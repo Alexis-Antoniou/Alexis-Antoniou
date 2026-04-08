@@ -1,1078 +1,279 @@
 <!DOCTYPE html>
-
-  <html lang="en">
-
-  <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Alexis Antoniou — Engineering Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root {
-
-      --blue: #1a56db;
-
-    --blue-light: #dbeafe;
-
-    --blue-mid: #3b82f6;
-
-    --teal: #0d9488;
-
-    --teal-light: #ccfbf1;
-
-    --purple: #7c3aed;
-
-    --purple-light: #ede9fe;
-
-    --amber: #b45309;
-
-    --amber-light: #fef3c7;
-
-    --text: #111827;
-
-    --text-muted: #6b7280;
-
-    --border: #e5e7eb;
-
-    --surface: #f9fafb;
-
-    --white: #ffffff;
-
-    --radius: 12px;
-
-    --radius-sm: 8px;
-
-}
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-
-        font-family: 'DM Sans', sans-serif;
-
-    color: var(--text);
-
-    background: var(--white);
-
-    font-size: 15px;
-
-    line-height: 1.6;
-
-}
-
-
-
-  /* NAV */
-
-  nav {
-
-        position: sticky; top: 0; z-index: 100;
-
-    background: rgba(255,255,255,0.95);
-
-    backdrop-filter: blur(8px);
-
-    border-bottom: 1px solid var(--border);
-
-    display: flex; align-items: center; gap: 24px;
-
-    padding: 1rem 3rem;
-
-}
-
-  .brand {
-
-        font-family: 'DM Serif Display', serif;
-
-    font-size: 18px; margin-right: auto;
-
-    color: var(--text);
-
-}
-
-  nav a {
-
-    font-size: 14px; color: var(--text-muted);
-
-    text-decoration: none; transition: color 0.2s;
-
-}
-
-  nav a:hover { color: var(--text); }
-
-
-
-  /* HERO */
-
-  .hero {
-
-        background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 50%, #faf5ff 100%);
-
-              padding: 5rem 3rem 4rem;
-
-    display: grid;
-
-    grid-template-columns: 1fr auto;
-
-    gap: 2rem;
-
-    align-items: center;
-
-    max-width: 100%;
-
-  }
-
-  .hero-left {}
-
-      .hero-badge {
-
-        display: inline-block;
-
-    background: #dcfce7; color: #166534;
-
-    font-size: 12px; font-weight: 500;
-
-    padding: 4px 14px; border-radius: 20px;
-
-    margin-bottom: 1.25rem;
-
-    border: 1px solid #bbf7d0;
-
-      }
-
-  .hero h1 {
-
-          font-family: 'DM Serif Display', serif;
-
-    font-size: 48px; line-height: 1.1;
-
-    color: var(--text); margin-bottom: 0.5rem;
-
-}
-
-  .hero-creds {
-
-        font-size: 14px; color: var(--blue);
-
-    font-weight: 500; margin-bottom: 1.25rem;
-
-    letter-spacing: 0.01em;
-
-}
-
-  .hero p {
-
-    font-size: 16px; color: var(--text-muted);
-
-    max-width: 560px; line-height: 1.75;
-
-    margin-bottom: 2rem;
-
-}
-
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-
-  .btn {
-
-        padding: 10px 24px; border-radius: var(--radius-sm);
-
-    font-size: 14px; font-family: 'DM Sans', sans-serif;
-
-    font-weight: 500; cursor: pointer;
-
-    text-decoration: none; display: inline-block;
-
-    transition: all 0.2s;
-
-}
-
-  .btn-primary {
-
-        background: var(--blue); color: white;
-
-    border: 1px solid var(--blue);
-
-}
-
-  .btn-primary:hover { background: #1d4ed8; }
-
-  .btn-outline {
-
-        background: white; color: var(--text);
-
-    border: 1px solid var(--border);
-
-}
-
-  .btn-outline:hover { background: var(--surface); }
-
-  .hero-avatar {
-
-        width: 160px; height: 160px; border-radius: 50%;
-
-    background: linear-gradient(135deg, var(--blue-light) 0%, var(--teal-light) 100%);
-
-    display: flex; align-items: center; justify-content: center;
-
-    font-family: 'DM Serif Display', serif;
-
-    font-size: 48px; color: var(--blue);
-
-    border: 3px solid white;
-
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-
-    flex-shrink: 0;
-
-}
-
-
-
-  /* STATS */
-
-  .stats-bar {
-
-        display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    border-top: 1px solid var(--border);
-
-    border-bottom: 1px solid var(--border);
-
-}
-
-  .stat {
-
-        padding: 1.5rem 2rem;
-
-    text-align: center;
-
-    border-right: 1px solid var(--border);
-
-}
-
-  .stat:last-child { border-right: none; }
-
-      .stat-n {
-
-        font-family: 'DM Serif Display', serif;
-
-    font-size: 28px; color: var(--blue);
-
-    display: block; margin-bottom: 4px;
-
-}
-
-  .stat-l { font-size: 12px; color: var(--text-muted); }
-
-
-
-  /* SECTIONS */
-
-  section { padding: 3.5rem 3rem; border-bottom: 1px solid var(--border); }
-
-  .sec-header { margin-bottom: 2rem; }
-
-  .sec-header h2 {
-
-        font-family: 'DM Serif Display', serif;
-
-    font-size: 28px; margin-bottom: 0.3rem;
-
-}
-
-  .sec-header p { font-size: 14px; color: var(--text-muted); }
-
-
-
-  /* SKILLS */
-
-  .skills-grid {
-
-        display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-
-    gap: 12px;
-
-    }
-
-  .skill-card {
-
-        background: var(--white);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    padding: 1.1rem;
-
-    transition: border-color 0.2s, box-shadow 0.2s;
-
-}
-
-  .skill-card:hover {
-
-        border-color: #bfdbfe;
-
-        box-shadow: 0 4px 12px rgba(26,86,219,0.08);
-
-}
-
-  .skill-dot {
-
-        width: 8px; height: 8px; border-radius: 50%;
-
-    display: inline-block; margin-bottom: 10px;
-
-}
-
-  .skill-card h3 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
-
-  .skill-card p { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
-
-  .skill-bar { height: 3px; background: var(--border); border-radius: 3px; }
-
-  .skill-fill { height: 3px; border-radius: 3px; transition: width 0.6s ease; }
-
-
-
-  /* PROJECTS */
-
-  .projects-grid {
-
-        display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-
-    gap: 16px;
-
-    }
-
-  .proj-card {
-
-        background: var(--white);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    overflow: hidden;
-
-    transition: box-shadow 0.2s, transform 0.2s;
-
-}
-
-  .proj-card:hover {
-
-        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-
-    transform: translateY(-2px);
-
-}
-
-  .proj-thumb {
-
-        height: 110px;
-
-    display: flex; align-items: center; justify-content: center;
-
-}
-
-  .proj-thumb svg { opacity: 0.85; }
-
-  .proj-body { padding: 1.1rem 1.25rem; }
-
-  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
-
-  .tag {
-
-        font-size: 11px; font-weight: 500;
-
-    padding: 3px 9px; border-radius: 20px;
-
-}
-
-  .proj-body h3 { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
-
-  .proj-body p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-
-  .trello-placeholder {
-
-        border: 1.5px dashed var(--border);
-
-    border-radius: var(--radius);
-
-    padding: 1.5rem;
-
-    text-align: center;
-
-    color: var(--text-muted);
-
-    font-size: 13px;
-
-    margin-top: 14px;
-
-    background: var(--surface);
-
-}
-
-  .trello-placeholder strong { color: var(--text); }
-
-
-
-  /* EXPERIENCE */
-
-  .timeline { display: flex; flex-direction: column; }
-
-  .exp-item { display: flex; gap: 20px; padding-bottom: 2rem; position: relative; }
-
-  .exp-item:not(:last-child)::before {
-
-        content: '';
-
-    position: absolute; left: 6px; top: 15px; bottom: 0;
-
-    width: 1px; background: var(--border);
-
-}
-
-  .exp-dot {
-
-        width: 13px; height: 13px; border-radius: 50%;
-
-    flex-shrink: 0; margin-top: 3px;
-
-    border: 2px solid white;
-
-    outline: 1.5px solid;
-
-}
-
-  .exp-content h3 { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
-
-  .exp-role { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-
-  .exp-content p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
-
-
-
-  /* EDUCATION */
-
-  .edu-grid {
-
-        display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
-    gap: 14px;
-
-    margin-top: 2rem;
-
-    }
-
-  .edu-card {
-
-        background: var(--white); border: 1px solid var(--border);
-
-    border-radius: var(--radius); padding: 1.25rem;
-
-}
-
-  .edu-badge {
-
-        font-size: 11px; font-weight: 500;
-
-    padding: 3px 10px; border-radius: 20px;
-
-    display: inline-block; margin-bottom: 10px;
-
-}
-
-  .edu-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
-
-  .edu-card .inst { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
-
-  .edu-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-
-
-
-  /* CONTACT */
-
-  .contact-grid {
-
-        display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-
-    gap: 12px;
-
-    }
-
-  .contact-card {
-
-        background: var(--surface); border-radius: var(--radius);
-
-    padding: 1.1rem 1.25rem;
-
-    display: flex; align-items: center; gap: 14px;
-
-    border: 1px solid var(--border);
-
-    text-decoration: none; color: inherit;
-
-    transition: border-color 0.2s, background 0.2s;
-
-}
-
-  .contact-card:hover { border-color: #bfdbfe; background: #f0f7ff; }
-
-      .contact-icon {
-
-        width: 38px; height: 38px; border-radius: var(--radius-sm);
-
-    display: flex; align-items: center; justify-content: center;
-
-    flex-shrink: 0;
-
-}
-
-  .contact-card h4 { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
-
-  .contact-card p { font-size: 12px; color: var(--text-muted); }
-
-
-
-  /* FOOTER */
-
-  footer {
-
-        padding: 2rem 3rem;
-
-    text-align: center;
-
-    font-size: 13px;
-
-    color: var(--text-muted);
-
-    background: var(--surface);
-
-}
-
-
-
-  @media (max-width: 700px) {
-
-    nav { padding: 1rem 1.25rem; gap: 14px; }
-
-    nav a:nth-child(n+4) { display: none; }
-
-    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
-
-    .hero-avatar { display: none; }
-
-          .hero h1 { font-size: 34px; }
-
-    .stats-bar { grid-template-columns: repeat(2,1fr); }
-
-    section { padding: 2.5rem 1.5rem; }
-
-}
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alexis Antoniou — Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--dark:#0a0c10;--dark2:#111418;--dark3:#181c22;--accent:#00c8ff;--text:#e8eaf0;--muted:#8a9ab0;--border:rgba(255,255,255,0.08);--r:12px}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1800&q=80') center/cover no-repeat;filter:brightness(0.25) saturate(0.7)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,8,20,0.7) 0%,rgba(0,20,40,0.4) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.04) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:860px;padding:3rem 2rem;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.3);color:var(--accent);font-size:12px;font-weight:500;padding:5px 16px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:.05em;text-transform:uppercase}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,7vw,80px);line-height:1.05;color:#fff;margin-bottom:.6rem;letter-spacing:-.02em}
+.hero-sub{font-size:15px;color:var(--accent);font-weight:400;margin-bottom:1.4rem;letter-spacing:.03em;opacity:.85}
+.hero p{font-size:17px;color:rgba(232,234,240,.72);max-width:620px;margin:0 auto 2.5rem;line-height:1.8}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:11px 28px;border-radius:var(--r);font-size:14px;font-family:inherit;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s;letter-spacing:.02em;border:1px solid}
+.btn-p{background:var(--accent);color:#050a10;border-color:var(--accent)}
+.btn-p:hover{background:#00aadd;transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--text);border-color:rgba(255,255,255,.2)}
+.btn-o:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--dark2);border-bottom:1px solid var(--border)}
+.stat{padding:1.6rem 2rem;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.sn{font-family:'DM Serif Display',serif;font-size:26px;color:var(--accent);display:block;margin-bottom:4px}
+.sl{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.projects{position:relative;height:100vh;min-height:640px;overflow:hidden;background:var(--dark3)}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s ease}
+.slide.active{opacity:1;pointer-events:all;z-index:2}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.3) saturate(.75)}
+.slide-grad{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,10,20,.85) 0%,rgba(5,10,20,.55) 52%,rgba(5,10,20,.15) 100%)}
+.slide-body{position:absolute;bottom:3rem;left:5%;right:5%;max-width:640px;z-index:3}
+.proj-num{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);opacity:.8;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.proj-num::before{content:'';display:block;width:28px;height:1px;background:var(--accent);opacity:.5}
+.tags{display:flex;gap:8px;margin-bottom:.9rem;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;letter-spacing:.04em}
+.tb{background:rgba(0,136,204,.18);color:#60cfff;border:1px solid rgba(0,136,204,.3)}
+.tt{background:rgba(0,180,150,.15);color:#4dd9c0;border:1px solid rgba(0,180,150,.25)}
+.tp{background:rgba(140,80,220,.15);color:#c084fc;border:1px solid rgba(140,80,220,.25)}
+.ta{background:rgba(200,169,110,.15);color:#e8c97a;border:1px solid rgba(200,169,110,.25)}
+.slide-body h3{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.1;margin-bottom:.9rem}
+.slide-body p{font-size:15px;color:rgba(232,234,240,.75);line-height:1.8;max-width:520px}
+.details{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:2.5rem;flex-wrap:wrap}
+.di label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.di span{font-size:13px;color:var(--text)}
+.snav{position:absolute;right:4%;bottom:3rem;z-index:10;display:flex;align-items:center;gap:10px}
+.sarr{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(8px);line-height:1}
+.sarr:hover{background:rgba(0,200,255,.15);border-color:rgba(0,200,255,.4);color:var(--accent)}
+.sdots{display:flex;gap:8px;align-items:center}
+.sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;padding:0}
+.sdot.on{background:var(--accent);width:24px;border-radius:3px}
+.snum{position:absolute;right:4%;top:2.5rem;z-index:10;font-size:13px;color:var(--muted);letter-spacing:.05em}
+.snum em{color:var(--accent);font-family:'DM Serif Display',serif;font-size:22px;font-style:normal}
+.slabel{position:absolute;left:5%;top:2.5rem;z-index:10;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);opacity:.7}
+.xp{padding:5rem 5%;background:var(--dark);border-bottom:1px solid var(--border)}
+.sec-hd{margin-bottom:3rem}
+.sec-lb{display:block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.sec-hd h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,40px);color:#fff;margin-bottom:.4rem}
+.sec-hd p{font-size:14px;color:var(--muted)}
+.ti{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
+.ti:last-child{border-bottom:none}
+.ti-year{font-size:12px;color:var(--muted);letter-spacing:.05em;padding-top:3px}
+.ti-body h3{font-size:16px;font-weight:500;color:#fff;margin-bottom:4px}
+.ti-role{font-size:13px;color:var(--accent);opacity:.8;margin-bottom:10px}
+.ti-body p{font-size:14px;color:var(--muted);line-height:1.7}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:1.5rem}
+.edu-card{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;position:relative;overflow:hidden}
+.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.edu-bdg{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:10px;background:rgba(0,200,255,.1);color:var(--accent);border:1px solid rgba(0,200,255,.2)}
+.edu-card h3{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px}
+.edu-inst{font-size:12px;color:var(--muted);margin-bottom:8px}
+.edu-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.contact{padding:5rem 5%;background:var(--dark2);border-bottom:1px solid var(--border)}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;max-width:800px}
+.cc{background:var(--dark3);border-radius:var(--r);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:16px;border:1px solid var(--border);text-decoration:none;color:inherit;transition:all .2s}
+.cc:hover{border-color:rgba(0,200,255,.3);background:rgba(0,200,255,.04);transform:translateY(-2px)}
+.ci{width:40px;height:40px;border-radius:var(--r);background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cc h4{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
+.cc p{font-size:12px;color:var(--muted)}
+footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
+.fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fu.vis{opacity:1;transform:none}
+@media(max-width:640px){.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:1rem .5rem}.sn{font-size:18px}.slide-body{left:6%;right:6%;bottom:2rem}.snav{right:5%;bottom:2rem}.snum{right:5%;top:2rem}.ti{grid-template-columns:1fr;gap:.5rem}.ti-year{font-size:11px;color:var(--accent)}}
 </style>
+</head>
+<body>
 
-  </head>
-
-  <body>
-
-
-
-  <nav>
-
-  <span class="brand">Alexis Antoniou</span>
-
-  <a href="#about">About</a>
-
-  <a href="#skills">Skills</a>
-
-  <a href="#projects">Projects</a>
-
-  <a href="#experience">Experience</a>
-
-  <a href="#contact">Contact</a>
-
-  </nav>
-
-
-
-  <!-- HERO -->
-
-  <div class="hero" id="about">
-
-  <div class="hero-left">
-
-  <div class="hero-badge">Open to Customer Support Engineer roles</div>
-
-  <h1>Alexis Antoniou</h1>
-
-  <div class="hero-creds">BEng (Hons) Civil Engineering &nbsp;·&nbsp; MSc BIM (Distinction)</div>
-
-  <p>Engineering professional with 7+ years in high-precision sensing technology. Proven ability to lead service operations from commissioning to long-term support — with a track record of delivering outcomes that directly support commercial success and customer satisfaction.</p>
-
-<div class="hero-btns">
-
-<a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="btn btn-primary">LinkedIn profile</a>
-
-  <a href="mailto:antoniou.a.alexis@gmail.com" class="btn btn-outline">Send email</a>
-
+<div class="hero" id="about">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="badge">Open to Customer Support Engineer roles</div>
+    <h1>Alexis Antoniou</h1>
+    <div class="hero-sub">BEng (Hons) Civil Engineering &nbsp;&middot;&nbsp; Metrology Specialist</div>
+    <p>Engineering professional with 7+ years in high-precision sensing technology. Proven ability to lead service operations from commissioning to long-term support &mdash; with a track record of delivering outcomes that directly support commercial success and customer satisfaction.</p>
+    <div class="btns">
+      <a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="btn btn-p">LinkedIn profile</a>
+      <a href="mailto:antoniou.a.alexis@gmail.com" class="btn btn-o">Send email</a>
+    </div>
   </div>
-
-  </div>
-
-  <div class="hero-avatar">AA</div>
-
-  </div>
-
-
-
-  <!-- STATS BAR -->
-
-  <div class="stats-bar">
-
-  <div class="stat"><span class="stat-n">7+</span><span class="stat-l">Years of experience</span></div>
-
-<div class="stat"><span class="stat-n">AFM</span><span class="stat-l">Semiconductor industry</span></div>
-
-  <div class="stat"><span class="stat-n">Asia</span><span class="stat-l">Regional service lead</span></div>
-
-<div class="stat"><span class="stat-n">MSc</span><span class="stat-l">Distinction awarded</span></div>
-
-  </div>
-
-
-
-  <!-- SKILLS -->
-
-  <section id="skills">
-
-  <div class="sec-header">
-
-  <h2>Skills</h2>
-
-  <p>Technical capabilities and domain expertise</p>
-
 </div>
 
-<div class="skills-grid">
-
-<div class="skill-card">
-
-<span class="skill-dot" style="background:#1a56db"></span>
-
-<h3>Field service operations</h3>
-
-<p>Commissioning, deployment, on-site maintenance</p>
-
-<div class="skill-bar"><div class="skill-fill" style="width:95%;background:#1a56db"></div></div>
-
-  </div>
-
-  <div class="skill-card">
-
-  <span class="skill-dot" style="background:#0d9488"></span>
-
-  <h3>Technical triage</h3>
-
-  <p>Complex issue resolution, root cause analysis</p>
-
-<div class="skill-bar"><div class="skill-fill" style="width:92%;background:#0d9488"></div></div>
-
+<div class="stats">
+  <div class="stat"><span class="sn">7+</span><span class="sl">Years of experience</span></div>
+  <div class="stat"><span class="sn">Metrology</span><span class="sl">Semiconductor industry</span></div>
+  <div class="stat"><span class="sn">Asia</span><span class="sl">Customer Support Supervisor</span></div>
 </div>
 
-<div class="skill-card">
+<section class="projects" id="projects" aria-label="Projects section slider">
+  <div class="slabel">Projects</div>
+  <div class="snum"><em id="sn">1</em>&nbsp;/ 3</div>
 
-<span class="skill-dot" style="background:#7c3aed"></span>
-
-  <h3>Data analysis & scripting</h3>
-
-  <p>Pattern recognition, bespoke visualisation tools</p>
-
-<div class="skill-bar"><div class="skill-fill" style="width:85%;background:#7c3aed"></div></div>
-
-</div>
-
-<div class="skill-card">
-
-<span class="skill-dot" style="background:#b45309"></span>
-
-  <h3>Technical documentation</h3>
-
-  <p>SOPs, service guides, training materials</p>
-
-<div class="skill-bar"><div class="skill-fill" style="width:90%;background:#b45309"></div></div>
-
+  <div class="slide active" id="s0">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&q=80')"></div>
+    <div class="slide-grad"></div>
+    <div class="slide-body">
+      <div class="proj-num">Project 01</div>
+      <div class="tags"><span class="tag tb">Service</span><span class="tag tt">Maintenance</span><span class="tag tb">Metrology</span></div>
+      <h3>M3 System<br>Service Maintenance</h3>
+      <p>Led planned and reactive service maintenance activities for the M3 system, ensuring continued tool performance, uptime, and customer satisfaction throughout the maintenance lifecycle across the Asia region.</p>
+      <div class="details">
+        <div class="di"><label>Industry</label><span>Semiconductor</span></div>
+        <div class="di"><label>Location</label><span>Taiwan / Asia</span></div>
+        <div class="di"><label>Role</label><span>Lead Field Engineer</span></div>
+        <div class="di"><label>Outcome</label><span>&#8593; Uptime &amp; satisfaction</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="skill-card">
-
-  <span class="skill-dot" style="background:#1a56db"></span>
-
-  <h3>AFM / sensing technology</h3>
-
-  <p>High-precision metrology, semiconductor context</p>
-
-<div class="skill-bar"><div class="skill-fill" style="width:90%;background:#1a56db"></div></div>
-
+  <div class="slide" id="s1">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80')"></div>
+    <div class="slide-grad"></div>
+    <div class="slide-body">
+      <div class="proj-num">Project 02</div>
+      <div class="tags"><span class="tag tp">Scripting</span><span class="tag ta">Data Viz</span><span class="tag tp">Automation</span></div>
+      <h3>Automated Pattern<br>Recognition Tool</h3>
+      <p>Developed a custom script to automate data pattern recognition &mdash; reducing engineer analysis time, saving licence costs, and enabling new modes of data interpretation through advanced visualisations. Transformed how the team processes high-precision metrology data.</p>
+      <div class="details">
+        <div class="di"><label>Type</label><span>Python / Scripting</span></div>
+        <div class="di"><label>Impact</label><span>&#8595; Analysis time</span></div>
+        <div class="di"><label>Outcome</label><span>Licence cost savings</span></div>
+        <div class="di"><label>Scope</label><span>Team-wide adoption</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="skill-card">
-
-  <span class="skill-dot" style="background:#0d9488"></span>
-
-  <h3>Training & upskilling</h3>
-
-  <p>Programme design, instructional delivery</p>
-
-<div class="skill-bar"><div class="skill-fill" style="width:88%;background:#0d9488"></div></div>
-
+  <div class="slide" id="s2">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1600&q=80')"></div>
+    <div class="slide-grad"></div>
+    <div class="slide-body">
+      <div class="proj-num">Project 03</div>
+      <div class="tags"><span class="tag tt">Training</span><span class="tag tb">Documentation</span><span class="tag tt">SOP</span></div>
+      <h3>Training Programme<br>&amp; SOP Suite</h3>
+      <p>Designed and delivered comprehensive training for new and existing engineers. Created instructional documentation, service guides, and SOPs that standardised service procedures across the team &mdash; reducing onboarding time across the Asia region.</p>
+      <div class="details">
+        <div class="di"><label>Scope</label><span>Team-wide programme</span></div>
+        <div class="di"><label>Output</label><span>SOPs &amp; guides</span></div>
+        <div class="di"><label>Region</label><span>Asia</span></div>
+        <div class="di"><label>Outcome</label><span>&#8595; Onboarding time</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="skill-card">
-
-  <span class="skill-dot" style="background:#7c3aed"></span>
-
-  <h3>Cross-functional coordination</h3>
-
-  <p>Service, applications, ops, engineering teams</p>
-
-  <div class="skill-bar"><div class="skill-fill" style="width:82%;background:#7c3aed"></div></div>
-
+  <div class="snav">
+    <div class="sdots">
+      <button class="sdot on" data-i="0" aria-label="Slide 1"></button>
+      <button class="sdot" data-i="1" aria-label="Slide 2"></button>
+      <button class="sdot" data-i="2" aria-label="Slide 3"></button>
+    </div>
+    <button class="sarr" id="prev" aria-label="Previous">&#8592;</button>
+    <button class="sarr" id="next" aria-label="Next">&#8594;</button>
   </div>
-
-  <div class="skill-card">
-
-  <span class="skill-dot" style="background:#b45309"></span>
-
-  <h3>Geotechnical equipment</h3>
-
-  <p>Commissioning, integration, remote support</p>
-
-  <div class="skill-bar"><div class="skill-fill" style="width:78%;background:#b45309"></div></div>
-
-  </div>
-
-  </div>
-
-  </section>
-
-
-
-  <!-- PROJECTS -->
-
-  <section id="projects">
-
-  <div class="sec-header">
-
-  <h2>Projects</h2>
-
-  <p>Key achievements and technical initiatives</p>
-
-</div>
-
-<div class="projects-grid">
-
-<div class="proj-card">
-
-<div class="proj-thumb" style="background:#dbeafe">
-
-<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="1.5">
-
-  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-
-  </svg>
-
-  </div>
-
-  <div class="proj-body">
-
-  <div class="proj-tags">
-
-  <span class="tag" style="background:#dbeafe;color:#1e40af">Service</span>
-
-  <span class="tag" style="background:#ccfbf1;color:#134e4a">Maintenance</span>
-
-  </div>
-
-  <h3>M3 service maintenance</h3>
-
-<p>Led planned and reactive service maintenance activities for the M3 system, ensuring continued tool performance, uptime, and customer satisfaction throughout the maintenance lifecycle.</p>
-
-</div>
-
-</div>
-
-  <div class="proj-card">
-
-  <div class="proj-thumb" style="background:#ede9fe">
-
-  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5">
-
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-
-  </svg>
-
-  </div>
-
-  <div class="proj-body">
-
-  <div class="proj-tags">
-
-  <span class="tag" style="background:#ede9fe;color:#4c1d95">Scripting</span>
-
-  <span class="tag" style="background:#fef3c7;color:#78350f">Data viz</span>
-
-  </div>
-
-  <h3>Automated pattern recognition tool</h3>
-
-  <p>Developed a script to automate data pattern recognition — reducing engineer analysis time, saving licence costs, and enabling new modes of data interpretation through advanced visualisations.</p>
-
-</div>
-
-</div>
-
-<div class="proj-card">
-
-<div class="proj-thumb" style="background:#ccfbf1">
-
-<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="1.5">
-
-  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-
-  <circle cx="9" cy="7" r="4"/>
-
-  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-
-  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-
-  </svg>
-
-  </div>
-
-  <div class="proj-body">
-
-  <div class="proj-tags">
-
-  <span class="tag" style="background:#ccfbf1;color:#134e4a">Training</span>
-
-  <span class="tag" style="background:#dbeafe;color:#1e40af">Documentation</span>
-
-  </div>
-
-  <h3>Training programme & SOP suite</h3>
-
-  <p>Designed and delivered training for new and existing engineers. Created instructional documentation, service guides, and SOPs that standardised service procedures across the team.</p>
-
-</div>
-
-</div>
-
-  </div>
-
-  <div class="trello-placeholder">
-
-  <strong>More projects coming soon</strong> — share your Trello board link to add your additional projects here.
-
-</div>
-
 </section>
 
-
-
-<!-- EXPERIENCE -->
-
-  <section id="experience">
-
-  <div class="sec-header">
-
-  <h2>Experience</h2>
-
-  <p>Professional history</p>
-
+<section class="xp" id="experience">
+  <div class="sec-hd fu">
+    <span class="sec-lb">Career</span>
+    <h2>Experience</h2>
+    <p>Professional history</p>
   </div>
-
-  <div class="timeline">
-
-  <div class="exp-item">
-
-  <div class="exp-dot" style="background:#1a56db;outline-color:#1a56db"></div>
-
-  <div class="exp-content">
-
-  <h3>Customer Support Supervisor — Infinitesima Ltd</h3>
-
-<div class="exp-role">2023 – Present &nbsp;·&nbsp; Semiconductor Industry (AFM) &nbsp;·&nbsp; Taiwan</div>
-
-  <p>Primary technical and operational point of contact for customer support in Asia. Independently manages the full service lifecycle — from pre-shipment commissioning through on-site deployment and long-term maintenance. Leads triage of complex technical issues, coordinates with specialist engineering teams, designs and delivers training programmes, and develops bespoke analysis scripts and data visualisation tools.</p>
-
-</div>
-
-</div>
-
-<div class="exp-item">
-
-<div class="exp-dot" style="background:#0d9488;outline-color:#0d9488"></div>
-
-<div class="exp-content">
-
-<h3>Customer Support Engineer — GDS Instruments</h3>
-
-  <div class="exp-role">2019 – 2023 &nbsp;·&nbsp; Geotechnical Industry</div>
-
-<p>Commissioned geotechnical equipment in-house and on customer sites, delivering training on operation, data interpretation, and maintenance. Provided remote technical support to efficiently resolve customer issues, reducing equipment downtime and maintaining high levels of client satisfaction.</p>
-
+  <div>
+    <div class="ti fu">
+      <div class="ti-year">2023 &ndash; Present</div>
+      <div class="ti-body">
+        <h3>Customer Support Supervisor &mdash; Infinitesima Ltd</h3>
+        <div class="ti-role">Semiconductor Industry (Metrology) &nbsp;&middot;&nbsp; Taiwan</div>
+        <p>Primary technical and operational point of contact for customer support in Asia. Independently manages the full service lifecycle &mdash; from pre-shipment commissioning through on-site deployment and long-term maintenance. Leads triage of complex technical issues, coordinates with specialist engineering teams, designs and delivers training programmes, and develops bespoke analysis scripts and data visualisation tools.</p>
+      </div>
+    </div>
+    <div class="ti fu">
+      <div class="ti-year">2019 &ndash; 2023</div>
+      <div class="ti-body">
+        <h3>Customer Support Engineer &mdash; GDS Instruments</h3>
+        <div class="ti-role">Geotechnical Industry</div>
+        <p>Commissioned geotechnical equipment in-house and on customer sites, delivering training on operation, data interpretation, and maintenance. Provided remote technical support to efficiently resolve customer issues, reducing equipment downtime and maintaining high levels of client satisfaction.</p>
+      </div>
+    </div>
   </div>
-
+  <div style="margin-top:3.5rem">
+    <span class="sec-lb">Academic</span>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:.4rem">Education</h2>
+    <p style="font-size:14px;color:var(--muted)">Academic background</p>
   </div>
-
-  </div>
-
-
-
-  <h2 style="font-family:'DM Serif Display',serif;font-size:28px;margin:2.5rem 0 0.3rem">Education</h2>
-
-  <p style="font-size:14px;color:var(--text-muted);margin-bottom:0">Academic background</p>
-
   <div class="edu-grid">
-
-  <div class="edu-card">
-
-  <span class="edu-badge" style="background:#ccfbf1;color:#134e4a">Distinction</span>
-
-  <h3>MSc Building Information Modelling</h3>
-
-  <div class="inst">University of Portsmouth &nbsp;·&nbsp; Graduated 2019</div>
-
-  <p>Advanced study in digital construction methodologies, data management, and integrated project workflows. Dissertation explored blockchain-based smart contract technology for automated payments — awarded highest distinction.</p>
-
-</div>
-
-<div class="edu-card">
-
-<span class="edu-badge" style="background:#dbeafe;color:#1e40af">BEng (Hons)</span>
-
-<h3>BEng (Hons) Civil Engineering</h3>
-
-<div class="inst">University of Portsmouth &nbsp;·&nbsp; Graduated 2018</div>
-
-  <p>Core grounding in structural analysis, geotechnics, materials, and engineering mathematics. Final year project: Environmental building certification comparison between LEED and BREEAM.</p>
-
+    <div class="edu-card fu">
+      <span class="edu-bdg">BEng (Hons)</span>
+      <h3>BEng (Hons) Civil Engineering</h3>
+      <div class="edu-inst">University of Portsmouth &nbsp;&middot;&nbsp; Graduated 2018</div>
+      <p>Core grounding in structural analysis, geotechnics, materials, and engineering mathematics. Final year project: Environmental building certification comparison between LEED and BREEAM.</p>
+    </div>
   </div>
+</section>
 
+<section class="contact" id="contact">
+  <div class="sec-hd fu">
+    <span class="sec-lb">Get in touch</span>
+    <h2>Contact</h2>
+    <p>Let's connect</p>
   </div>
-
-  </section>
-
-
-  
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-
-  <div class="sec-header">
-
-  <h2>Contact</h2>
-
-  <p>Let's connect</p>
-
+  <div class="cg">
+    <a href="mailto:antoniou.a.alexis@gmail.com" class="cc">
+      <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div><h4>Email</h4><p>antoniou.a.alexis@gmail.com</p></div>
+    </a>
+    <a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="cc">
+      <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div><h4>LinkedIn</h4><p>linkedin.com/in/alexis-antoniou</p></div>
+    </a>
+    <div class="cc" style="cursor:default">
+      <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div><h4>Location</h4><p>Taiwan</p></div>
+    </div>
   </div>
+</section>
 
-  <div class="contact-grid">
+<footer>Alexis Antoniou BEng (Hons) &nbsp;&middot;&nbsp; Customer Support Supervisor &nbsp;&middot;&nbsp; Taiwan</footer>
 
-  <a href="mailto:antoniou.a.alexis@gmail.com" class="contact-card">
-
-  <div class="contact-icon" style="background:#dbeafe">
-
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2">
-
-  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-
-  <polyline points="22,6 12,13 2,6"/>
-
-  </svg>
-
-  </div>
-
-  <div><h4>Email</h4><p>antoniou.a.alexis@gmail.com</p></div>
-
-  </a>
-
-  <a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="contact-card">
-
-  <div class="contact-icon" style="background:#ede9fe">
-
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
-
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-
-  <rect x="2" y="9" width="4" height="12"/>
-
-  <circle cx="4" cy="4" r="2"/>
-
-  </svg>
-
-  </div>
-
-  <div><h4>LinkedIn</h4><p>linkedin.com/in/alexis-antoniou</p></div>
-
-  </a>
-
-  <div class="contact-card">
-
-  <div class="contact-icon" style="background:#ccfbf1">
-
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2">
-
-  <circle cx="12" cy="12" r="10"/>
-
-  <line x1="2" y1="12" x2="22" y2="12"/>
-
-  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-
-  </svg>
-
-  </div>
-
-  <div><h4>Location</h4><p>Taiwan</p></div>
-
-  </div>
-
-  </div>
-
-  </section>
-
-
-
-  <footer>
-
-    Alexis Antoniou BEng (Hons), MSc &nbsp;·&nbsp; Customer Support Supervisor &nbsp;·&nbsp; Taiwan
-
-</footer>
-
-
-
-  </body>
-
-  </html>
+<script>
+(function(){
+  var cur=0;
+  var slides=document.querySelectorAll('.slide');
+  var dots=document.querySelectorAll('.sdot');
+  var snum=document.getElementById('sn');
+  var n=slides.length;
+  function go(i){
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('on');
+    cur=(i+n)%n;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('on');
+    snum.textContent=cur+1;
+  }
+  document.getElementById('next').onclick=function(){go(cur+1)};
+  document.getElementById('prev').onclick=function(){go(cur-1)};
+  dots.forEach(function(d){d.onclick=function(){go(+d.dataset.i)}});
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+  var t=setInterval(function(){go(cur+1)},6000);
+  var ps=document.getElementById('projects');
+  ps.addEventListener('mouseenter',function(){clearInterval(t)});
+  ps.addEventListener('mouseleave',function(){clearInterval(t);t=setInterval(function(){go(cur+1)},6000)});
+  var tx=0;
+  ps.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  ps.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){dx<0?go(cur+1):go(cur-1)}},{passive:true});
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.15});
+  document.querySelectorAll('.fu').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

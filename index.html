@@ -6,94 +6,145 @@
 <title>Alexis Antoniou — Engineering Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-:root{--dark:#0a0c10;--dark2:#111418;--dark3:#181c22;--accent:#00c8ff;--text:#e8eaf0;--muted:#8a9ab0;--border:rgba(255,255,255,0.08);--r:12px}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1800&q=80') center/cover no-repeat;filter:brightness(0.25) saturate(0.7)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,8,20,0.7) 0%,rgba(0,20,40,0.4) 100%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.04) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+html,body{overflow-x:hidden}
+:root{--dark:#060810;--dark2:#0d1017;--dark3:#141920;--accent:#00c8ff;--text:#e8eaf0;--muted:#8a9ab0;--border:rgba(255,255,255,0.07);--r:12px}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);font-size:15px;line-height:1.6}
+
+/* --- HERO --- */
+.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/AFM_nanoindentation_Gao_2004.jpg/1280px-AFM_nanoindentation_Gao_2004.jpg') center/cover no-repeat;filter:brightness(0.18) saturate(1.4) hue-rotate(190deg)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,4,16,0.88) 0%,rgba(0,12,30,0.6) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.035) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
 .hero-content{position:relative;z-index:2;max-width:860px;padding:3rem 2rem;text-align:center}
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.3);color:var(--accent);font-size:12px;font-weight:500;padding:5px 16px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:.05em;text-transform:uppercase}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.28);color:var(--accent);font-size:11px;font-weight:500;padding:5px 16px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:.06em;text-transform:uppercase}
 .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,7vw,80px);line-height:1.05;color:#fff;margin-bottom:.6rem;letter-spacing:-.02em}
-.hero-sub{font-size:15px;color:var(--accent);font-weight:400;margin-bottom:1.4rem;letter-spacing:.03em;opacity:.85}
-.hero p{font-size:17px;color:rgba(232,234,240,.72);max-width:620px;margin:0 auto 2.5rem;line-height:1.8}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(44px,7vw,82px);line-height:1.02;color:#fff;margin-bottom:.6rem;letter-spacing:-.02em}
+.hero-sub{font-size:14px;color:var(--accent);font-weight:400;margin-bottom:1.4rem;letter-spacing:.04em;opacity:.85}
+.hero p{font-size:17px;color:rgba(232,234,240,.7);max-width:620px;margin:0 auto 2.5rem;line-height:1.85}
 .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{padding:11px 28px;border-radius:var(--r);font-size:14px;font-family:inherit;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s;letter-spacing:.02em;border:1px solid}
-.btn-p{background:var(--accent);color:#050a10;border-color:var(--accent)}
+.btn-p{background:var(--accent);color:#020810;border-color:var(--accent)}
 .btn-p:hover{background:#00aadd;transform:translateY(-1px)}
-.btn-o{background:transparent;color:var(--text);border-color:rgba(255,255,255,.2)}
-.btn-o:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
+.btn-o{background:transparent;color:var(--text);border-color:rgba(255,255,255,.18)}
+.btn-o:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.04)}
+
+/* --- STATS --- */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--dark2);border-bottom:1px solid var(--border)}
 .stat{padding:1.6rem 2rem;text-align:center;border-right:1px solid var(--border)}
 .stat:last-child{border-right:none}
 .sn{font-family:'DM Serif Display',serif;font-size:26px;color:var(--accent);display:block;margin-bottom:4px}
-.sl{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
-.projects{position:relative;height:100vh;min-height:640px;overflow:hidden;background:var(--dark3)}
-.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s ease}
-.slide.active{opacity:1;pointer-events:all;z-index:2}
-.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.3) saturate(.75)}
-.slide-grad{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,10,20,.85) 0%,rgba(5,10,20,.55) 52%,rgba(5,10,20,.15) 100%)}
-.slide-body{position:absolute;bottom:3rem;left:5%;right:5%;max-width:640px;z-index:3}
-.proj-num{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);opacity:.8;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
-.proj-num::before{content:'';display:block;width:28px;height:1px;background:var(--accent);opacity:.5}
-.tags{display:flex;gap:8px;margin-bottom:.9rem;flex-wrap:wrap}
-.tag{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;letter-spacing:.04em}
-.tb{background:rgba(0,136,204,.18);color:#60cfff;border:1px solid rgba(0,136,204,.3)}
-.tt{background:rgba(0,180,150,.15);color:#4dd9c0;border:1px solid rgba(0,180,150,.25)}
-.tp{background:rgba(140,80,220,.15);color:#c084fc;border:1px solid rgba(140,80,220,.25)}
-.ta{background:rgba(200,169,110,.15);color:#e8c97a;border:1px solid rgba(200,169,110,.25)}
-.slide-body h3{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.1;margin-bottom:.9rem}
-.slide-body p{font-size:15px;color:rgba(232,234,240,.75);line-height:1.8;max-width:520px}
-.details{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:2.5rem;flex-wrap:wrap}
-.di label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.sl{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+/* --- SCROLL PINNED PROJECTS (Sowieso-style) --- */
+.scroll-section{position:relative}
+.pin-wrap-outer{position:relative}
+.pin-wrap{display:flex;height:100vh;align-items:stretch;width:max-content}
+.panel{position:relative;width:100vw;height:100vh;overflow:hidden;flex-shrink:0}
+.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .1s linear}
+.panel-tint{position:absolute;inset:0}
+.panel-body{position:absolute;bottom:0;left:0;right:0;padding:3rem 5%;z-index:2;max-width:700px}
+.proj-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);opacity:.75;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.proj-label::before{content:'';width:24px;height:1px;background:var(--accent);opacity:.5}
+.tags{display:flex;gap:8px;margin-bottom:.85rem;flex-wrap:wrap}
+.tag{font-size:10px;font-weight:500;padding:4px 11px;border-radius:20px;letter-spacing:.04em}
+.tb{background:rgba(0,136,204,.15);color:#60cfff;border:1px solid rgba(0,136,204,.28)}
+.tt{background:rgba(0,180,140,.12);color:#4dd9b8;border:1px solid rgba(0,180,140,.22)}
+.tp{background:rgba(140,80,220,.12);color:#c084fc;border:1px solid rgba(140,80,220,.22)}
+.ta{background:rgba(200,160,80,.12);color:#e8c97a;border:1px solid rgba(200,160,80,.22)}
+.tm{background:rgba(220,80,80,.12);color:#f87171;border:1px solid rgba(220,80,80,.22)}
+.panel-body h3{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,52px);color:#fff;line-height:1.08;margin-bottom:.85rem}
+.panel-body p{font-size:15px;color:rgba(232,234,240,.72);line-height:1.82;max-width:540px}
+.panel-details{margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:2.2rem;flex-wrap:wrap}
+.di label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .di span{font-size:13px;color:var(--text)}
-.snav{position:absolute;right:4%;bottom:3rem;z-index:10;display:flex;align-items:center;gap:10px}
-.sarr{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(8px);line-height:1}
-.sarr:hover{background:rgba(0,200,255,.15);border-color:rgba(0,200,255,.4);color:var(--accent)}
-.sdots{display:flex;gap:8px;align-items:center}
-.sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;padding:0}
-.sdot.on{background:var(--accent);width:24px;border-radius:3px}
-.snum{position:absolute;right:4%;top:2.5rem;z-index:10;font-size:13px;color:var(--muted);letter-spacing:.05em}
-.snum em{color:var(--accent);font-family:'DM Serif Display',serif;font-size:22px;font-style:normal}
-.slabel{position:absolute;left:5%;top:2.5rem;z-index:10;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);opacity:.7}
+.panel-num{position:absolute;right:4%;top:2.5rem;z-index:10;font-size:13px;color:var(--muted);letter-spacing:.05em}
+.panel-num em{color:var(--accent);font-family:'DM Serif Display',serif;font-size:22px;font-style:normal}
+.section-label{position:absolute;left:5%;top:2.5rem;z-index:10;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);opacity:.65}
+.progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:1000;transform-origin:left center;transform:scaleX(0)}
+
+/* --- AFM IMAGE STRIP (between sections) --- */
+.afm-strip{background:var(--dark3);padding:3rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.afm-strip-inner{display:flex;gap:16px;width:max-content;animation:stripScroll 30s linear infinite}
+@keyframes stripScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.afm-strip-inner:hover{animation-play-state:paused}
+.afm-img{width:200px;height:140px;object-fit:cover;border-radius:8px;filter:saturate(1.2) brightness(0.85);border:1px solid rgba(0,200,255,0.12);flex-shrink:0;transition:all .3s}
+.afm-img:hover{filter:saturate(1.6) brightness(1.1);transform:scale(1.04);border-color:rgba(0,200,255,0.4)}
+.afm-caption{font-size:10px;color:var(--muted);letter-spacing:.05em;margin-top:.6rem;text-align:center}
+
+/* --- EXPERIENCE --- */
 .xp{padding:5rem 5%;background:var(--dark);border-bottom:1px solid var(--border)}
 .sec-hd{margin-bottom:3rem}
 .sec-lb{display:block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 .sec-hd h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,40px);color:#fff;margin-bottom:.4rem}
 .sec-hd p{font-size:14px;color:var(--muted)}
-.ti{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
+.ti{display:grid;grid-template-columns:130px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
 .ti:last-child{border-bottom:none}
-.ti-year{font-size:12px;color:var(--muted);letter-spacing:.05em;padding-top:3px}
+.ti-year{font-size:12px;color:var(--muted);letter-spacing:.04em;padding-top:3px}
 .ti-body h3{font-size:16px;font-weight:500;color:#fff;margin-bottom:4px}
 .ti-role{font-size:13px;color:var(--accent);opacity:.8;margin-bottom:10px}
-.ti-body p{font-size:14px;color:var(--muted);line-height:1.7}
+.ti-body p{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* --- ACHIEVEMENTS (from Trello 2026 Done + 2025 Archive) --- */
+.achievements{padding:5rem 5%;background:var(--dark2);border-bottom:1px solid var(--border)}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:1.5rem}
+.ach-card{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;position:relative;overflow:hidden;transition:all .25s}
+.ach-card:hover{border-color:rgba(0,200,255,0.2);transform:translateY(-2px)}
+.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.ach-year{font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:9px;background:rgba(0,200,255,.08);color:var(--accent);border:1px solid rgba(0,200,255,.18);letter-spacing:.05em}
+.ach-card h3{font-size:14px;font-weight:500;color:#fff;margin-bottom:5px;line-height:1.4}
+.ach-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.ach-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:7px;opacity:.7}
+
+/* --- EDU --- */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:1.5rem}
 .edu-card{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;position:relative;overflow:hidden}
 .edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
-.edu-bdg{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:10px;background:rgba(0,200,255,.1);color:var(--accent);border:1px solid rgba(0,200,255,.2)}
+.edu-bdg{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:10px;background:rgba(0,200,255,.08);color:var(--accent);border:1px solid rgba(0,200,255,.18)}
 .edu-card h3{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px}
 .edu-inst{font-size:12px;color:var(--muted);margin-bottom:8px}
 .edu-card p{font-size:13px;color:var(--muted);line-height:1.6}
-.contact{padding:5rem 5%;background:var(--dark2);border-bottom:1px solid var(--border)}
+
+/* --- CONTACT --- */
+.contact{padding:5rem 5%;background:var(--dark);border-bottom:1px solid var(--border)}
 .cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;max-width:800px}
 .cc{background:var(--dark3);border-radius:var(--r);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:16px;border:1px solid var(--border);text-decoration:none;color:inherit;transition:all .2s}
-.cc:hover{border-color:rgba(0,200,255,.3);background:rgba(0,200,255,.04);transform:translateY(-2px)}
-.ci{width:40px;height:40px;border-radius:var(--r);background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cc:hover{border-color:rgba(0,200,255,.28);background:rgba(0,200,255,.04);transform:translateY(-2px)}
+.ci{width:40px;height:40px;border-radius:var(--r);background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cc h4{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
 .cc p{font-size:12px;color:var(--muted)}
 footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
-.fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+
+/* --- SCROLL ANIMATIONS --- */
+.fu{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .fu.vis{opacity:1;transform:none}
-@media(max-width:640px){.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:1rem .5rem}.sn{font-size:18px}.slide-body{left:6%;right:6%;bottom:2rem}.snav{right:5%;bottom:2rem}.snum{right:5%;top:2rem}.ti{grid-template-columns:1fr;gap:.5rem}.ti-year{font-size:11px;color:var(--accent)}}
+
+/* --- HORIZONTAL SCROLL PROGRESS DOTS --- */
+.scroll-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px;opacity:0;transition:opacity .3s}
+.scroll-dots.visible{opacity:1}
+.scroll-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0}
+.scroll-dot.active{background:var(--accent);transform:scale(1.3)}
+
+@media(max-width:640px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat{padding:1rem .5rem}
+  .sn{font-size:18px}
+  .panel-body{padding:2rem 6%;bottom:1rem}
+  .ti{grid-template-columns:1fr;gap:.5rem}
+  .ti-year{font-size:11px;color:var(--accent)}
+  .pin-wrap{width:300vw}
+  .panel{width:100vw}
+}
 </style>
 </head>
 <body>
+<div class="progress-bar" id="progressBar"></div>
 
+<!-- HERO -->
 <div class="hero" id="about">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -110,78 +161,181 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
   </div>
 </div>
 
+<!-- STATS -->
 <div class="stats">
   <div class="stat"><span class="sn">7+</span><span class="sl">Years of experience</span></div>
   <div class="stat"><span class="sn">Metrology</span><span class="sl">Semiconductor industry</span></div>
   <div class="stat"><span class="sn">Asia</span><span class="sl">Customer Support Supervisor</span></div>
 </div>
 
-<section class="projects" id="projects" aria-label="Projects section slider">
-  <div class="slabel">Projects</div>
-  <div class="snum"><em id="sn">1</em>&nbsp;/ 3</div>
-
-  <div class="slide active" id="s0">
-    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&q=80')"></div>
-    <div class="slide-grad"></div>
-    <div class="slide-body">
-      <div class="proj-num">Project 01</div>
-      <div class="tags"><span class="tag tb">Service</span><span class="tag tt">Maintenance</span><span class="tag tb">Metrology</span></div>
-      <h3>M3 System<br>Service Maintenance</h3>
-      <p>Led planned and reactive service maintenance activities for the M3 system, ensuring continued tool performance, uptime, and customer satisfaction throughout the maintenance lifecycle across the Asia region.</p>
-      <div class="details">
-        <div class="di"><label>Industry</label><span>Semiconductor</span></div>
-        <div class="di"><label>Location</label><span>Taiwan / Asia</span></div>
-        <div class="di"><label>Role</label><span>Lead Field Engineer</span></div>
-        <div class="di"><label>Outcome</label><span>&#8593; Uptime &amp; satisfaction</span></div>
-      </div>
-    </div>
+<!-- HORIZONTAL SCROLL PROJECTS SECTION -->
+<section id="projects" class="scroll-section">
+  <div class="scroll-dots" id="scrollDots">
+    <button class="scroll-dot active" data-panel="0"></button>
+    <button class="scroll-dot" data-panel="1"></button>
+    <button class="scroll-dot" data-panel="2"></button>
   </div>
+  <div class="pin-wrap-outer" id="pinOuter">
+    <div class="pin-wrap" id="pinWrap">
 
-  <div class="slide" id="s1">
-    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80')"></div>
-    <div class="slide-grad"></div>
-    <div class="slide-body">
-      <div class="proj-num">Project 02</div>
-      <div class="tags"><span class="tag tp">Scripting</span><span class="tag ta">Data Viz</span><span class="tag tp">Automation</span></div>
-      <h3>Automated Pattern<br>Recognition Tool</h3>
-      <p>Developed a custom script to automate data pattern recognition &mdash; reducing engineer analysis time, saving licence costs, and enabling new modes of data interpretation through advanced visualisations. Transformed how the team processes high-precision metrology data.</p>
-      <div class="details">
-        <div class="di"><label>Type</label><span>Python / Scripting</span></div>
-        <div class="di"><label>Impact</label><span>&#8595; Analysis time</span></div>
-        <div class="di"><label>Outcome</label><span>Licence cost savings</span></div>
-        <div class="di"><label>Scope</label><span>Team-wide adoption</span></div>
+      <!-- PANEL 1 -->
+      <div class="panel">
+        <div class="panel-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/AFM_micrograph_of_a_silicon_surface%2C_2_um.jpg/1280px-AFM_micrograph_of_a_silicon_surface%2C_2_um.jpg');filter:brightness(0.22) saturate(1.6) hue-rotate(180deg)"></div>
+        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.9) 0%,rgba(0,10,26,.6) 52%,rgba(0,4,18,.15) 100%)"></div>
+        <div class="section-label">Projects</div>
+        <div class="panel-num"><em>01</em>&thinsp;/ 03</div>
+        <div class="panel-body">
+          <div class="proj-label">Project 01</div>
+          <div class="tags"><span class="tag tb">Service</span><span class="tag tt">Maintenance</span><span class="tag tb">Metrology</span></div>
+          <h3>M3 System<br>Service Maintenance</h3>
+          <p>Led planned and reactive service maintenance for the M3 atomic force microscopy system &mdash; ensuring continued tool performance, uptime, and customer satisfaction across the Asia region. Coordinated complex fault diagnosis and coordinated corrective actions with global engineering teams.</p>
+          <div class="panel-details">
+            <div class="di"><label>Industry</label><span>Semiconductor</span></div>
+            <div class="di"><label>Location</label><span>Taiwan / Asia</span></div>
+            <div class="di"><label>Role</label><span>Lead Field Engineer</span></div>
+            <div class="di"><label>Outcome</label><span>&#8593; Uptime &amp; satisfaction</span></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="slide" id="s2">
-    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1600&q=80')"></div>
-    <div class="slide-grad"></div>
-    <div class="slide-body">
-      <div class="proj-num">Project 03</div>
-      <div class="tags"><span class="tag tt">Training</span><span class="tag tb">Documentation</span><span class="tag tt">SOP</span></div>
-      <h3>Training Programme<br>&amp; SOP Suite</h3>
-      <p>Designed and delivered comprehensive training for new and existing engineers. Created instructional documentation, service guides, and SOPs that standardised service procedures across the team &mdash; reducing onboarding time across the Asia region.</p>
-      <div class="details">
-        <div class="di"><label>Scope</label><span>Team-wide programme</span></div>
-        <div class="di"><label>Output</label><span>SOPs &amp; guides</span></div>
-        <div class="di"><label>Region</label><span>Asia</span></div>
-        <div class="di"><label>Outcome</label><span>&#8595; Onboarding time</span></div>
+      <!-- PANEL 2 -->
+      <div class="panel">
+        <div class="panel-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/AFM_image_of_surface_of_single_crystalline_silicon.jpg/1280px-AFM_image_of_surface_of_single_crystalline_silicon.jpg');filter:brightness(0.2) saturate(1.8) hue-rotate(200deg)"></div>
+        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,8,20,.92) 0%,rgba(0,15,30,.6) 52%,rgba(0,8,20,.12) 100%)"></div>
+        <div class="section-label">Projects</div>
+        <div class="panel-num"><em>02</em>&thinsp;/ 03</div>
+        <div class="panel-body">
+          <div class="proj-label">Project 02</div>
+          <div class="tags"><span class="tag tp">Scripting</span><span class="tag ta">Data Viz</span><span class="tag tp">Automation</span></div>
+          <h3>Automated Pattern<br>Recognition Tool</h3>
+          <p>Developed a custom Python script to automate defect pattern recognition in AFM metrology data &mdash; reducing engineer analysis time, eliminating licence costs, and enabling advanced visualisation modes. Transformed how the team processes and interprets high-precision surface scan data.</p>
+          <div class="panel-details">
+            <div class="di"><label>Type</label><span>Python / Scripting</span></div>
+            <div class="di"><label>Impact</label><span>&#8595; Analysis time</span></div>
+            <div class="di"><label>Outcome</label><span>Licence cost savings</span></div>
+            <div class="di"><label>Scope</label><span>Team-wide adoption</span></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="snav">
-    <div class="sdots">
-      <button class="sdot on" data-i="0" aria-label="Slide 1"></button>
-      <button class="sdot" data-i="1" aria-label="Slide 2"></button>
-      <button class="sdot" data-i="2" aria-label="Slide 3"></button>
+      <!-- PANEL 3 -->
+      <div class="panel">
+        <div class="panel-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mica_surface_-_AFM.jpg/1280px-Mica_surface_-_AFM.jpg');filter:brightness(0.2) saturate(2) hue-rotate(170deg)"></div>
+        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,5,20,.92) 0%,rgba(0,12,28,.58) 52%,rgba(0,5,20,.12) 100%)"></div>
+        <div class="section-label">Projects</div>
+        <div class="panel-num"><em>03</em>&thinsp;/ 03</div>
+        <div class="panel-body">
+          <div class="proj-label">Project 03</div>
+          <div class="tags"><span class="tag tt">Training</span><span class="tag tb">Documentation</span><span class="tag tt">SOP</span></div>
+          <h3>Training Programme<br>&amp; SOP Suite</h3>
+          <p>Designed and delivered comprehensive training programmes for new and existing engineers covering AFM system operation, commissioning procedures, and metrology workflows. Created instructional documentation, service guides, and SOPs that standardised procedures across the Asia region.</p>
+          <div class="panel-details">
+            <div class="di"><label>Scope</label><span>Team-wide programme</span></div>
+            <div class="di"><label>Output</label><span>SOPs &amp; guides</span></div>
+            <div class="di"><label>Region</label><span>Asia</span></div>
+            <div class="di"><label>Outcome</label><span>&#8595; Onboarding time</span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <button class="sarr" id="prev" aria-label="Previous">&#8592;</button>
-    <button class="sarr" id="next" aria-label="Next">&#8594;</button>
   </div>
 </section>
 
+<!-- AFM IMAGE STRIP -->
+<div class="afm-strip">
+  <p class="afm-caption" style="margin-bottom:1rem;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Atomic Force Microscopy &mdash; Surface Metrology Imaging</p>
+  <div class="afm-strip-inner">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/AFM_micrograph_of_a_silicon_surface%2C_2_um.jpg/400px-AFM_micrograph_of_a_silicon_surface%2C_2_um.jpg" alt="AFM silicon surface scan" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/AFM_image_of_surface_of_single_crystalline_silicon.jpg/400px-AFM_image_of_surface_of_single_crystalline_silicon.jpg" alt="Single crystal silicon AFM" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mica_surface_-_AFM.jpg/400px-Mica_surface_-_AFM.jpg" alt="Mica surface AFM scan" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/AFM_nanoindentation_Gao_2004.jpg/400px-AFM_nanoindentation_Gao_2004.jpg" alt="AFM nanoindentation" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/AFM_tip_approaching_surface.jpg/400px-AFM_tip_approaching_surface.jpg" alt="AFM tip surface approach" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/AFM_micrograph_of_a_silicon_surface%2C_2_um.jpg/400px-AFM_micrograph_of_a_silicon_surface%2C_2_um.jpg" alt="AFM silicon surface scan" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/AFM_image_of_surface_of_single_crystalline_silicon.jpg/400px-AFM_image_of_surface_of_single_crystalline_silicon.jpg" alt="Single crystal silicon AFM" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mica_surface_-_AFM.jpg/400px-Mica_surface_-_AFM.jpg" alt="Mica surface AFM scan" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/AFM_nanoindentation_Gao_2004.jpg/400px-AFM_nanoindentation_Gao_2004.jpg" alt="AFM nanoindentation" loading="lazy">
+    <img class="afm-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/AFM_tip_approaching_surface.jpg/400px-AFM_tip_approaching_surface.jpg" alt="AFM tip surface approach" loading="lazy">
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS from Trello 2026 Done + 2025 Archive -->
+<section class="achievements" id="achievements">
+  <div class="sec-hd fu">
+    <span class="sec-lb">Delivered</span>
+    <h2>Achievements</h2>
+    <p>Key deliverables from 2025 &amp; 2026</p>
+  </div>
+
+  <div style="margin-bottom:1.2rem">
+    <span class="sec-lb" style="display:inline-block;margin-bottom:.3rem">2026</span>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card fu">
+      <span class="ach-year">2026 Done</span>
+      <h3><span class="ach-dot"></span>Documentation Suite</h3>
+      <p>Created and maintained a comprehensive documentation library for Metron systems &mdash; covering commissioning procedures, operational workflows, and maintenance records.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2026 Done</span>
+      <h3><span class="ach-dot"></span>Wafer Placement &amp; Alignment Script</h3>
+      <p>Developed a script for automated wafer placement, centering, and angular alignment analysis &mdash; standardising this critical setup step across all system commissioning workflows.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2026 Done</span>
+      <h3><span class="ach-dot"></span>Stage Accuracy Analysis Script</h3>
+      <p>Built a dedicated Python-based script for stage accuracy analysis, enabling repeatable quantitative assessments of stage positioning performance during commissioning and maintenance.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem;margin-bottom:1.2rem">
+    <span class="sec-lb" style="display:inline-block;margin-bottom:.3rem">2025</span>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>Metron Workflow Improvements</h3>
+      <p>Identified and proposed concrete improvements to Metron system workflows &mdash; driving efficiency gains and reducing operator error rates in day-to-day operations.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>M3 Service Maintenance</h3>
+      <p>Successfully completed M3 system service maintenance cycle, ensuring continued instrument performance and customer uptime for key accounts across the Asia region.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>M2 Support</h3>
+      <p>Provided technical support and troubleshooting for M2 systems, resolving customer issues and maintaining high satisfaction levels through effective remote and on-site intervention.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>Creation of Documentation</h3>
+      <p>Authored technical documentation packages for multiple system configurations, covering installation procedures, service guidelines, and operator training materials.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>Host PC Change Proposal</h3>
+      <p>Developed and presented a formal proposal to change the Host PC configuration &mdash; addressing performance bottlenecks and improving system reliability for end-users.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>M5 Commissioning &amp; Jira Tracking</h3>
+      <p>Initiated M5 system commissioning and created a comprehensive Jira issue to track and manage all ongoing activities &mdash; ensuring visibility and accountability across the project lifecycle.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>Engineer Training Programme</h3>
+      <p>Designed and delivered structured training for new engineers (Jake Training programme), covering system operation, field service procedures, and customer communication protocols.</p>
+    </div>
+    <div class="ach-card fu">
+      <span class="ach-year">2025 Archive</span>
+      <h3><span class="ach-dot"></span>Calibrated Tools Registry</h3>
+      <p>Established a calibrated tools tracking sheet ensuring all measurement and service tools are logged with calibration status, reducing risk of non-conformance during customer visits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
 <section class="xp" id="experience">
   <div class="sec-hd fu">
     <span class="sec-lb">Career</span>
@@ -193,7 +347,7 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
       <div class="ti-year">2023 &ndash; Present</div>
       <div class="ti-body">
         <h3>Customer Support Supervisor &mdash; Infinitesima Ltd</h3>
-        <div class="ti-role">Semiconductor Industry (Metrology) &nbsp;&middot;&nbsp; Taiwan</div>
+        <div class="ti-role">Semiconductor Industry (AFM Metrology) &nbsp;&middot;&nbsp; Taiwan</div>
         <p>Primary technical and operational point of contact for customer support in Asia. Independently manages the full service lifecycle &mdash; from pre-shipment commissioning through on-site deployment and long-term maintenance. Leads triage of complex technical issues, coordinates with specialist engineering teams, designs and delivers training programmes, and develops bespoke analysis scripts and data visualisation tools.</p>
       </div>
     </div>
@@ -221,6 +375,7 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="sec-hd fu">
     <span class="sec-lb">Get in touch</span>
@@ -244,36 +399,143 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
 </section>
 
 <footer>Alexis Antoniou BEng (Hons) &nbsp;&middot;&nbsp; Customer Support Supervisor &nbsp;&middot;&nbsp; Taiwan</footer>
-
 <script>
 (function(){
-  var cur=0;
-  var slides=document.querySelectorAll('.slide');
-  var dots=document.querySelectorAll('.sdot');
-  var snum=document.getElementById('sn');
-  var n=slides.length;
-  function go(i){
-    slides[cur].classList.remove('active');
-    dots[cur].classList.remove('on');
-    cur=(i+n)%n;
-    slides[cur].classList.add('active');
-    dots[cur].classList.add('on');
-    snum.textContent=cur+1;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Lenis-style smooth scroll using native scroll + GSAP
+  // Horizontal scroll pin for projects section
+  const pinOuter = document.getElementById('pinOuter');
+  const pinWrap = document.getElementById('pinWrap');
+
+  if (pinOuter && pinWrap) {
+    const panels = pinWrap.querySelectorAll('.panel');
+    const numPanels = panels.length;
+    const scrollDots = document.getElementById('scrollDots');
+
+    // Make the outer container take up enough scroll height
+    // Each panel needs 100vh of scroll
+    pinOuter.style.height = (numPanels * 100) + 'vh';
+
+    // Create the sticky container
+    const stickyEl = document.createElement('div');
+    stickyEl.style.cssText = 'position:sticky;top:0;height:100vh;overflow:hidden;';
+    pinOuter.appendChild(stickyEl);
+    stickyEl.appendChild(pinWrap);
+    pinWrap.style.cssText = 'display:flex;height:100vh;width:' + (numPanels * 100) + 'vw;will-change:transform;';
+    panels.forEach(function(p){ p.style.width = '100vw'; p.style.height = '100vh'; });
+
+    // Scroll-driven horizontal translation
+    ScrollTrigger.create({
+      trigger: pinOuter,
+      start: 'top top',
+      end: function(){ return '+=' + ((numPanels - 1) * window.innerHeight); },
+      scrub: 1,
+      onUpdate: function(self) {
+        var progress = self.progress;
+        var xOffset = -progress * (numPanels - 1) * 100;
+        gsap.set(pinWrap, { xPercent: xOffset });
+
+        // Update dots
+        var activeDot = Math.round(progress * (numPanels - 1));
+        scrollDots.querySelectorAll('.scroll-dot').forEach(function(d, i){
+          d.classList.toggle('active', i === activeDot);
+        });
+
+        // Parallax on bg images
+        panels.forEach(function(p, i){
+          var panelProgress = (progress * (numPanels - 1)) - i;
+          panelProgress = Math.max(-1, Math.min(1, panelProgress));
+          var bg = p.querySelector('.panel-bg');
+          if (bg) gsap.set(bg, { xPercent: panelProgress * 8 });
+        });
+      },
+      onEnter: function(){ scrollDots.classList.add('visible'); },
+      onLeave: function(){ scrollDots.classList.remove('visible'); },
+      onEnterBack: function(){ scrollDots.classList.add('visible'); },
+      onLeaveBack: function(){ scrollDots.classList.remove('visible'); }
+    });
+
+    // Dot click navigation
+    scrollDots.querySelectorAll('.scroll-dot').forEach(function(dot){
+      dot.addEventListener('click', function(){
+        var panelIdx = parseInt(dot.getAttribute('data-panel'));
+        var trigger = ScrollTrigger.getById ? ScrollTrigger.getAll()[0] : null;
+        if (trigger) {
+          var targetScroll = trigger.start + panelIdx * window.innerHeight;
+          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Panel content entrance animations
+    panels.forEach(function(panel, i){
+      var body = panel.querySelector('.panel-body');
+      var label = panel.querySelector('.section-label');
+      var num = panel.querySelector('.panel-num');
+      if (!body) return;
+
+      ScrollTrigger.create({
+        trigger: pinOuter,
+        start: 'top top',
+        end: function(){ return '+=' + ((numPanels - 1) * window.innerHeight); },
+        scrub: false,
+        onUpdate: function(self){
+          var prog = self.progress * (numPanels - 1);
+          var dist = Math.abs(prog - i);
+          if (dist < 0.3) {
+            body.style.opacity = 1;
+            body.style.transform = 'translateY(0)';
+          } else if (dist < 0.8) {
+            var t = 1 - (dist - 0.3) / 0.5;
+            body.style.opacity = t;
+            body.style.transform = 'translateY(' + ((1-t) * 30) + 'px)';
+          } else {
+            body.style.opacity = 0;
+            body.style.transform = 'translateY(30px)';
+          }
+        }
+      });
+
+      body.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      if (i > 0) { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
+    });
   }
-  document.getElementById('next').onclick=function(){go(cur+1)};
-  document.getElementById('prev').onclick=function(){go(cur-1)};
-  dots.forEach(function(d){d.onclick=function(){go(+d.dataset.i)}});
-  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
-  var t=setInterval(function(){go(cur+1)},6000);
-  var ps=document.getElementById('projects');
-  ps.addEventListener('mouseenter',function(){clearInterval(t)});
-  ps.addEventListener('mouseleave',function(){clearInterval(t);t=setInterval(function(){go(cur+1)},6000)});
-  var tx=0;
-  ps.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
-  ps.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){dx<0?go(cur+1):go(cur-1)}},{passive:true});
-  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.15});
-  document.querySelectorAll('.fu').forEach(function(el){io.observe(el)});
+
+  // Progress bar
+  var progressBar = document.getElementById('progressBar');
+  if (progressBar) {
+    window.addEventListener('scroll', function(){
+      var scrolled = window.scrollY;
+      var total = document.body.scrollHeight - window.innerHeight;
+      var pct = total > 0 ? scrolled / total : 0;
+      progressBar.style.transform = 'scaleX(' + pct + ')';
+    });
+  }
+
+  // Intersection observer for .fu elements
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) e.target.classList.add('vis');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fu').forEach(function(el){ io.observe(el); });
+
+  // AFM strip parallax
+  var strip = document.querySelector('.afm-strip-inner');
+  if (strip) {
+    ScrollTrigger.create({
+      trigger: '.afm-strip',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: 1,
+      onUpdate: function(self){
+        strip.style.animationPlayState = 'running';
+      }
+    });
+  }
+
 })();
 </script>
 </body>
-</html>
+          </html>

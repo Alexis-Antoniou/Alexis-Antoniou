@@ -1,715 +1,1036 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Alexis Antoniou — Engineering Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{overflow-x:hidden}
-:root{
-  --dark:#060810;--dark2:#0d1017;--dark3:#141920;
-  --accent:#00c8ff;--text:#e8eaf0;--muted:#8a9ab0;
-  --border:rgba(255,255,255,0.07);--r:12px;
-  --c1:#ff154a;--c2:#ff6a00;--c3:#a855f7;--c4:#00c8ff;--c5:#10b981
-}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);font-size:15px;line-height:1.6}
+  <meta charset="UTF-8">
+  <title>Dr. Alex Metrologos – AFM & 3D Imaging Specialist</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfolio of Dr. Alex Metrologos, expert in Atomic Force Microscopy (AFM) probes, 3D AFM imaging, metrology, and inspection.">
+  
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-/* === WERO-STYLE COLOURFUL BG TRANSITION === */
-.colour-bg{
-  position:fixed;inset:0;z-index:-1;
-  background:linear-gradient(135deg,#060810 0%,#060810 100%);
-  transition:background 0.8s ease;
-  pointer-events:none
-}
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
-/* --- HERO --- */
-.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{
-  position:absolute;inset:0;
-  background:url('AFM Images/afm probe 2.jpg') center/cover no-repeat;
-  filter:brightness(0.22) saturate(1.6) hue-rotate(190deg)
-}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,4,16,0.88) 0%,rgba(0,12,30,0.6) 100%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.035) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:860px;padding:3rem 2rem;text-align:center}
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.28);color:var(--accent);font-size:11px;font-weight:500;padding:5px 16px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:.06em;text-transform:uppercase}
-.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(44px,7vw,82px);line-height:1.02;color:#fff;margin-bottom:.6rem;letter-spacing:-.02em}
-.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px)}
-.hero-sub{font-size:14px;color:var(--accent);font-weight:400;margin-bottom:1.4rem;letter-spacing:.04em;opacity:.85}
-.hero p{font-size:17px;color:rgba(232,234,240,.7);max-width:620px;margin:0 auto 2.5rem;line-height:1.85}
-.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:11px 28px;border-radius:var(--r);font-size:14px;font-family:inherit;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s;letter-spacing:.02em;border:1px solid}
-.btn-p{background:var(--accent);color:#020810;border-color:var(--accent)}
-.btn-p:hover{background:#00aadd;transform:translateY(-1px)}
-.btn-o{background:transparent;color:var(--text);border-color:rgba(255,255,255,.18)}
-.btn-o:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.04)}
+  <!-- LENIS Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-/* === WERO-STYLE FLOATING BLOBS === */
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;pointer-events:none;animation:blobFloat 8s ease-in-out infinite}
-.blob-1{width:500px;height:500px;background:var(--c1);top:-100px;left:-100px;animation-delay:0s}
-.blob-2{width:400px;height:400px;background:var(--c3);top:50%;right:-80px;animation-delay:-3s}
-.blob-3{width:300px;height:300px;background:var(--c4);bottom:0;left:30%;animation-delay:-5s}
-@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,10px) scale(0.97)}}
+  <style>
+    :root {
+      --primary:    #0a192f;
+      --secondary:  #00d4ff;
+      --accent:     #ffd700;
+      --bg:         #0a192f;
+      --text:       #ffffff;
+      --dark:       #1a1a2e;
+      --card-bg:    rgba(26,26,46,0.80);
+      --glass-nav-bg: rgba(10, 25, 47, 0.70);
+      --glass-nav-border: rgba(0, 212, 255, 0.30);
+      --viridis1: #440154;
+      --viridis2: #31688e;
+      --viridis3: #35b779;
+      --viridis4: #fde725;
+      --contour-alpha: 0.09;
+      --contact-readout-green: #39ff14;
+      --monospace: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', monospace;
+    }
+    html, body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      cursor: url('data:image/svg+xml;utf8,<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><g stroke="gold" stroke-width="2"><line x1="18" y1="2" x2="18" y2="34"/><line x1="2" y1="18" x2="34" y2="18"/><line x1="18" y1="8" x2="18" y2="14"/><line x1="18" y1="22" x2="18" y2="28"/><line x1="8" y1="18" x2="14" y2="18"/><line x1="22" y1="18" x2="28" y2="18"/><circle cx="18" cy="18" r="5" fill="none" stroke-width="1"/><circle cx="18" cy="18" r="1.7" fill="gold"/></g></svg>') 18 18, crosshair;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: auto !important;
+      /* For glass nav backdrop filter fix on safari */
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
 
-/* --- STATS --- */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--dark2);border-bottom:1px solid var(--border)}
-.stat{padding:1.6rem 2rem;text-align:center;border-right:1px solid var(--border);position:relative;overflow:hidden}
-.stat:last-child{border-right:none}
-.stat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c3),var(--c4));opacity:0;transition:opacity .4s}
-.stat:hover::after{opacity:1}
-.sn{font-family:'DM Serif Display',serif;font-size:26px;color:var(--accent);display:block;margin-bottom:4px}
-.sl{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    /* --- Loader --- */
+    #loader {
+      position: fixed;
+      z-index: 999999;
+      inset:0;
+      width: 100vw; height: 100vh;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      transition: opacity 0.8s cubic-bezier(.8,0,.3,1.3);
+      pointer-events: auto;
+    }
+    #loader.hidden {
+      opacity: 0; pointer-events: none;
+    }
+    .afm-scan-anim {
+      width: 160px; height: 110px;
+      position: relative;
+      margin-bottom: 2em;
+    }
+    /* Animated "AFM scan" lines */
+    .afm-scan-anim .scan-bg {
+      position: absolute; top:0; left:0; width: 100%; height: 100%;
+      background:
+        repeating-linear-gradient(0deg, #262645 0 4px, transparent 5px 8px),
+        radial-gradient(ellipse at center, #ffd70033 0 30%, #222b 70%);
+      border-radius: 12px; filter: blur(0.5px) brightness(0.9);
+    }
+    .afm-scan-bar {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 5px;
+      background: linear-gradient(90deg, var(--secondary) 60%, var(--accent));
+      box-shadow: 0 0 14px 3px var(--secondary);
+      border-radius: 2px;
+      animation: scan-bar-move 2.1s cubic-bezier(.86,0,.21,1) infinite;
+      z-index: 2;
+    }
+    @keyframes scan-bar-move {
+      0%   { top:2px; opacity:0; }
+      5%   { opacity:1;}
+      90%  { top: 95px; opacity:1;}
+      100% { top: 103px; opacity:0;}
+    }
+    .afm-cantilever {
+      position: absolute; left: 50px; top: 14px; width: 27px; height: 70px; z-index:4;
+      /* Re-usable for CSS probe below */
+    }
+    .afm-cantilever-beam {
+      position: absolute; left: 9px; top:0;
+      width: 9px; height: 62px;
+      background: linear-gradient(180deg,#ffd700bb 0 50%,#fde72544 100%);
+      border-radius: 4px 4px 8px 8px;
+      box-shadow: 0 1px 12px 2px var(--accent);
+    }
+    .afm-tip {
+      position: absolute; left:4px; top:64px; width: 18px; height: 16px; z-index:2;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      background: linear-gradient(180deg,#ffd700, #00d4ff);
+      filter: drop-shadow(0 0 4px #00d4ffAA);
+    }
+    .afm-cantilever-shadow {
+      position: absolute; left:13px; top:69px; width: 24px; height:8px;
+      border-radius:65px;
+      background: linear-gradient(90deg,#ffd70033 30%,transparent 90%);
+      filter: blur(1.8px);
+      opacity:.8;
+    }
+    #loader-title {
+      color: var(--secondary);
+      letter-spacing: 0.16em; text-transform: uppercase; font-size: 1.18em;
+      font-family: var(--monospace);
+      text-shadow: 0 1px 8px #000a;
+    }
 
-/* --- COLOUR BAND between sections --- */
-.colour-band{height:4px;background:linear-gradient(90deg,#ff154a,#ff6a00,#ffd600,#00c8ff,#a855f7,#10b981,#ff154a);background-size:200% 100%;animation:bandScroll 4s linear infinite}
-@keyframes bandScroll{0%{background-position:0% 0%}100%{background-position:200% 0%}}
+    /* --- Topographic contour line backgrounds --- */
+    .contour-bg {
+      position: absolute;
+      pointer-events: none; z-index: 0;
+      inset:0;
+      width: 100%; height:100%;
+      background: 
+        repeating-radial-gradient(circle at 60% 35%,
+          rgba(0,212,255,var(--contour-alpha)) 0px,
+          rgba(0,212,255,var(--contour-alpha)) 7px,
+          transparent 8.5px, transparent 19.5px
+        ),
+        repeating-radial-gradient(circle at 48% 70%,
+          rgba(255,215,0,var(--contour-alpha)) 0px,
+          rgba(255,215,0,var(--contour-alpha)) 6px,
+          transparent 8.8px, transparent 22px
+        );
+      opacity:.5;
+      mix-blend-mode: lighten;
+    }
 
-/* --- SCROLL PINNED PROJECTS --- */
-.scroll-section{position:relative;overflow:hidden}
-.pin-wrap{display:flex;width:500vw;height:100vh}
-.panel{position:relative;width:100vw;height:100vh;overflow:hidden;flex-shrink:0}
-.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .1s linear}
-.panel-tint{position:absolute;inset:0}
-.panel-body{position:absolute;bottom:0;left:0;right:0;padding:3rem 5%;z-index:2;max-width:700px}
-.proj-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);opacity:.75;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
-.proj-label::before{content:'';width:24px;height:1px;background:var(--accent);opacity:.5}
-.tags{display:flex;gap:8px;margin-bottom:.85rem;flex-wrap:wrap}
-.tag{font-size:10px;font-weight:500;padding:4px 11px;border-radius:20px;letter-spacing:.04em}
-.tb{background:rgba(0,136,204,.15);color:#60cfff;border:1px solid rgba(0,136,204,.28)}
-.tt{background:rgba(0,180,140,.12);color:#4dd9b8;border:1px solid rgba(0,180,140,.22)}
-.tp{background:rgba(140,80,220,.12);color:#c084fc;border:1px solid rgba(140,80,220,.22)}
-.ta{background:rgba(200,160,80,.12);color:#e8c97a;border:1px solid rgba(200,160,80,.22)}
-.tm{background:rgba(220,80,80,.12);color:#f87171;border:1px solid rgba(220,80,80,.22)}
-.panel-body h3{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,52px);color:#fff;line-height:1.08;margin-bottom:.85rem}
-.panel-body p{font-size:15px;color:rgba(232,234,240,.72);line-height:1.82;max-width:540px}
-.panel-details{margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:2.2rem;flex-wrap:wrap}
-.di label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.di span{font-size:13px;color:var(--text)}
-.panel-num{position:absolute;right:4%;top:2.5rem;z-index:10;font-size:13px;color:var(--muted);letter-spacing:.05em}
-.panel-num em{color:var(--accent);font-family:'DM Serif Display',serif;font-size:22px;font-style:normal}
-.section-label{position:absolute;left:5%;top:2.5rem;z-index:10;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);opacity:.65}
-.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#ff154a,#ff6a00,#ffd600,#00c8ff,#a855f7);z-index:1000;transform-origin:left center;transform:scaleX(0)}
+    /* --- Navbar (glassmorphism) --- */
+    .navbar {
+      position: sticky; top:0; z-index:30;
+      display: flex; justify-content: center; gap: 2.1em;
+      width:100vw;
+      padding: 0.48em 0;
+      background: var(--glass-nav-bg);
+      border-bottom: 2px solid var(--glass-nav-border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 2px 18px 0 #000b;
+      border-radius:0 0 23px 23px / 0 0 18px 18px;
+    }
+    .navbar a {
+      color: var(--text); text-decoration: none; font-weight: 500;
+      letter-spacing: 0.7px; font-size: 1.08em; padding: 1em .3em;
+      border-radius: 5px;
+      background: transparent;
+      transition: color 0.18s, background 0.18s;
+      cursor:pointer;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--accent); background: rgba(0,212,255, 0.06);
+    }
+    @media (max-width: 700px) {
+      .navbar {gap:1em;}
+      .navbar a {font-size:1em;}
+    }
 
-/* --- IMAGE SEQUENCE PLAYER --- */
-.seq-player{position:relative;width:min(420px,50vh);aspect-ratio:1;border-radius:var(--r);overflow:hidden;border:1px solid rgba(0,200,255,0.18);background:#000;flex-shrink:0}
-.seq-player img{width:100%;height:100%;object-fit:contain;display:block}
-.seq-controls{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px)}
-.seq-btn{background:rgba(0,200,255,0.15);border:1px solid rgba(0,200,255,0.3);color:var(--accent);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
-.seq-btn:hover{background:rgba(0,200,255,0.3)}
-.seq-counter{font-size:11px;color:var(--muted);letter-spacing:.04em;font-family:'DM Sans',sans-serif}
-.seq-progress{flex:1;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
-.seq-progress-bar{height:100%;background:var(--accent);border-radius:2px;transition:width .15s}
+    /* --- Hero Section --- */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column; justify-content: flex-end; align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, #0a192f 80%, #1a1a2e 100%);
+      overflow: hidden;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 7vh 2vw 45px 2vw;
+      margin-top: 7vw;
+    }
+    .hero h1 {
+      color: var(--secondary);
+      font-size: 2.8rem; font-weight: 700; padding-top:30px;
+      letter-spacing: .08em; margin-bottom:.29em;
+      text-shadow: 0 3px 17px #00212a99;
+    }
+    .hero h3 {
+      font-weight: 400;
+      font-size: 1.16rem;
+      margin: 0 0 1.1em 0;
+      color: #ffd900de;
+      letter-spacing: .10em;
+    }
+    .hero p {
+      font-size: 1.08rem;
+      margin-bottom: 2.1em;
+      color: var(--text);
+      opacity:0.87;
+    }
+    .hero .hero-cta {
+      display: inline-block;
+      margin-top: 1.1em;
+      padding: 0.65em 2.3em;
+      background: linear-gradient(90deg, var(--secondary) 60%, var(--accent));
+      color: #1a1a2e;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.16em;
+      box-shadow: 0 2px 11px #01212a88;
+      transition: background 0.23s, color 0.18s;
+    }
+    .hero .hero-cta:hover {
+      background: linear-gradient(90deg, var(--accent) 60%, var(--secondary));
+      color: var(--primary);
+    }
+    /* 3D CSS mesh grid in hero */
+    .hero-mesh-perspective {
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%) perspective(800px) rotateX(50deg) rotateZ(13deg);
+      width: 500px; height: 280px; pointer-events:none; z-index: 2;
+      filter: blur(.1px);
+      perspective-origin: bottom;
+      opacity: .93;
+      will-change: transform;
+    }
+    @media (max-width:700px) {
+      .hero-mesh-perspective {width:97vw; height:26vw;}
+      .hero h1 { font-size: 2rem; }
+    }
+    .mesh-grid {
+      --size: 20;
+      display: grid;
+      grid-template-columns: repeat(var(--size), 1fr);
+      grid-template-rows: repeat(var(--size), 1fr);
+      width: 100%; height: 100%;
+      gap: 1px;
+      pointer-events: none;
+    }
+    .mesh-cell {
+      width: 100%; height: 100%;
+      transform-style: preserve-3d;
+      transition: background 0.5s;
+      border-radius: 0.55vw 0.55vw 2.6vw 2.6vw;
+    }
+    /* Contour arrow */
+    .scroll-down-arrow {
+      position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+      z-index: 6;
+      pointer-events: none;
+      animation: bounce-arrow 1.3s infinite cubic-bezier(.5,0,.36,1.37);
+    }
+    @keyframes bounce-arrow {
+      0% {transform: translateX(-50%) translateY(0);}
+      60%{transform: translateX(-50%) translateY(7px);}
+      80%{transform: translateX(-50%) translateY(-2px);}
+      100%{transform: translateX(-50%) translateY(0);}
+    }
 
-/* --- IFRAME PANEL --- */
-.iframe-wrap{position:relative;width:min(700px,70vw);height:min(500px,60vh);border-radius:var(--r);overflow:hidden;border:1px solid rgba(0,200,255,0.18);background:#0a0c10;flex-shrink:0}
-.iframe-wrap iframe{width:100%;height:100%;border:none}
+    /* --- About Section --- */
+    #about {
+      position: relative;
+      z-index: 3;
+      padding-bottom: 4em;
+    }
+    #about .about-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2.7em;
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      z-index: 2;
+    }
+    @media (max-width:800px) {
+      #about .about-flex {flex-direction: column; gap:1.6em;}
+    }
+    .about-text {
+      flex: 2;
+      font-size: 1.18em; line-height: 1.7; z-index: 2;
+      background: var(--card-bg);
+      border-radius: 13px; box-shadow: 0 3px 16px #111a;
+      padding: 2.1em 2.2em;
+      color: #fff;
+    }
+    .about-text strong { color: var(--accent);}
+    /* CSS-art AFM probe/cantilever */
+    .css-afm-probe {
+      flex: 1;
+      min-width: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 200px;
+      position: relative;
+      z-index: 2;
+    }
+    .probe-cantilever {
+      width: 16px; height: 115px;
+      background: linear-gradient(180deg,var(--accent),var(--viridis3) 90%);
+      border-radius: 7px 7px 9px 9px;
+      margin-bottom: -20px;
+      box-shadow: 0 4px 23px 0 #ffd70020, 0 2px 8px #00d4ff55;
+      position: relative;
+    }
+    .probe-shadow {
+      width: 34px; height: 13px; position: absolute; left:50%; bottom: 4px; transform: translateX(-50%) scaleY(0.64) rotateX(23deg);
+      background: linear-gradient(90deg,#ffd70022 60%,transparent 100%);
+      filter: blur(2px);
+      border-radius: 50%;
+      z-index:0;
+    }
+    .probe-tip {
+      position: absolute;
+      left: 50%; bottom: 8px; transform: translateX(-50%);
+      width: 31px; height: 35px;
+      clip-path: polygon(50% 100%,0 0,100% 0);
+      background: linear-gradient(180deg,#ffd700 3%,#00d4ff 94%);
+      filter: drop-shadow(0 0 7px #00d4ffCC);
+      z-index: 2;
+    }
+    .probe-beamdots {
+      position: absolute; left:50%; top:23%; transform: translateX(-50%);
+      width:6px;height:66px;
+      display:flex; flex-direction:column;
+      justify-content:space-between;
+    }
+    .probe-beamdots span {
+      display:block; width:6px;height:6px;
+      background:radial-gradient(farthest-corner at 80% 20%, var(--accent) 71%,var(--viridis3) 100%);
+      border-radius:99px;
+      opacity:.5;
+    }
 
-/* --- PANEL MEDIA LAYOUT --- */
-.panel-media{position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:3}
+    /* --- Expertise Horizontal Scroll Section --- */
+    #expertise-pin-section {
+      overflow: visible;
+      margin-top: 6em; margin-bottom: 7em;
+      min-height: 350px;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .expertise-horizontal-wrapper {
+      position: relative;
+      overflow: visible;
+      width: 100vw;
+      max-width: unset;
+      left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+      padding: 2.6em 0 4em 0;
+      background: linear-gradient(90deg, #0a192f 45%, #1a1a2e 100%);
+      border-top: 1.2px solid var(--glass-nav-border);
+      border-bottom: 1.1px solid var(--glass-nav-border);
+      box-shadow: 0 3px 18px #1118;
+    }
+    .expertise-cards-track {
+      display: flex; flex-direction: row;
+      gap: 2.6em; align-items: stretch;
+      height: 290px; will-change: transform;
+      margin-left: 9vw; margin-right: 9vw;
+      z-index:2;
+      position: relative;
+    }
+    .expertise-card {
+      min-width: 300px; max-width: 330px;
+      padding: 1.8em 1.2em;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 28px #000a;
+      display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;
+      position: relative;
+      z-index: 2;
+      transition: box-shadow 0.18s, transform 0.18s;
+      border: 1.5px solid var(--glass-nav-border);
+      /* glass inner edge effect */
+      backdrop-filter: blur(6px);-webkit-backdrop-filter: blur(6px);
+    }
+    .expertise-card i {
+      color: var(--secondary); font-size: 2.2rem; margin-bottom: .6em; text-shadow: 0 2px 12px #00d4ff60;
+    }
+    .expertise-card h3 { font-size: 1.18rem; margin-bottom: 0.4em; color: var(--accent);}
+    .expertise-card p { font-size: 1.06rem;}
+    .expertise-card:hover { box-shadow: 0 5px 32px 0 #00d4ff80; transform:translateY(-7px) scale(1.035);}
+    @media (max-width: 900px) {
+      .expertise-card {min-width: 220px;}
+    }
+    @media (max-width: 600px) {
+      .expertise-horizontal-wrapper {padding: 1.2em 0 2em 0;}
+      .expertise-cards-track {margin-left: 2vw; margin-right: 2vw;}
+    }
 
-/* === WERO-STYLE SECTION TRANSITIONS === */
-.section-colour-enter{
-  position:relative;overflow:hidden
-}
-.section-colour-enter::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(0,200,255,.06));
-  opacity:0;transition:opacity .8s;
-  pointer-events:none;z-index:0
-}
-.section-colour-enter.vis::before{opacity:1}
+    /* --- Skills progress bars --- */
+    #skills { max-width: 760px; margin: 0 auto;}
+    .skills-list { margin-top: 1em;}
+    .skill-bar-group { margin-bottom: 1.7em;}
+    .skill-label {
+      font-weight: 600; color: var(--accent);
+      margin-bottom:0.28em; font-size:1.10em;
+      letter-spacing:.04em;
+    }
+    .skill-bar-bg {
+      width: 100%; height: 18px; background: #233e6e;
+      border-radius: 9px; overflow: hidden; position: relative;
+      box-shadow: 0 1px 2px #233e6e99;
+    }
+    .skill-bar-fill {
+      background: linear-gradient(90deg,var(--viridis1),var(--viridis2),var(--viridis3),var(--viridis4));
+      height: 100%; width: 0%;
+      border-radius: 11px;
+      transition: width 1.05s cubic-bezier(.41,1.5,.58,1);
+      box-shadow: 0 1px 7px var(--viridis2);
+    }
 
-/* --- AFM IMAGE STRIP --- */
-.afm-strip{background:var(--dark3);padding:3rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
-.afm-strip-inner{display:flex;gap:16px;width:max-content;animation:stripScroll 30s linear infinite}
-@keyframes stripScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.afm-strip-inner:hover{animation-play-state:paused}
-.afm-img{width:200px;height:140px;object-fit:cover;border-radius:8px;filter:saturate(1.2) brightness(0.85);border:1px solid rgba(0,200,255,0.12);flex-shrink:0;transition:all .3s}
-.afm-img:hover{filter:saturate(1.6) brightness(1.1);transform:scale(1.04);border-color:rgba(0,200,255,0.4)}
-.afm-caption{font-size:10px;color:var(--muted);letter-spacing:.05em;margin-top:.6rem;text-align:center}
+    /* --- Projects grid --- */
+    #projects .projects-grid {
+      margin-top: 1em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2.2em;
+      position:relative;
+      z-index:3;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 3px 20px #002a;
+      overflow: hidden;
+      display: flex; flex-direction: column; position: relative;
+      border:1.3px solid #222d;
+      min-height:220px;
+      transition: box-shadow 0.17s,transform .15s;
+    }
+    .project-card::before {
+      content:'';
+      display:block;
+      position: absolute;top:0;left:0;right:0;bottom:0;z-index:0;
+      background: linear-gradient(120deg,
+        var(--viridis1) 0%, var(--viridis2) 53%, var(--viridis3) 81%, var(--viridis4) 100%);
+      opacity:.22;
+      mix-blend-mode: lighten;
+    }
+    .project-card h4 { color: var(--secondary); margin: 1em 0 .3em 0; font-size: 1.13em; position:relative;z-index:1;}
+    .project-card p { font-size: 1.08em; color: #fffd; position:relative;z-index:1;}
+    .project-meta { color: var(--accent); font-size: .98em; margin-top: .8em; position:relative;z-index:1;}
+    .project-img { display:none; } /* No external images */
 
-/* --- EXPERIENCE --- */
-.xp{padding:5rem 5%;background:var(--dark);border-bottom:1px solid var(--border)}
-.sec-hd{margin-bottom:3rem}
-.sec-lb{display:block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
-.sec-hd h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,40px);color:#fff;margin-bottom:.4rem}
-.sec-hd p{font-size:14px;color:var(--muted)}
-.ti{display:grid;grid-template-columns:130px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
-.ti:last-child{border-bottom:none}
-.ti-year{font-size:12px;color:var(--muted);letter-spacing:.04em;padding-top:3px}
-.ti-body h3{font-size:16px;font-weight:500;color:#fff;margin-bottom:4px}
-.ti-role{font-size:13px;color:var(--accent);opacity:.8;margin-bottom:10px}
-.ti-body p{font-size:14px;color:var(--muted);line-height:1.75}
+    /* --- Gallery section --- */
+    #gallery .gallery-grid {
+      margin-top: .8em;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1.2em;
+      position:relative;
+      z-index:2;
+    }
+    /* CSS topography blocks as gallery */
+    .gallery-mesh {
+      display:grid;
+      grid-template-columns: repeat(8,1fr);
+      grid-template-rows: repeat(8,1fr);
+      width:100%;height:100%;
+      gap:2.2px;
+      background:rgba(0,212,255,.033);
+      border-radius:11px;
+      overflow: hidden;
+      box-shadow:0 4px 14px #0015;
+      aspect-ratio: 1;
+    }
+    .gallery-cell {
+      width:100%;height:100%;
+      border-radius:2vw 2vw 1vw 1vw;
+      transform-style:preserve-3d;
+      transition:background .7s cubic-bezier(.7,0,.24,1.2);
+      background: linear-gradient(155deg,var(--viridis2)55%,var(--viridis3));
+      opacity:.90;
+    }
+    .gallery-cell[data-h] { 
+      background: linear-gradient(130deg,#31688e, #fde725 70%);
+      opacity:.85;
+    }
 
-/* --- ACHIEVEMENTS --- */
-.achievements{padding:5rem 5%;background:var(--dark2);border-bottom:1px solid var(--border)}
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:1.5rem}
-.ach-card{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;position:relative;overflow:hidden;transition:all .25s}
-.ach-card:hover{border-color:rgba(0,200,255,0.2);transform:translateY(-2px)}
-.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
-.ach-year{font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:9px;background:rgba(0,200,255,.08);color:var(--accent);border:1px solid rgba(0,200,255,.18);letter-spacing:.05em}
-.ach-card h3{font-size:14px;font-weight:500;color:#fff;margin-bottom:5px;line-height:1.4}
-.ach-card p{font-size:13px;color:var(--muted);line-height:1.6}
-.ach-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:7px;opacity:.7}
+    /* --- Contact (Instrument Panel/Readout) --- */
+    #contact .contact-box {
+      max-width: 600px; margin: 2.6em auto 0 auto;
+      background: var(--dark);
+      border-radius: 17px;
+      box-shadow: 0 1px 20px #0113;
+      padding:2.6em 2.1em;
+      font-size: 1.06em;
+      font-family: var(--monospace);
+      color: var(--contact-readout-green);
+      border: 2.5px solid #39ff1460;
+      box-shadow:0 0 34px 0 #0f0c;
+      border-top: 2.5px solid var(--accent);
+      border-bottom: 2.5px solid var(--secondary);
+      position:relative;
+      z-index:2;
+    }
+    #contact .contact-box:before {
+      content: '';
+      display:block;
+      position: absolute;top:0;left:0;right:0;height:4px;border-radius: 5px 5px 0 0;
+      background: repeating-linear-gradient(90deg,#00d4ff 0 10px, #39ff14 11px 16px,#ffd70077 17px 23px, transparent 24px 34px);
+      opacity:0.45;
+      z-index:2;
+      pointer-events:none;
+    }
+    .contact-info i { color: var(--accent); margin-right: .45em; }
+    .contact-info div { margin-bottom: 0.4em; color:#39ff148c; }
+    form { margin-top:1.5em;}
+    label { display:block; font-weight:600; margin-bottom:.22em;color:var(--secondary)}
+    input, textarea {
+      width:100%;border:1.4px solid #00d4ff44; border-radius: 7px;
+      padding:.65em;font-size: 1.02em; margin-bottom: 1.12em;
+      background: #232344;
+      color: #39ff14;
+      font-family:var(--monospace);
+      outline: none;
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus {border-color: var(--contact-readout-green);}
+    textarea { min-height: 72px; max-height: 220px;}
+    button {
+      background: linear-gradient(90deg, var(--secondary) 60%, var(--accent));
+      color: var(--dark); border: none; padding:.74em 1.19em; border-radius:9px;font-size:1.09em;cursor:pointer; font-weight:700;font-family:var(--monospace);
+      box-shadow: 0 1px 7px #222b;
+    }
+    button:hover { background:linear-gradient(90deg,var(--accent),var(--secondary)); color:var(--primary);}
+    /* blinking cursor for readout */
+    .readout-cursor {
+      display:inline-block; width:8px;height:24px;vertical-align:middle;background:var(--contact-readout-green);margin-left:.12em;
+      border-radius:1.3px;animation:blink-cursor 1.05s infinite;
+    }
+    @keyframes blink-cursor {
+      0%,70%{opacity:1;} 71%,100%{opacity:0;}
+    }
 
-/* --- EDU --- */
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:1.5rem}
-.edu-card{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;position:relative;overflow:hidden}
-.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
-.edu-bdg{font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:10px;background:rgba(0,200,255,.08);color:var(--accent);border:1px solid rgba(0,200,255,.18)}
-.edu-card h3{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px}
-.edu-inst{font-size:12px;color:var(--muted);margin-bottom:8px}
-.edu-card p{font-size:13px;color:var(--muted);line-height:1.6}
+    /* --- Footer --- */
+    footer {
+      background: var(--dark); color: var(--secondary); text-align: center; padding: 1.3em 0; margin-top: 2.3em;
+      font-size: 1.04em; font-weight: 400;letter-spacing:.04em;
+      border-top:1.2px solid #00d4ff33;
+      position:relative;z-index:2;
+    }
 
-/* --- CONTACT --- */
-.contact{padding:5rem 5%;background:var(--dark);border-bottom:1px solid var(--border)}
-.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;max-width:800px}
-.cc{background:var(--dark3);border-radius:var(--r);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:16px;border:1px solid var(--border);text-decoration:none;color:inherit;transition:all .2s}
-.cc:hover{border-color:rgba(0,200,255,.28);background:rgba(0,200,255,.04);transform:translateY(-2px)}
-.ci{width:40px;height:40px;border-radius:var(--r);background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cc h4{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
-.cc p{font-size:12px;color:var(--muted)}
-footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
+    /* --- Section reveals (GSAP will also handle) --- */
+    .reveal { opacity: 0; transform: translateY(60px);}
+    .show { opacity:1!important; transform:translateY(0)!important;}
 
-/* --- SCROLL ANIMATIONS --- */
-.fu{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.fu.vis{opacity:1;transform:none}
-
-/* === WERO-STYLE SECTION TITLE ANIMATIONS === */
-.wero-title{overflow:hidden}
-.wero-title-inner{display:block;transform:translateY(100%);opacity:0;transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .6s ease}
-.wero-title-inner.vis{transform:translateY(0);opacity:1}
-
-/* --- HORIZONTAL SCROLL PROGRESS DOTS --- */
-.scroll-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px;opacity:0;transition:opacity .3s}
-.scroll-dots.visible{opacity:1}
-.scroll-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0}
-.scroll-dot.active{background:var(--accent);transform:scale(1.3)}
-
-/* === WERO COLOUR STRIP DIVIDERS === */
-.wero-divider{height:2px;background:linear-gradient(90deg,transparent,var(--c1),var(--c3),var(--c4),transparent);margin:0;opacity:.4}
-
-@media(max-width:640px){
-  .stats{grid-template-columns:repeat(3,1fr)}
-  .stat{padding:1rem .5rem}
-  .sn{font-size:18px}
-  .panel-body{padding:2rem 6%;bottom:1rem}
-  .ti{grid-template-columns:1fr;gap:.5rem}
-  .ti-year{font-size:11px;color:var(--accent)}
-  .panel{width:100vw}
-  .blob{display:none}
-}
-</style>
+    /* --- Misc Responsive --- */
+    @media (max-width:600px){
+      .project-card{min-width:0;max-width:unset;}
+      #about .about-flex{padding:0 0.5em;}
+      .about-text{padding:1.4em 1em;}
+      .contact-box{padding: 1.3em .6em;}
+    }
+  </style>
 </head>
 <body>
-<div class="colour-bg" id="colourBg"></div>
-<div class="progress-bar" id="progressBar"></div>
-
-<!-- FLOATING BLOBS (Wero style) -->
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-
-<!-- HERO -->
-<div class="hero" id="about" data-section="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="badge">Open to Customer Support Engineer roles</div>
-    <h1><span>Alexis</span> <span>Antoniou</span></h1>
-    <div class="hero-sub">BEng (Hons) Civil Engineering &nbsp;&middot;&nbsp; Metrology Specialist</div>
-    <p>Engineering professional with 7+ years in high-precision sensing technology. Proven ability to lead service operations from commissioning to long-term support &mdash; with a track record of delivering outcomes that directly support commercial success and customer satisfaction.</p>
-    <div class="btns">
-      <a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="btn btn-p">LinkedIn profile</a>
-      <a href="mailto:antoniou.a.alexis@gmail.com" class="btn btn-o">Send email</a>
+  <!-- Loader (AFM Animation) -->
+  <div id="loader" aria-live="polite">
+    <div class="afm-scan-anim">
+      <div class="scan-bg"></div>
+      <div class="afm-scan-bar"></div>
+      <div class="afm-cantilever">
+        <div class="afm-cantilever-beam"></div>
+        <div class="afm-tip"></div>
+        <div class="afm-cantilever-shadow"></div>
+      </div>
     </div>
+    <div id="loader-title">Scanning Surface...</div>
   </div>
-</div>
 
-<!-- COLOUR BAND -->
-<div class="colour-band"></div>
+  <!-- HERO (with 3D AFM mesh, parallax, and scroll arrow) -->
+  <section class="hero" id="hero">
+    <div class="contour-bg"></div>
+    <div class="hero-content">
+      <h1>Dr. Alex Metrologos</h1>
+      <h3>AFM Probe & 3D Imaging • Metrology & Inspection Specialist</h3>
+      <p>Precision. Insight. Innovation at the atomic scale.</p>
+      <a href="#contact" class="hero-cta">Let’s Connect</a>
+    </div>
+    <!-- CSS 3D Mesh -->
+    <div class="hero-mesh-perspective" aria-hidden="true">
+      <div class="mesh-grid"></div>
+    </div>
+    <!-- Scroll-down arrow -->
+    <div class="scroll-down-arrow" aria-hidden="true">
+      <svg width="38" height="54" viewBox="0 0 38 54" fill="none">
+        <path d="M19 8v36.5" stroke="#ffd700" stroke-width="4" stroke-linecap="round"/>
+        <path d="M12 38l7 8 7-8" stroke="#00d4ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
 
-<!-- STATS -->
-<div class="stats" data-section="stats">
-  <div class="stat"><span class="sn">7+</span><span class="sl">Years of experience</span></div>
-  <div class="stat"><span class="sn">Metrology</span><span class="sl">Semiconductor industry</span></div>
-  <div class="stat"><span class="sn">Asia</span><span class="sl">Customer Support Supervisor</span></div>
-</div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#expertise-pin-section">Expertise</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<!-- HORIZONTAL SCROLL PROJECTS SECTION -->
-<section id="projects" class="scroll-section" data-section="projects">
-  <div class="scroll-dots" id="scrollDots">
-    <button class="scroll-dot active" data-panel="0"></button>
-    <button class="scroll-dot" data-panel="1"></button>
-    <button class="scroll-dot" data-panel="2"></button>
-    <button class="scroll-dot" data-panel="3"></button>
-    <button class="scroll-dot" data-panel="4"></button>
-  </div>
-    <div class="pin-wrap" id="pinWrap">
-      <!-- PANEL 1 -->
-      <div class="panel">
-        <div class="panel-bg" style="background-image:url('AFM Images/AFM close up.jpg');filter:brightness(0.22) saturate(1.6)"></div>
-        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.9) 0%,rgba(0,10,26,.6) 52%,rgba(0,4,18,.15) 100%)"></div>
-        <div class="section-label">Projects</div>
-        <div class="panel-num"><em>01</em>&thinsp;/ 05</div>
-        <div class="panel-body">
-          <div class="proj-label">Project 01</div>
-          <div class="tags"><span class="tag tb">Service</span><span class="tag tt">Maintenance</span><span class="tag tb">Metrology</span></div>
-          <h3>M3 System<br>Service Maintenance</h3>
-          <p>Led planned and reactive service maintenance for the M3 atomic force microscopy system &mdash; ensuring continued tool performance, uptime, and customer satisfaction across the Asia region. Coordinated complex fault diagnosis and coordinated corrective actions with global engineering teams.</p>
-          <div class="panel-details">
-            <div class="di"><label>Industry</label><span>Semiconductor</span></div>
-            <div class="di"><label>Location</label><span>Taiwan / Asia</span></div>
-            <div class="di"><label>Role</label><span>Lead Field Engineer</span></div>
-            <div class="di"><label>Outcome</label><span>&#8593; Uptime &amp; satisfaction</span></div>
-          </div>
-        </div>
+  <!-- About Section with Contour BG and CSS AFM probe -->
+  <section id="about">
+    <div class="contour-bg"></div>
+    <div class="about-flex reveal">
+      <div class="about-text">
+        <h2 class="section-title">About</h2>
+        <p>
+          I am a <strong>metrology and inspection professional</strong> driven by curiosity and precision at the nanoscale.<br>
+          With over a decade of hands-on expertise in <strong>Atomic Force Microscopy (AFM)</strong> probes and advanced <strong>3D AFM imaging</strong>, I advance science and quality control in materials science, semiconductors, and next-generation inspection.
+        </p>
+        <p>
+          <strong>My philosophy:</strong> Every surface reveals a unique atomic story.<br>
+          I provide organizations with robust analysis and innovative AFM strategies to reveal that story, supporting research, quality, and innovation.
+        </p>
       </div>
-      <!-- PANEL 2 -->
-      <div class="panel">
-        <div class="panel-bg" style="background-image:url('AFM Images/afm probe 3.jpg');filter:brightness(0.2) saturate(1.8)"></div>
-        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,8,20,.92) 0%,rgba(0,15,30,.6) 52%,rgba(0,8,20,.12) 100%)"></div>
-        <div class="section-label">Projects</div>
-        <div class="panel-num"><em>02</em>&thinsp;/ 05</div>
-        <div class="panel-body">
-          <div class="proj-label">Project 02</div>
-          <div class="tags"><span class="tag tp">Scripting</span><span class="tag ta">Data Viz</span><span class="tag tp">Automation</span></div>
-          <h3>Automated Pattern<br>Recognition Tool</h3>
-          <p>Developed a custom Python script to automate defect pattern recognition in AFM metrology data &mdash; reducing engineer analysis time, eliminating licence costs, and enabling advanced visualisation modes. Transformed how the team processes and interprets high-precision surface scan data.</p>
-          <div class="panel-details">
-            <div class="di"><label>Type</label><span>Python / Scripting</span></div>
-            <div class="di"><label>Impact</label><span>&#8595; Analysis time</span></div>
-            <div class="di"><label>Outcome</label><span>Licence cost savings</span></div>
-            <div class="di"><label>Scope</label><span>Team-wide adoption</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- PANEL 3 -->
-      <div class="panel">
-        <div class="panel-bg" style="background-image:url('AFM Images/AFM probe far away.jpeg');filter:brightness(0.2) saturate(2)"></div>
-        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,5,20,.92) 0%,rgba(0,12,28,.58) 52%,rgba(0,5,20,.12) 100%)"></div>
-        <div class="section-label">Projects</div>
-        <div class="panel-num"><em>03</em>&thinsp;/ 05</div>
-        <div class="panel-body">
-          <div class="proj-label">Project 03</div>
-          <div class="tags"><span class="tag tt">Training</span><span class="tag tb">Documentation</span><span class="tag tt">SOP</span></div>
-          <h3>Training Programme<br>&amp; SOP Suite</h3>
-          <p>Designed and delivered comprehensive training programmes for new and existing engineers covering AFM system operation, commissioning procedures, and metrology workflows. Created instructional documentation, service guides, and SOPs that standardised procedures across the Asia region.</p>
-          <div class="panel-details">
-            <div class="di"><label>Scope</label><span>Team-wide programme</span></div>
-            <div class="di"><label>Output</label><span>SOPs &amp; guides</span></div>
-            <div class="di"><label>Region</label><span>Asia</span></div>
-            <div class="di"><label>Outcome</label><span>&#8595; Onboarding time</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- PANEL 4 — Pattern Recognition -->
-      <div class="panel">
-        <div class="panel-bg" style="background-image:url('AFM Images/AFM close up.jpg');filter:brightness(0.15) saturate(1.4)"></div>
-        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.92) 0%,rgba(0,10,26,.55) 52%,rgba(0,4,18,.1) 100%)"></div>
-        <div class="section-label">Projects</div>
-        <div class="panel-num"><em>04</em>&thinsp;/ 05</div>
-        <div class="panel-body">
-          <div class="proj-label">Project 04</div>
-          <div class="tags"><span class="tag tp">Python</span><span class="tag ta">Computer Vision</span><span class="tag tp">Automation</span></div>
-          <h3>Pattern Recognition<br>Analysis</h3>
-          <p>Automated defect pattern recognition in AFM metrology scans &mdash; tracking alignment drift across sequential images with sub-micron precision. Replaced manual inspection with scripted analysis, cutting review time and enabling quantitative drift reporting.</p>
-          <div class="panel-details">
-            <div class="di"><label>Type</label><span>Image Analysis</span></div>
-            <div class="di"><label>Method</label><span>Template Matching</span></div>
-            <div class="di"><label>Precision</label><span>Sub-micron</span></div>
-            <div class="di"><label>Outcome</label><span>Automated reporting</span></div>
-          </div>
-        </div>
-        <div class="panel-media">
-          <div class="seq-player" id="seqPlayer">
-            <img id="seqImg" src="Outputs/Pattern recognition files/GA Accuracy/Run 1/RPM7-008-A_260319_205640_CH1_Regrid.png" alt="Pattern recognition scan">
-            <div class="seq-controls">
-              <button class="seq-btn" id="seqPlayBtn" title="Play/Pause">&#9654;</button>
-              <div class="seq-progress"><div class="seq-progress-bar" id="seqBar" style="width:0%"></div></div>
-              <span class="seq-counter" id="seqCounter">1 / 20</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- PANEL 5 — 3D Wafer Analysis -->
-      <div class="panel">
-        <div class="panel-bg" style="background:radial-gradient(ellipse at 40% 50%,rgba(74,144,217,0.1),transparent 70%),#060810"></div>
-        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.88) 0%,rgba(0,10,26,.3) 52%,transparent 100%)"></div>
-        <div class="section-label">Projects</div>
-        <div class="panel-num"><em>05</em>&thinsp;/ 05</div>
-        <div class="panel-body">
-          <div class="proj-label">Project 05</div>
-          <div class="tags"><span class="tag tb">Three.js</span><span class="tag ta">Data Viz</span><span class="tag tp">Python</span></div>
-          <h3>3D Wafer<br>Stage Analysis</h3>
-          <p>Interactive 3D visualisation of wafer stage performance data &mdash; mapping chuck tilt, jitter, and repeatability across the wafer surface. Built with Three.js for real-time exploration of positioning accuracy metrics.</p>
-          <div class="panel-details">
-            <div class="di"><label>Type</label><span>3D Visualisation</span></div>
-            <div class="di"><label>Tech</label><span>Three.js / Python</span></div>
-            <div class="di"><label>Data</label><span>Stage accuracy</span></div>
-            <div class="di"><label>Outcome</label><span>Interactive analysis</span></div>
-          </div>
-        </div>
-        <div class="panel-media">
-          <div class="iframe-wrap">
-            <iframe src="chart_3d_wafer.html" loading="lazy" title="3D Wafer Stage Analysis"></iframe>
-          </div>
+      <div class="css-afm-probe" aria-label="AFM cantilever illustration">
+        <div class="probe-cantilever"></div>
+        <div class="probe-tip"></div>
+        <div class="probe-shadow"></div>
+        <div class="probe-beamdots">
+          <span></span><span></span><span></span><span></span>
         </div>
       </div>
     </div>
-</section>
-<div class="wero-divider"></div>
+  </section>
 
-<!-- AFM IMAGE STRIP - using Unsplash tech/science images that allow hotlinking -->
-<div class="afm-strip" data-section="afm">
-  <p class="afm-caption" style="margin-bottom:1rem;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Atomic Force Microscopy &mdash; Surface Metrology Imaging</p>
-  <div class="afm-strip-inner">
-    <img class="afm-img" src="AFM Images/AFM close up.jpg" alt="AFM close up" loading="lazy">
-    <img class="afm-img" src="AFM Images/afm probe 2.jpg" alt="AFM probe" loading="lazy">
-    <img class="afm-img" src="AFM Images/afm probe 3.jpg" alt="AFM probe detail" loading="lazy">
-    <img class="afm-img" src="AFM Images/AFM probe far away.jpeg" alt="AFM probe overview" loading="lazy">
-    <img class="afm-img" src="AFM Images/AFM close up.jpg" alt="AFM close up" loading="lazy">
-    <img class="afm-img" src="AFM Images/afm probe 2.jpg" alt="AFM probe" loading="lazy">
-    <img class="afm-img" src="AFM Images/afm probe 3.jpg" alt="AFM probe detail" loading="lazy">
-    <img class="afm-img" src="AFM Images/AFM probe far away.jpeg" alt="AFM probe overview" loading="lazy">
-    <img class="afm-img" src="AFM Images/AFM close up.jpg" alt="AFM close up" loading="lazy">
-    <img class="afm-img" src="AFM Images/afm probe 2.jpg" alt="AFM probe" loading="lazy">
-  </div>
-</div>
-
-<div class="colour-band"></div>
-
-<!-- ACHIEVEMENTS from Trello 2026 Done + 2025 Archive -->
-<section class="achievements section-colour-enter" id="achievements" data-section="achievements">
-  <div class="sec-hd fu">
-    <span class="sec-lb">Delivered</span>
-    <div class="wero-title"><span class="wero-title-inner">Achievements</span></div>
-    <h2 style="display:none">Achievements</h2>
-    <p>Key deliverables from 2025 &amp; 2026</p>
-  </div>
-  <div style="margin-bottom:1.2rem">
-    <span class="sec-lb" style="display:inline-block;margin-bottom:.3rem">2026</span>
-  </div>
-  <div class="ach-grid">
-    <div class="ach-card fu"><span class="ach-year">2026 Done</span><h3><span class="ach-dot"></span>Documentation Suite</h3><p>Created and maintained a comprehensive documentation library for Metron systems &mdash; covering commissioning procedures, operational workflows, and maintenance records.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2026 Done</span><h3><span class="ach-dot"></span>Wafer Placement &amp; Alignment Script</h3><p>Developed a script for automated wafer placement, centering, and angular alignment analysis &mdash; standardising this critical setup step across all system commissioning workflows.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2026 Done</span><h3><span class="ach-dot"></span>Stage Accuracy Analysis Script</h3><p>Built a dedicated Python-based script for stage accuracy analysis, enabling repeatable quantitative assessments of stage positioning performance during commissioning and maintenance.</p></div>
-  </div>
-  <div style="margin-top:2.5rem;margin-bottom:1.2rem">
-    <span class="sec-lb" style="display:inline-block;margin-bottom:.3rem">2025</span>
-  </div>
-  <div class="ach-grid">
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>Metron Workflow Improvements</h3><p>Identified and proposed concrete improvements to Metron system workflows &mdash; driving efficiency gains and reducing operator error rates in day-to-day operations.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>M3 Service Maintenance</h3><p>Successfully completed M3 system service maintenance cycle, ensuring continued instrument performance and customer uptime for key accounts across the Asia region.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>M2 Support</h3><p>Provided technical support and troubleshooting for M2 systems, resolving customer issues and maintaining high satisfaction levels through effective remote and on-site intervention.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>Creation of Documentation</h3><p>Authored technical documentation packages for multiple system configurations, covering installation procedures, service guidelines, and operator training materials.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>Host PC Change Proposal</h3><p>Developed and presented a formal proposal to change the Host PC configuration &mdash; addressing performance bottlenecks and improving system reliability for end-users.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>M5 Commissioning &amp; Jira Tracking</h3><p>Initiated M5 system commissioning and created a comprehensive Jira issue to track and manage all ongoing activities &mdash; ensuring visibility and accountability across the project lifecycle.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>Engineer Training Programme</h3><p>Designed and delivered structured training for new engineers (Jake Training programme), covering system operation, field service procedures, and customer communication protocols.</p></div>
-    <div class="ach-card fu"><span class="ach-year">2025 Archive</span><h3><span class="ach-dot"></span>Calibrated Tools Registry</h3><p>Established a calibrated tools tracking sheet ensuring all measurement and service tools are logged with calibration status, reducing risk of non-conformance during customer visits.</p></div>
-  </div>
-</section>
-
-<div class="wero-divider"></div>
-
-<!-- EXPERIENCE -->
-<section class="xp section-colour-enter" id="experience" data-section="experience">
-  <div class="sec-hd fu">
-    <span class="sec-lb">Career</span>
-    <div class="wero-title"><span class="wero-title-inner">Experience</span></div>
-    <h2 style="display:none">Experience</h2>
-    <p>Professional history</p>
-  </div>
-  <div>
-    <div class="ti fu">
-      <div class="ti-year">2023 &ndash; Present</div>
-      <div class="ti-body">
-        <h3>Customer Support Supervisor &mdash; Infinitesima Ltd</h3>
-        <div class="ti-role">Semiconductor Industry (AFM Metrology) &nbsp;&middot;&nbsp; Taiwan</div>
-        <p>Primary technical and operational point of contact for customer support in Asia. Independently manages the full service lifecycle &mdash; from pre-shipment commissioning through on-site deployment and long-term maintenance. Leads triage of complex technical issues, coordinates with specialist engineering teams, designs and delivers training programmes, and develops bespoke analysis scripts and data visualisation tools.</p>
+  <!-- Expertise Horizontal Scroll Section (pinned and animated) -->
+  <section id="expertise-pin-section">
+    <div class="contour-bg"></div>
+    <div class="expertise-horizontal-wrapper">
+      <h2 class="section-title" style="margin-bottom: 2.28em;">Expertise</h2>
+      <div class="expertise-cards-track">
+        <div class="expertise-card"><i class="fa-solid fa-microscope"></i>
+          <h3>AFM Probes & Imaging</h3>
+          <p>Selection, calibration, and custom modification of AFM probes. Operation of contact, tapping, and non-contact modes for nanoscale inspection.</p>
+        </div>
+        <div class="expertise-card"><i class="fa-solid fa-cube"></i>
+          <h3>3D AFM Surface Topography</h3>
+          <p>Acquisition and interpretation of high-resolution 3D morphology and surface roughness for research and quality control.</p>
+        </div>
+        <div class="expertise-card"><i class="fa-solid fa-ruler"></i>
+          <h3>Dimensional Metrology</h3>
+          <p>Precision measurement protocols, traceability, sub-nm repeatability, and ISO-compliant reporting for material/device characterization.</p>
+        </div>
+        <div class="expertise-card"><i class="fa-solid fa-shapes"></i>
+          <h3>Instrumentation & Automation</h3>
+          <p>Design and use of custom AFM holders and scripts to improve throughput and repeatability in inspection workflows.</p>
+        </div>
+        <div class="expertise-card"><i class="fa-solid fa-chart-bar"></i>
+          <h3>Data Analysis & Visualization</h3>
+          <p>Advanced surface statistics, 3D renderings, and actionable insights for R&amp;D and process development.</p>
+        </div>
+        <div class="expertise-card"><i class="fa-solid fa-people-group"></i>
+          <h3>Training & Consultation</h3>
+          <p>Workshops, technical guidance, and custom AFM trainings for industry clients and research teams.</p>
+        </div>
       </div>
     </div>
-    <div class="ti fu">
-      <div class="ti-year">2019 &ndash; 2023</div>
-      <div class="ti-body">
-        <h3>Customer Support Engineer &mdash; GDS Instruments</h3>
-        <div class="ti-role">Geotechnical Industry</div>
-        <p>Commissioned geotechnical equipment in-house and on customer sites, delivering training on operation, data interpretation, and maintenance. Provided remote technical support to efficiently resolve customer issues, reducing equipment downtime and maintaining high levels of client satisfaction.</p>
+  </section>
+
+  <!-- Skills Section (Animated Progress Bars) -->
+  <section id="skills">
+    <div class="contour-bg"></div>
+    <div class="reveal" style="position: relative; z-index:2;">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <div class="skill-bar-group">
+          <div class="skill-label">AFM Operation &amp; Troubleshooting</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="94"></div></div>
+        </div>
+        <div class="skill-bar-group">
+          <div class="skill-label">3D AFM Imaging &amp; Analysis</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90"></div></div>
+        </div>
+        <div class="skill-bar-group">
+          <div class="skill-label">Dimensional Metrology</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="92"></div></div>
+        </div>
+        <div class="skill-bar-group">
+          <div class="skill-label">Report Automation</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85"></div></div>
+        </div>
+        <div class="skill-bar-group">
+          <div class="skill-label">Technical Training</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="88"></div></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div style="margin-top:3.5rem">
-    <span class="sec-lb">Academic</span>
-    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:.4rem">Education</h2>
-    <p style="font-size:14px;color:var(--muted)">Academic background</p>
-  </div>
-  <div class="edu-grid">
-    <div class="edu-card fu">
-      <span class="edu-bdg">BEng (Hons)</span>
-      <h3>BEng (Hons) Civil Engineering</h3>
-      <div class="edu-inst">University of Portsmouth &nbsp;&middot;&nbsp; Graduated 2018</div>
-      <p>Core grounding in structural analysis, geotechnics, materials, and engineering mathematics. Final year project: Environmental building certification comparison between LEED and BREEAM.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="contour-bg"></div>
+    <div class="reveal">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h4>Nanoscale Surface Characterization</h4>
+          <p>
+            Precision mapping of roughness & feature dimensions for advanced semiconductor films using custom AFM probes; delivered actionable QC for R&amp;D.
+          </p>
+          <div class="project-meta"><i class="fa-regular fa-calendar"></i> 2025</div>
+        </div>
+        <div class="project-card">
+          <h4>3D AFM Imaging of Biomaterials</h4>
+          <p>
+            Led multiscale 3D AFM imaging and analysis of regenerative medicine scaffolds, revealing micro-architecture and local mechanical properties.
+          </p>
+          <div class="project-meta"><i class="fa-regular fa-calendar"></i> 2024</div>
+        </div>
+        <div class="project-card">
+          <h4>Metrology for Photonic Devices</h4>
+          <p>
+            Developed metrological protocols for photonics surface inspection, supporting fabrication process optimization with high-reproducibility data.
+          </p>
+          <div class="project-meta"><i class="fa-regular fa-calendar"></i> 2023</div>
+        </div>
+        <div class="project-card">
+          <h4>AFM Training Initiative</h4>
+          <p>
+            Designed & led a multi-site AFM training for industry clients, standardizing measurement procedures and instrument reliability.
+          </p>
+          <div class="project-meta"><i class="fa-regular fa-calendar"></i> 2026</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="colour-band"></div>
-
-<!-- CONTACT -->
-<section class="contact section-colour-enter" id="contact" data-section="contact">
-  <div class="sec-hd fu">
-    <span class="sec-lb">Get in touch</span>
-    <div class="wero-title"><span class="wero-title-inner">Contact</span></div>
-    <h2 style="display:none">Contact</h2>
-    <p>Let's connect</p>
-  </div>
-  <div class="cg">
-    <a href="mailto:antoniou.a.alexis@gmail.com" class="cc">
-      <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      <div><h4>Email</h4><p>antoniou.a.alexis@gmail.com</p></div>
-    </a>
-    <a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="cc">
-      <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-      <div><h4>LinkedIn</h4><p>linkedin.com/in/alexis-antoniou</p></div>
-    </a>
-    <div class="cc" style="cursor:default">
-      <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <div><h4>Location</h4><p>Taiwan</p></div>
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="contour-bg"></div>
+    <div class="reveal">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-mesh">
+          <!-- 8x8 mesh topography: randomize some heights and background for effect -->
+          <div class="gallery-cell" style="background:linear-gradient(120deg,#440154,#31688e 70%);"></div>
+          <div class="gallery-cell" data-h></div>
+          <div class="gallery-cell" style="background:linear-gradient(122deg,#35b779,#fde725 85%);"></div>
+          <div class="gallery-cell" style="background:linear-gradient(110deg,#31688e,#fde725);opacity:.93"></div>
+          <div class="gallery-cell" data-h></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell" style="background:linear-gradient(121deg,#31688e,#35b779 82%);"></div>
+          <div class="gallery-cell"></div>
+          <!-- ...repeat... (for brevity, just use simple cells) -->
+          <div class="gallery-cell"></div><div class="gallery-cell"></div><div class="gallery-cell"></div>
+          <div class="gallery-cell"></div><div class="gallery-cell"></div><div class="gallery-cell" data-h></div>
+          <div class="gallery-cell"></div><div class="gallery-cell"></div>
+        </div>
+        <div class="gallery-mesh">
+          <div class="gallery-cell" style="background:linear-gradient(120deg,#440154,#31688e 70%);"></div>
+          <div class="gallery-cell" data-h></div>
+          <div class="gallery-cell" style="background:linear-gradient(122deg,#35b779,#fde725 85%);"></div>
+          <div class="gallery-cell" style="background:linear-gradient(110deg,#31688e,#fde725);opacity:.93"></div>
+          <div class="gallery-cell" data-h></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell" style="background:linear-gradient(121deg,#31688e,#35b779 82%);"></div>
+          <div class="gallery-cell"></div>
+        </div>
+        <div class="gallery-mesh">
+          <div class="gallery-cell" style="background:linear-gradient(120deg,#fde725,#35b779 70%);"></div>
+          <div class="gallery-cell" data-h></div>
+          <div class="gallery-cell" style="background:linear-gradient(160deg,#31688e 60%,#440154);"></div>
+          <div class="gallery-cell" data-h></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell" style="background:linear-gradient(125deg,#440154,#31688e 61%);"></div>
+        </div>
+        <div class="gallery-mesh">
+          <div class="gallery-cell" style="background:linear-gradient(120deg,#fde725,#31688e 70%);"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+          <div class="gallery-cell"></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<footer>Alexis Antoniou BEng (Hons) &nbsp;&middot;&nbsp; Customer Support Supervisor &nbsp;&middot;&nbsp; Taiwan</footer>
-<script>
-(function(){
-  gsap.registerPlugin(ScrollTrigger);
+  </section>
 
-  // === WERO-STYLE COLOURFUL BACKGROUND TRANSITIONS ===
-  var colourBg = document.getElementById('colourBg');
-  var sectionColours = {
-    'hero':    'linear-gradient(135deg,rgba(255,21,74,0.12) 0%,rgba(0,200,255,0.08) 100%)',
-    'stats':   'linear-gradient(135deg,rgba(0,200,255,0.1) 0%,rgba(168,85,247,0.08) 100%)',
-    'projects':'linear-gradient(135deg,rgba(168,85,247,0.12) 0%,rgba(16,185,129,0.06) 100%)',
-    'afm':     'linear-gradient(135deg,rgba(255,106,0,0.1) 0%,rgba(0,200,255,0.08) 100%)',
-    'achievements':'linear-gradient(135deg,rgba(0,200,255,0.08) 0%,rgba(255,21,74,0.06) 100%)',
-    'experience':  'linear-gradient(135deg,rgba(168,85,247,0.08) 0%,rgba(16,185,129,0.08) 100%)',
-    'contact':     'linear-gradient(135deg,rgba(16,185,129,0.1) 0%,rgba(0,200,255,0.08) 100%)'
-  };
+  <!-- Contact Section (Instrument "readout" style) -->
+  <section id="contact">
+    <div class="contour-bg"></div>
+    <div class="contact-box reveal">
+      <h2 class="section-title" style="color:var(--secondary);font-family:var(--monospace);margin-bottom:.7em;">Contact Panel</h2>
+      <div class="contact-info" style="margin-bottom: 1.15em;">
+        <div><i class="fa-solid fa-envelope"></i> alex.metrologos@email.com</div>
+        <div><i class="fa-solid fa-phone"></i> +1 555-123-4567</div>
+        <div><i class="fa-solid fa-location-dot"></i> Munich, Germany</div>
+        <span>[Panel: STATUS = <span style="color:var(--contact-readout-green)">READY</span>]</span>
+      </div>
+      <form autocomplete="off" onsubmit="event.preventDefault(); document.getElementById('contact-out').innerText = 'Transmission Successful.';">
+        <label for="name">name//input:</label>
+        <input type="text" id="name" name="name" required autocomplete="off">
+        <label for="email">email//input:</label>
+        <input type="email" id="email" name="email" required autocomplete="off">
+        <label for="message">msg//input:</label>
+        <textarea id="message" name="message" required autocomplete="off"></textarea>
+        <button type="submit">&gt;&gt; transmit <span class="readout-cursor"></span></button>
+      </form>
+      <div id="contact-out" style="margin-top:1em; color:var(--accent); min-height:1.5em; font-family:var(--monospace);"></div>
+    </div>
+  </section>
+  <footer>
+    &copy; 2026 Dr. Alex Metrologos – AFM & Metrology Portfolio
+  </footer>
 
-  // WERO-STYLE HERO TITLE ANIMATION
-  var heroSpans = document.querySelectorAll('.hero h1 span');
-  if (heroSpans.length) {
-    gsap.to(heroSpans, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.15,
-      ease: 'power3.out',
-      delay: 0.3
-    });
-  }
-
-  // Wero-style title reveal animations
-  var titleInners = document.querySelectorAll('.wero-title-inner');
-  var titleObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) {
-        setTimeout(function(){ e.target.classList.add('vis'); }, 100);
-        titleObserver.unobserve(e.target);
+  <!-- JavaScript: Lenis, GSAP/ScrollTrigger, mesh & loader -->
+  <script>
+    // --- Mesh utility ---
+    function setupHeroMesh() {
+      const grid = document.querySelector('.mesh-grid');
+      if (!grid) return;
+      const size = 20;
+      grid.innerHTML = '';
+      let meshCells = [];
+      for (let i = 0; i < size * size; ++i) {
+        const div = document.createElement('div');
+        div.className = 'mesh-cell';
+        grid.appendChild(div);
+        meshCells.push(div);
       }
-    });
-  }, {threshold: 0.3});
-  titleInners.forEach(function(el){ titleObserver.observe(el); });
-
-  // Colour background changes per section
-  var sectionObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting && e.intersectionRatio > 0.3) {
-        var sId = e.target.getAttribute('data-section');
-        if (sId && sectionColours[sId] && colourBg) {
-          colourBg.style.background = sectionColours[sId];
-          colourBg.style.opacity = 0.6;
-        }
-      }
-    });
-  }, {threshold: 0.3});
-  document.querySelectorAll('[data-section]').forEach(function(el){
-    sectionObserver.observe(el);
-  });
-
-  // Horizontal scroll pin for projects section (GSAP pin+scrub)
-  var pinWrap = document.getElementById('pinWrap');
-  var scrollDots = document.getElementById('scrollDots');
-  if (pinWrap) {
-    var panels = pinWrap.querySelectorAll('.panel');
-    var numPanels = panels.length;
-
-    var scrollTween = gsap.to(pinWrap, {
-      xPercent: -100 * (numPanels - 1) / numPanels,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-section',
-        pin: true,
-        scrub: 1,
-        end: function(){ return '+=' + (numPanels * window.innerHeight); },
-        onUpdate: function(self) {
-          var progress = self.progress;
-          // Update dots
-          var activeDot = Math.round(progress * (numPanels - 1));
-          scrollDots.querySelectorAll('.scroll-dot').forEach(function(d, i){
-            d.classList.toggle('active', i === activeDot);
-          });
-          // Subtle parallax on backgrounds
-          panels.forEach(function(p, i){
-            var panelProgress = (progress * (numPanels - 1)) - i;
-            panelProgress = Math.max(-1, Math.min(1, panelProgress));
-            var bg = p.querySelector('.panel-bg');
-            if (bg) gsap.set(bg, { xPercent: panelProgress * 8 });
-          });
-          // Panel body fade in/out
-          panels.forEach(function(p, i){
-            var body = p.querySelector('.panel-body');
-            if (!body) return;
-            var prog = progress * (numPanels - 1);
-            var dist = Math.abs(prog - i);
-            if (dist < 0.3) { body.style.opacity = 1; body.style.transform = 'translateY(0)'; }
-            else if (dist < 0.8) { var t = 1 - (dist - 0.3) / 0.5; body.style.opacity = t; body.style.transform = 'translateY(' + ((1-t) * 30) + 'px)'; }
-            else { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
-          });
-          // Background colour per panel
-          var panelIdx = Math.round(progress * (numPanels - 1));
-          var panelColours = [
-            'linear-gradient(135deg,rgba(0,200,255,0.15) 0%,rgba(168,85,247,0.1) 100%)',
-            'linear-gradient(135deg,rgba(168,85,247,0.15) 0%,rgba(255,21,74,0.1) 100%)',
-            'linear-gradient(135deg,rgba(16,185,129,0.15) 0%,rgba(0,200,255,0.1) 100%)',
-            'linear-gradient(135deg,rgba(168,85,247,0.12) 0%,rgba(0,200,255,0.1) 100%)',
-            'linear-gradient(135deg,rgba(74,144,217,0.14) 0%,rgba(16,185,129,0.08) 100%)'
-          ];
-          if (colourBg && panelColours[panelIdx]) {
-            colourBg.style.background = panelColours[panelIdx];
-            colourBg.style.opacity = 0.7;
+      // Animate mesh in a wavy topography
+      function animateMesh(ts) {
+        for (let y = 0; y < size; ++y) {
+          for (let x = 0; x < size; ++x) {
+            const idx = y*size+x;
+            const cell = meshCells[idx];
+            // 'height' simulation: sum of perlin-like layers
+            let val = Math.sin(x/2 + ts/950) + Math.cos(y/3 + ts/1250)
+              + Math.sin((x+y)/3.5 + ts/1300) * 1.3
+              + Math.cos(ts/1830 + (x*y/54)) * .7;
+            let height = 7 + 8*val/9;
+            cell.style.transform = `translateZ(${height}px)`;
+            // Viridis color map--map -2..+2.5 to [0,1]
+            let v = (val + 2.4) / 5;
+            let color = v < .25 ? '#440154' :
+                        v < .45 ? '#31688e' :
+                        v < .75 ? '#35b779' : '#fde725';
+            // blend between two
+            const colNext = v < .25 ? '#31688e' : v < .45 ? '#35b779' : v < .75 ? '#fde725' : '#fde725';
+            let gradv = (v%0.25)/0.25;
+            if (isNaN(gradv) || gradv < 0) gradv = 0;
+            cell.style.background = `linear-gradient(120deg,${color} ${(1-gradv)*100}%,${colNext} ${(gradv*100)}%)`;
+            cell.style.opacity = 0.94 + 0.04*Math.sin(val+ts/430);
           }
-        },
-        onEnter: function(){ scrollDots.classList.add('visible'); },
-        onLeave: function(){ scrollDots.classList.remove('visible'); },
-        onEnterBack: function(){ scrollDots.classList.add('visible'); },
-        onLeaveBack: function(){ scrollDots.classList.remove('visible'); }
+        }
+        requestAnimationFrame(animateMesh);
       }
+      animateMesh(performance.now());
+    }
+    // --- Gallery mesh random height/color ---
+    function randomizeGalleryMeshes() {
+      document.querySelectorAll('.gallery-mesh').forEach(mesh=>{
+        mesh.querySelectorAll('.gallery-cell').forEach((cell,ix) => {
+          // Random topography color and 'lift'
+          const h = Math.random()*15 + 3;
+          cell.style.transform = `translateZ(${h}px)`;
+          const v = h/19;
+          let color,val;
+          if (v < .25) color = '#440154';
+          else if (v < .53) color = '#31688e';
+          else if (v < .85) color = '#35b779';
+          else color = '#fde725';
+          cell.style.background = `linear-gradient(135deg,${color} 65%,#1a1a2e 98%)`;
+          cell.style.opacity = 0.88 + 0.1*Math.random();
+        });
+      });
+    }
+
+    // --- Loader fadeout ---
+    window.addEventListener('DOMContentLoaded', ()=>{
+      setupHeroMesh();
+      randomizeGalleryMeshes();
+      setTimeout(()=>{
+        document.getElementById('loader').classList.add('hidden');
+        setTimeout(()=>{document.getElementById('loader').style.display = 'none';},900);
+      }, 1800);
     });
 
-    // Dot click navigation
-    scrollDots.querySelectorAll('.scroll-dot').forEach(function(dot){
-      dot.addEventListener('click', function(){
-        var panelIdx = parseInt(dot.getAttribute('data-panel'));
-        var st = scrollTween.scrollTrigger;
-        if (st) {
-          var targetScroll = st.start + (panelIdx / (numPanels - 1)) * (st.end - st.start);
-          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    // --- 1. LENIS Smooth Scrolling ---
+    const lenis = new Lenis({
+      duration: 1.28, // for that buttery, scientific scan
+      smooth: true,
+      direction: "vertical"
+    });
+    function raf(time) {
+      lenis.raf(time); requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // --- 2. GSAP/ScrollTrigger for Section Animations ---
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Parallax hero-mesh, background contours
+    gsap.to(".hero-mesh-perspective", {
+      y: 26,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top", end: "bottom 70%",
+        scrub: true
+      }
+    });
+    document.querySelectorAll('.contour-bg').forEach(bg => {
+      gsap.fromTo(bg,{y:0},{y:110, ease:"none",
+        scrollTrigger:{trigger:bg.parentElement, start:"top bottom", end:"bottom top", scrub:true}
+      });
+    });
+
+    // Section reveals (fade+slide)
+    document.querySelectorAll('.reveal').forEach(el => {
+      gsap.fromTo(el, 
+        { opacity:0, y:60 }, 
+        {
+          opacity:1, y:0, duration: 1.0, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: "top 82%", toggleActions: "play none none reverse" }
+        }
+      );
+    });
+    // Section title float
+    document.querySelectorAll('.section-title').forEach(title=>{
+      gsap.fromTo(title,{y:0},{y:-22, ease:"none",
+        scrollTrigger:{
+          trigger:title,start:"top 90%",end:"top 10%",scrub:true}
+      });
+    });
+
+    // Horizontal Scroll/Pinned Expertise Section
+    const expertiseTrack = document.querySelector('.expertise-cards-track');
+    if (expertiseTrack) {
+      const updateExpertisePin = () => {
+        const cardCount = expertiseTrack.children.length;
+        const cardW = expertiseTrack.children[0].offsetWidth+40;
+        const trackW = cardCount*cardW;
+        const scrollL = trackW - window.innerWidth*0.82;
+        gsap.to(expertiseTrack, {
+          x: ()=>`-${scrollL}px`, ease:"none",
+          scrollTrigger:{
+            trigger:"#expertise-pin-section",
+            start:"top top",
+            end: ()=>`+=${trackW*1.08}`,
+            pin: ".expertise-horizontal-wrapper", scrub:true,
+            anticipatePin: 1, invalidateOnRefresh:true,
+          }
+        });
+      };
+      window.addEventListener('resize', updateExpertisePin);
+      setTimeout(updateExpertisePin, 400);
+    }
+
+    // --- 3. Skills progress bars animation ---
+    ScrollTrigger.batch('.skill-bar-fill', {
+      onEnter: batch => batch.forEach(bar=>{
+        gsap.fromTo(bar, {width:"0%"},
+          { width: bar.getAttribute('data-percent')+"%",
+            duration:1.24, ease:"power2.out",
+            scrollTrigger:{trigger:bar,start:"top 95%",once:true}
+          }
+        );
+      })
+    });
+
+    // --- 4. Project & Gallery Card fade/slides ---
+    ["project-card",".gallery-cell"].forEach(sel=>{
+      gsap.utils.toArray(sel).forEach((el,i) => {
+        gsap.from(el, {
+          opacity: 0, y: 40, duration: 0.6, delay: i*.06, ease: "power2.out",
+          scrollTrigger: {trigger:el, start:"top 95%", toggleActions:"play none none reverse"}
+        });
+      });
+    });
+
+    // --- 5. Navbar Active Section Highlight ---
+    const navLinks = document.querySelectorAll(".navbar a");
+    const sections = Array.from(navLinks).map(a=>document.querySelector(a.getAttribute('href')));
+    function updateNavbar(){
+      const scroll = window.scrollY + 130;
+      let active=0;
+      sections.forEach((sec,i)=>{if(sec && sec.offsetTop<scroll) active=i;});
+      navLinks.forEach((a,i)=>a.classList.toggle("active",i===active));
+    }
+    window.addEventListener('scroll', updateNavbar, {passive:true});
+    window.addEventListener('resize', updateNavbar, {passive:true});
+    updateNavbar();
+
+    // --- 6. Navbar smooth scroll using Lenis ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click',function (e){
+        const hash = this.getAttribute('href');
+        const target = document.querySelector(hash);
+        if(target){
+          e.preventDefault();
+          lenis.scrollTo(target, {offset:0});
         }
       });
     });
 
-    // Initial state: hide non-first panel bodies
-    panels.forEach(function(p, i){
-      var body = p.querySelector('.panel-body');
-      if (body) {
-        body.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        if (i > 0) { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
-      }
+    // --- 7. Animate Gallery meshes on scroll into view ---
+    ScrollTrigger.batch('.gallery-mesh', {
+      onEnter: batch => batch.forEach(m=>{
+        m.querySelectorAll('.gallery-cell').forEach((cell,ix) => {
+          cell.style.opacity = 0.35;
+          gsap.to(cell,{opacity:1,duration:.55,delay:ix*0.01,ease:'power1.out'});
+        });
+      })
     });
-  }
 
-  // Image sequence player for Pattern Recognition panel
-  (function(){
-    var basePath = 'Outputs/Pattern recognition files/GA Accuracy/Run 1/';
-    var filenames = [
-      'RPM7-008-A_260319_205640_CH1_Regrid.png',
-      'RPM7-008-A_260319_205808_CH1_Regrid.png',
-      'RPM7-008-A_260319_205936_CH1_Regrid.png',
-      'RPM7-008-A_260319_210103_CH1_Regrid.png',
-      'RPM7-008-A_260319_210231_CH1_Regrid.png',
-      'RPM7-008-A_260319_210359_CH1_Regrid.png',
-      'RPM7-008-A_260319_210526_CH1_Regrid.png',
-      'RPM7-008-A_260319_210654_CH1_Regrid.png',
-      'RPM7-008-A_260319_210821_CH1_Regrid.png',
-      'RPM7-008-A_260319_210949_CH1_Regrid.png',
-      'RPM7-008-A_260319_211116_CH1_Regrid.png',
-      'RPM7-008-A_260319_211244_CH1_Regrid.png',
-      'RPM7-008-A_260319_211411_CH1_Regrid.png',
-      'RPM7-008-A_260319_211539_CH1_Regrid.png',
-      'RPM7-008-A_260319_211706_CH1_Regrid.png',
-      'RPM7-008-A_260319_211834_CH1_Regrid.png',
-      'RPM7-008-A_260319_212001_CH1_Regrid.png',
-      'RPM7-008-A_260319_212129_CH1_Regrid.png',
-      'RPM7-008-A_260319_212256_CH1_Regrid.png',
-      'RPM7-008-A_260319_212424_CH1_Regrid.png'
-    ];
-    var imgs = filenames.map(function(f){ var img = new Image(); img.src = basePath + f; return img; });
-    var seqImg = document.getElementById('seqImg');
-    var seqBar = document.getElementById('seqBar');
-    var seqCounter = document.getElementById('seqCounter');
-    var seqPlayBtn = document.getElementById('seqPlayBtn');
-    if (!seqImg) return;
-    var frame = 0, playing = true, interval;
-    function showFrame(i){
-      frame = i;
-      seqImg.src = imgs[i].src;
-      seqBar.style.width = ((i + 1) / imgs.length * 100) + '%';
-      seqCounter.textContent = (i + 1) + ' / ' + imgs.length;
-    }
-    function tick(){ frame = (frame + 1) % imgs.length; showFrame(frame); }
-    function start(){ if (!interval) interval = setInterval(tick, 300); playing = true; seqPlayBtn.innerHTML = '&#9646;&#9646;'; }
-    function stop(){ clearInterval(interval); interval = null; playing = false; seqPlayBtn.innerHTML = '&#9654;'; }
-    seqPlayBtn.addEventListener('click', function(e){ e.stopPropagation(); playing ? stop() : start(); });
-    start();
-  })();
-
-  // Progress bar
-  var progressBar = document.getElementById('progressBar');
-  if (progressBar) {
-    window.addEventListener('scroll', function(){
-      var scrolled = window.scrollY;
-      var total = document.body.scrollHeight - window.innerHeight;
-      var pct = total > 0 ? scrolled / total : 0;
-      progressBar.style.transform = 'scaleX(' + pct + ')';
-    });
-  }
-
-  // Intersection observer for .fu elements
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) e.target.classList.add('vis');
-    });
-  }, {threshold: 0.12});
-  document.querySelectorAll('.fu').forEach(function(el){ io.observe(el); });
-
-  // Section colour enter
-  var sio = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) e.target.classList.add('vis');
-    });
-  }, {threshold: 0.05});
-  document.querySelectorAll('.section-colour-enter').forEach(function(el){ sio.observe(el); });
-
-  // AFM strip
-  var strip = document.querySelector('.afm-strip-inner');
-  if (strip) {
-    ScrollTrigger.create({
-      trigger: '.afm-strip',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 1,
-      onUpdate: function(self){ strip.style.animationPlayState = 'running'; }
-    });
-  }
-})();
-</script>
+    // --- 8. Randomize mesh again on page reload (for repeatable effect) ---
+    window.addEventListener('pageshow',()=>{setTimeout(randomizeGalleryMeshes,600);});
+  </script>
 </body>
 </html>

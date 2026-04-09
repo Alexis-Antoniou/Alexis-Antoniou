@@ -6,8 +6,8 @@
 <title>Alexis Antoniou — Engineering Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"><\/script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"><\/script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
@@ -31,7 +31,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);f
 .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-bg{
   position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1280&auto=format&fit=crop&q=60') center/cover no-repeat;
+  background:url('AFM Images/afm probe 2.jpg') center/cover no-repeat;
   filter:brightness(0.22) saturate(1.6) hue-rotate(190deg)
 }
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,4,16,0.88) 0%,rgba(0,12,30,0.6) 100%)}
@@ -72,9 +72,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);f
 @keyframes bandScroll{0%{background-position:0% 0%}100%{background-position:200% 0%}}
 
 /* --- SCROLL PINNED PROJECTS --- */
-.scroll-section{position:relative}
-.pin-wrap-outer{position:relative}
-.pin-wrap{display:flex;height:100vh;align-items:stretch;width:max-content}
+.scroll-section{position:relative;overflow:hidden}
+.pin-wrap{display:flex;width:500vw;height:100vh}
 .panel{position:relative;width:100vw;height:100vh;overflow:hidden;flex-shrink:0}
 .panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .1s linear}
 .panel-tint{position:absolute;inset:0}
@@ -97,6 +96,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);f
 .panel-num em{color:var(--accent);font-family:'DM Serif Display',serif;font-size:22px;font-style:normal}
 .section-label{position:absolute;left:5%;top:2.5rem;z-index:10;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);opacity:.65}
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#ff154a,#ff6a00,#ffd600,#00c8ff,#a855f7);z-index:1000;transform-origin:left center;transform:scaleX(0)}
+
+/* --- IMAGE SEQUENCE PLAYER --- */
+.seq-player{position:relative;width:min(420px,50vh);aspect-ratio:1;border-radius:var(--r);overflow:hidden;border:1px solid rgba(0,200,255,0.18);background:#000;flex-shrink:0}
+.seq-player img{width:100%;height:100%;object-fit:contain;display:block}
+.seq-controls{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px)}
+.seq-btn{background:rgba(0,200,255,0.15);border:1px solid rgba(0,200,255,0.3);color:var(--accent);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.seq-btn:hover{background:rgba(0,200,255,0.3)}
+.seq-counter{font-size:11px;color:var(--muted);letter-spacing:.04em;font-family:'DM Sans',sans-serif}
+.seq-progress{flex:1;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
+.seq-progress-bar{height:100%;background:var(--accent);border-radius:2px;transition:width .15s}
+
+/* --- IFRAME PANEL --- */
+.iframe-wrap{position:relative;width:min(700px,70vw);height:min(500px,60vh);border-radius:var(--r);overflow:hidden;border:1px solid rgba(0,200,255,0.18);background:#0a0c10;flex-shrink:0}
+.iframe-wrap iframe{width:100%;height:100%;border:none}
+
+/* --- PANEL MEDIA LAYOUT --- */
+.panel-media{position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:3}
 
 /* === WERO-STYLE SECTION TRANSITIONS === */
 .section-colour-enter{
@@ -187,7 +203,6 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
   .panel-body{padding:2rem 6%;bottom:1rem}
   .ti{grid-template-columns:1fr;gap:.5rem}
   .ti-year{font-size:11px;color:var(--accent)}
-  .pin-wrap{width:300vw}
   .panel{width:100vw}
   .blob{display:none}
 }
@@ -235,15 +250,16 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
     <button class="scroll-dot active" data-panel="0"></button>
     <button class="scroll-dot" data-panel="1"></button>
     <button class="scroll-dot" data-panel="2"></button>
+    <button class="scroll-dot" data-panel="3"></button>
+    <button class="scroll-dot" data-panel="4"></button>
   </div>
-  <div class="pin-wrap-outer" id="pinOuter">
     <div class="pin-wrap" id="pinWrap">
       <!-- PANEL 1 -->
       <div class="panel">
-        <div class="panel-bg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1280&auto=format&fit=crop&q=60');filter:brightness(0.22) saturate(1.6) hue-rotate(180deg)"></div>
+        <div class="panel-bg" style="background-image:url('AFM Images/AFM close up.jpg');filter:brightness(0.22) saturate(1.6)"></div>
         <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.9) 0%,rgba(0,10,26,.6) 52%,rgba(0,4,18,.15) 100%)"></div>
         <div class="section-label">Projects</div>
-        <div class="panel-num"><em>01</em>&thinsp;/ 03</div>
+        <div class="panel-num"><em>01</em>&thinsp;/ 05</div>
         <div class="panel-body">
           <div class="proj-label">Project 01</div>
           <div class="tags"><span class="tag tb">Service</span><span class="tag tt">Maintenance</span><span class="tag tb">Metrology</span></div>
@@ -259,10 +275,10 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
       </div>
       <!-- PANEL 2 -->
       <div class="panel">
-        <div class="panel-bg" style="background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1280&auto=format&fit=crop&q=60');filter:brightness(0.2) saturate(1.8) hue-rotate(200deg)"></div>
+        <div class="panel-bg" style="background-image:url('AFM Images/afm probe 3.jpg');filter:brightness(0.2) saturate(1.8)"></div>
         <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,8,20,.92) 0%,rgba(0,15,30,.6) 52%,rgba(0,8,20,.12) 100%)"></div>
         <div class="section-label">Projects</div>
-        <div class="panel-num"><em>02</em>&thinsp;/ 03</div>
+        <div class="panel-num"><em>02</em>&thinsp;/ 05</div>
         <div class="panel-body">
           <div class="proj-label">Project 02</div>
           <div class="tags"><span class="tag tp">Scripting</span><span class="tag ta">Data Viz</span><span class="tag tp">Automation</span></div>
@@ -278,10 +294,10 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
       </div>
       <!-- PANEL 3 -->
       <div class="panel">
-        <div class="panel-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1280&auto=format&fit=crop&q=60');filter:brightness(0.2) saturate(2) hue-rotate(170deg)"></div>
+        <div class="panel-bg" style="background-image:url('AFM Images/AFM probe far away.jpeg');filter:brightness(0.2) saturate(2)"></div>
         <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,5,20,.92) 0%,rgba(0,12,28,.58) 52%,rgba(0,5,20,.12) 100%)"></div>
         <div class="section-label">Projects</div>
-        <div class="panel-num"><em>03</em>&thinsp;/ 03</div>
+        <div class="panel-num"><em>03</em>&thinsp;/ 05</div>
         <div class="panel-body">
           <div class="proj-label">Project 03</div>
           <div class="tags"><span class="tag tt">Training</span><span class="tag tb">Documentation</span><span class="tag tt">SOP</span></div>
@@ -295,8 +311,60 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
           </div>
         </div>
       </div>
+      <!-- PANEL 4 — Pattern Recognition -->
+      <div class="panel">
+        <div class="panel-bg" style="background-image:url('AFM Images/AFM close up.jpg');filter:brightness(0.15) saturate(1.4)"></div>
+        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.92) 0%,rgba(0,10,26,.55) 52%,rgba(0,4,18,.1) 100%)"></div>
+        <div class="section-label">Projects</div>
+        <div class="panel-num"><em>04</em>&thinsp;/ 05</div>
+        <div class="panel-body">
+          <div class="proj-label">Project 04</div>
+          <div class="tags"><span class="tag tp">Python</span><span class="tag ta">Computer Vision</span><span class="tag tp">Automation</span></div>
+          <h3>Pattern Recognition<br>Analysis</h3>
+          <p>Automated defect pattern recognition in AFM metrology scans &mdash; tracking alignment drift across sequential images with sub-micron precision. Replaced manual inspection with scripted analysis, cutting review time and enabling quantitative drift reporting.</p>
+          <div class="panel-details">
+            <div class="di"><label>Type</label><span>Image Analysis</span></div>
+            <div class="di"><label>Method</label><span>Template Matching</span></div>
+            <div class="di"><label>Precision</label><span>Sub-micron</span></div>
+            <div class="di"><label>Outcome</label><span>Automated reporting</span></div>
+          </div>
+        </div>
+        <div class="panel-media">
+          <div class="seq-player" id="seqPlayer">
+            <img id="seqImg" src="Outputs/Pattern recognition files/GA Accuracy/Run 1/RPM7-008-A_260319_205640_CH1_Regrid.png" alt="Pattern recognition scan">
+            <div class="seq-controls">
+              <button class="seq-btn" id="seqPlayBtn" title="Play/Pause">&#9654;</button>
+              <div class="seq-progress"><div class="seq-progress-bar" id="seqBar" style="width:0%"></div></div>
+              <span class="seq-counter" id="seqCounter">1 / 20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PANEL 5 — 3D Wafer Analysis -->
+      <div class="panel">
+        <div class="panel-bg" style="background:radial-gradient(ellipse at 40% 50%,rgba(74,144,217,0.1),transparent 70%),#060810"></div>
+        <div class="panel-tint" style="background:linear-gradient(120deg,rgba(0,4,18,.88) 0%,rgba(0,10,26,.3) 52%,transparent 100%)"></div>
+        <div class="section-label">Projects</div>
+        <div class="panel-num"><em>05</em>&thinsp;/ 05</div>
+        <div class="panel-body">
+          <div class="proj-label">Project 05</div>
+          <div class="tags"><span class="tag tb">Three.js</span><span class="tag ta">Data Viz</span><span class="tag tp">Python</span></div>
+          <h3>3D Wafer<br>Stage Analysis</h3>
+          <p>Interactive 3D visualisation of wafer stage performance data &mdash; mapping chuck tilt, jitter, and repeatability across the wafer surface. Built with Three.js for real-time exploration of positioning accuracy metrics.</p>
+          <div class="panel-details">
+            <div class="di"><label>Type</label><span>3D Visualisation</span></div>
+            <div class="di"><label>Tech</label><span>Three.js / Python</span></div>
+            <div class="di"><label>Data</label><span>Stage accuracy</span></div>
+            <div class="di"><label>Outcome</label><span>Interactive analysis</span></div>
+          </div>
+        </div>
+        <div class="panel-media">
+          <div class="iframe-wrap">
+            <iframe src="chart_3d_wafer.html" loading="lazy" title="3D Wafer Stage Analysis"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 </section>
 <div class="wero-divider"></div>
 
@@ -304,16 +372,16 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
 <div class="afm-strip" data-section="afm">
   <p class="afm-caption" style="margin-bottom:1rem;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Atomic Force Microscopy &mdash; Surface Metrology Imaging</p>
   <div class="afm-strip-inner">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60" alt="Circuit board microscopy" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&auto=format&fit=crop&q=60" alt="Semiconductor surface scan" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&auto=format&fit=crop&q=60" alt="Silicon wafer metrology" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&auto=format&fit=crop&q=60" alt="AFM surface analysis" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=60" alt="Precision engineering surface" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60" alt="Circuit board microscopy" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&auto=format&fit=crop&q=60" alt="Semiconductor surface scan" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&auto=format&fit=crop&q=60" alt="Silicon wafer metrology" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&auto=format&fit=crop&q=60" alt="AFM surface analysis" loading="lazy">
-    <img class="afm-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=60" alt="Precision engineering surface" loading="lazy">
+    <img class="afm-img" src="AFM Images/AFM close up.jpg" alt="AFM close up" loading="lazy">
+    <img class="afm-img" src="AFM Images/afm probe 2.jpg" alt="AFM probe" loading="lazy">
+    <img class="afm-img" src="AFM Images/afm probe 3.jpg" alt="AFM probe detail" loading="lazy">
+    <img class="afm-img" src="AFM Images/AFM probe far away.jpeg" alt="AFM probe overview" loading="lazy">
+    <img class="afm-img" src="AFM Images/AFM close up.jpg" alt="AFM close up" loading="lazy">
+    <img class="afm-img" src="AFM Images/afm probe 2.jpg" alt="AFM probe" loading="lazy">
+    <img class="afm-img" src="AFM Images/afm probe 3.jpg" alt="AFM probe detail" loading="lazy">
+    <img class="afm-img" src="AFM Images/AFM probe far away.jpeg" alt="AFM probe overview" loading="lazy">
+    <img class="afm-img" src="AFM Images/AFM close up.jpg" alt="AFM close up" loading="lazy">
+    <img class="afm-img" src="AFM Images/afm probe 2.jpg" alt="AFM probe" loading="lazy">
   </div>
 </div>
 
@@ -476,89 +544,132 @@ footer{padding:2rem 5%;text-align:center;font-size:13px;color:var(--muted);borde
     sectionObserver.observe(el);
   });
 
-  // Horizontal scroll pin for projects section
-  var pinOuter = document.getElementById('pinOuter');
+  // Horizontal scroll pin for projects section (GSAP pin+scrub)
   var pinWrap = document.getElementById('pinWrap');
-  if (pinOuter && pinWrap) {
+  var scrollDots = document.getElementById('scrollDots');
+  if (pinWrap) {
     var panels = pinWrap.querySelectorAll('.panel');
     var numPanels = panels.length;
-    var scrollDots = document.getElementById('scrollDots');
-    pinOuter.style.height = (numPanels * 100) + 'vh';
-    var stickyEl = document.createElement('div');
-    stickyEl.style.cssText = 'position:sticky;top:0;height:100vh;overflow:hidden;';
-    pinOuter.appendChild(stickyEl);
-    stickyEl.appendChild(pinWrap);
-    pinWrap.style.cssText = 'display:flex;height:100vh;width:' + (numPanels * 100) + 'vw;will-change:transform;';
-    panels.forEach(function(p){ p.style.width = '100vw'; p.style.height = '100vh'; });
 
-    ScrollTrigger.create({
-      trigger: pinOuter,
-      start: 'top top',
-      end: function(){ return '+=' + ((numPanels - 1) * window.innerHeight); },
-      scrub: 1,
-      onUpdate: function(self) {
-        var progress = self.progress;
-        var xOffset = -progress * (numPanels - 1) * 100;
-        gsap.set(pinWrap, { xPercent: xOffset });
-        var activeDot = Math.round(progress * (numPanels - 1));
-        scrollDots.querySelectorAll('.scroll-dot').forEach(function(d, i){
-          d.classList.toggle('active', i === activeDot);
-        });
-        panels.forEach(function(p, i){
-          var panelProgress = (progress * (numPanels - 1)) - i;
-          panelProgress = Math.max(-1, Math.min(1, panelProgress));
-          var bg = p.querySelector('.panel-bg');
-          if (bg) gsap.set(bg, { xPercent: panelProgress * 8 });
-        });
-        // WERO-STYLE: change background colour as panel changes
-        var panelIdx = Math.round(progress * (numPanels - 1));
-        var panelColours = [
-          'linear-gradient(135deg,rgba(0,200,255,0.15) 0%,rgba(168,85,247,0.1) 100%)',
-          'linear-gradient(135deg,rgba(168,85,247,0.15) 0%,rgba(255,21,74,0.1) 100%)',
-          'linear-gradient(135deg,rgba(16,185,129,0.15) 0%,rgba(0,200,255,0.1) 100%)'
-        ];
-        if (colourBg && panelColours[panelIdx]) {
-          colourBg.style.background = panelColours[panelIdx];
-          colourBg.style.opacity = 0.7;
-        }
-      },
-      onEnter: function(){ scrollDots.classList.add('visible'); },
-      onLeave: function(){ scrollDots.classList.remove('visible'); },
-      onEnterBack: function(){ scrollDots.classList.add('visible'); },
-      onLeaveBack: function(){ scrollDots.classList.remove('visible'); }
+    var scrollTween = gsap.to(pinWrap, {
+      xPercent: -100 * (numPanels - 1) / numPanels,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.scroll-section',
+        pin: true,
+        scrub: 1,
+        end: function(){ return '+=' + (numPanels * window.innerHeight); },
+        onUpdate: function(self) {
+          var progress = self.progress;
+          // Update dots
+          var activeDot = Math.round(progress * (numPanels - 1));
+          scrollDots.querySelectorAll('.scroll-dot').forEach(function(d, i){
+            d.classList.toggle('active', i === activeDot);
+          });
+          // Subtle parallax on backgrounds
+          panels.forEach(function(p, i){
+            var panelProgress = (progress * (numPanels - 1)) - i;
+            panelProgress = Math.max(-1, Math.min(1, panelProgress));
+            var bg = p.querySelector('.panel-bg');
+            if (bg) gsap.set(bg, { xPercent: panelProgress * 8 });
+          });
+          // Panel body fade in/out
+          panels.forEach(function(p, i){
+            var body = p.querySelector('.panel-body');
+            if (!body) return;
+            var prog = progress * (numPanels - 1);
+            var dist = Math.abs(prog - i);
+            if (dist < 0.3) { body.style.opacity = 1; body.style.transform = 'translateY(0)'; }
+            else if (dist < 0.8) { var t = 1 - (dist - 0.3) / 0.5; body.style.opacity = t; body.style.transform = 'translateY(' + ((1-t) * 30) + 'px)'; }
+            else { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
+          });
+          // Background colour per panel
+          var panelIdx = Math.round(progress * (numPanels - 1));
+          var panelColours = [
+            'linear-gradient(135deg,rgba(0,200,255,0.15) 0%,rgba(168,85,247,0.1) 100%)',
+            'linear-gradient(135deg,rgba(168,85,247,0.15) 0%,rgba(255,21,74,0.1) 100%)',
+            'linear-gradient(135deg,rgba(16,185,129,0.15) 0%,rgba(0,200,255,0.1) 100%)',
+            'linear-gradient(135deg,rgba(168,85,247,0.12) 0%,rgba(0,200,255,0.1) 100%)',
+            'linear-gradient(135deg,rgba(74,144,217,0.14) 0%,rgba(16,185,129,0.08) 100%)'
+          ];
+          if (colourBg && panelColours[panelIdx]) {
+            colourBg.style.background = panelColours[panelIdx];
+            colourBg.style.opacity = 0.7;
+          }
+        },
+        onEnter: function(){ scrollDots.classList.add('visible'); },
+        onLeave: function(){ scrollDots.classList.remove('visible'); },
+        onEnterBack: function(){ scrollDots.classList.add('visible'); },
+        onLeaveBack: function(){ scrollDots.classList.remove('visible'); }
+      }
     });
 
+    // Dot click navigation
     scrollDots.querySelectorAll('.scroll-dot').forEach(function(dot){
       dot.addEventListener('click', function(){
         var panelIdx = parseInt(dot.getAttribute('data-panel'));
-        var trigger = ScrollTrigger.getAll()[0];
-        if (trigger) {
-          var targetScroll = trigger.start + panelIdx * window.innerHeight;
+        var st = scrollTween.scrollTrigger;
+        if (st) {
+          var targetScroll = st.start + (panelIdx / (numPanels - 1)) * (st.end - st.start);
           window.scrollTo({ top: targetScroll, behavior: 'smooth' });
         }
       });
     });
 
-    panels.forEach(function(panel, i){
-      var body = panel.querySelector('.panel-body');
-      if (!body) return;
-      ScrollTrigger.create({
-        trigger: pinOuter,
-        start: 'top top',
-        end: function(){ return '+=' + ((numPanels - 1) * window.innerHeight); },
-        scrub: false,
-        onUpdate: function(self){
-          var prog = self.progress * (numPanels - 1);
-          var dist = Math.abs(prog - i);
-          if (dist < 0.3) { body.style.opacity = 1; body.style.transform = 'translateY(0)'; }
-          else if (dist < 0.8) { var t = 1 - (dist - 0.3) / 0.5; body.style.opacity = t; body.style.transform = 'translateY(' + ((1-t) * 30) + 'px)'; }
-          else { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
-        }
-      });
-      body.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-      if (i > 0) { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
+    // Initial state: hide non-first panel bodies
+    panels.forEach(function(p, i){
+      var body = p.querySelector('.panel-body');
+      if (body) {
+        body.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        if (i > 0) { body.style.opacity = 0; body.style.transform = 'translateY(30px)'; }
+      }
     });
   }
+
+  // Image sequence player for Pattern Recognition panel
+  (function(){
+    var basePath = 'Outputs/Pattern recognition files/GA Accuracy/Run 1/';
+    var filenames = [
+      'RPM7-008-A_260319_205640_CH1_Regrid.png',
+      'RPM7-008-A_260319_205808_CH1_Regrid.png',
+      'RPM7-008-A_260319_205936_CH1_Regrid.png',
+      'RPM7-008-A_260319_210103_CH1_Regrid.png',
+      'RPM7-008-A_260319_210231_CH1_Regrid.png',
+      'RPM7-008-A_260319_210359_CH1_Regrid.png',
+      'RPM7-008-A_260319_210526_CH1_Regrid.png',
+      'RPM7-008-A_260319_210654_CH1_Regrid.png',
+      'RPM7-008-A_260319_210821_CH1_Regrid.png',
+      'RPM7-008-A_260319_210949_CH1_Regrid.png',
+      'RPM7-008-A_260319_211116_CH1_Regrid.png',
+      'RPM7-008-A_260319_211244_CH1_Regrid.png',
+      'RPM7-008-A_260319_211411_CH1_Regrid.png',
+      'RPM7-008-A_260319_211539_CH1_Regrid.png',
+      'RPM7-008-A_260319_211706_CH1_Regrid.png',
+      'RPM7-008-A_260319_211834_CH1_Regrid.png',
+      'RPM7-008-A_260319_212001_CH1_Regrid.png',
+      'RPM7-008-A_260319_212129_CH1_Regrid.png',
+      'RPM7-008-A_260319_212256_CH1_Regrid.png',
+      'RPM7-008-A_260319_212424_CH1_Regrid.png'
+    ];
+    var imgs = filenames.map(function(f){ var img = new Image(); img.src = basePath + f; return img; });
+    var seqImg = document.getElementById('seqImg');
+    var seqBar = document.getElementById('seqBar');
+    var seqCounter = document.getElementById('seqCounter');
+    var seqPlayBtn = document.getElementById('seqPlayBtn');
+    if (!seqImg) return;
+    var frame = 0, playing = true, interval;
+    function showFrame(i){
+      frame = i;
+      seqImg.src = imgs[i].src;
+      seqBar.style.width = ((i + 1) / imgs.length * 100) + '%';
+      seqCounter.textContent = (i + 1) + ' / ' + imgs.length;
+    }
+    function tick(){ frame = (frame + 1) % imgs.length; showFrame(frame); }
+    function start(){ if (!interval) interval = setInterval(tick, 300); playing = true; seqPlayBtn.innerHTML = '&#9646;&#9646;'; }
+    function stop(){ clearInterval(interval); interval = null; playing = false; seqPlayBtn.innerHTML = '&#9654;'; }
+    seqPlayBtn.addEventListener('click', function(e){ e.stopPropagation(); playing ? stop() : start(); });
+    start();
+  })();
 
   // Progress bar
   var progressBar = document.getElementById('progressBar');

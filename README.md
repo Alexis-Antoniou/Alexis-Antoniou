@@ -1,7 +1,7 @@
 # Alexis Antoniou: Personal Portfolio
 
-![Performance 100](https://img.shields.io/badge/Lighthouse_Performance-100-brightgreen?logo=lighthouse&logoColor=white)
-![Accessibility 100](https://img.shields.io/badge/Lighthouse_Accessibility-100-brightgreen?logo=lighthouse&logoColor=white)
+![Performance 99](https://img.shields.io/badge/Lighthouse_Performance-99-brightgreen?logo=lighthouse&logoColor=white)
+![Accessibility 98](https://img.shields.io/badge/Lighthouse_Accessibility-98-brightgreen?logo=lighthouse&logoColor=white)
 ![Best Practices 100](https://img.shields.io/badge/Lighthouse_Best_Practices-100-brightgreen?logo=lighthouse&logoColor=white)
 ![SEO 100](https://img.shields.io/badge/Lighthouse_SEO-100-brightgreen?logo=lighthouse&logoColor=white)
 

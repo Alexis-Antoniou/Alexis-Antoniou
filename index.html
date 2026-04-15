@@ -3,726 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alexis Antoniou - Portfolio</title>
+<title>Alexis Antoniou: Engineering Tools for Semiconductor Metrology</title>
+<meta name="description" content="Engineering professional building purpose-built analysis tools, interactive 3D visualisations, and operational dashboards for semiconductor AFM metrology. Sole field engineer across Asia.">
+<meta name="author" content="Alexis Antoniou">
+<meta name="theme-color" content="#f7f5f2">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="googlebot" content="index,follow">
+<meta name="keywords" content="Alexis Antoniou, atomic force microscopy, AFM, semiconductor metrology, field service engineer, Python, Flask, computer vision, data visualisation, BIM, Infinitesima, Portsmouth, portfolio">
+<link rel="canonical" href="https://alexis-antoniou.github.io/Alexis-Antoniou/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alexis Antoniou: Engineering Tools for Semiconductor Metrology">
+<meta property="og:description" content="Purpose-built analysis tools, 3D visualisations, and dashboards for high-precision AFM metrology. Sole field engineer across Asia.">
+<meta property="og:url" content="https://alexis-antoniou.github.io/Alexis-Antoniou/">
+<meta property="og:image" content="https://alexis-antoniou.github.io/Alexis-Antoniou/assets/bridge%20sample%201.jpg">
+<meta property="og:image:alt" content="Atomic force microscopy bridge-sample visualisation by Alexis Antoniou">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Alexis Antoniou - Portfolio">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alexis Antoniou: Engineering Tools for Semiconductor Metrology">
+<meta name="twitter:description" content="Purpose-built analysis tools, 3D visualisations, and dashboards for high-precision AFM metrology.">
+<meta name="twitter:image" content="https://alexis-antoniou.github.io/Alexis-Antoniou/assets/bridge%20sample%201.jpg">
+<meta name="twitter:image:alt" content="Atomic force microscopy bridge-sample visualisation by Alexis Antoniou">
+<meta name="twitter:creator" content="@alexisantoniou">
+
+<!-- Favicon (inline SVG - no extra request) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f7f5f2'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter,sans-serif' font-weight='900' font-size='34' fill='%232548e8'%3EA%3C/text%3E%3Ccircle cx='46' cy='20' r='4' fill='%23e8663c'/%3E%3C/svg%3E">
+
+<!-- Structured data: a graph of WebSite + ProfilePage + Person + Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://alexis-antoniou.github.io/Alexis-Antoniou/#website",
+      "url": "https://alexis-antoniou.github.io/Alexis-Antoniou/",
+      "name": "Alexis Antoniou - Portfolio",
+      "description": "Engineering portfolio focused on AFM metrology tooling, data visualisation, and field service work.",
+      "inLanguage": "en-GB",
+      "publisher": { "@id": "https://alexis-antoniou.github.io/Alexis-Antoniou/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://alexis-antoniou.github.io/Alexis-Antoniou/#profile",
+      "url": "https://alexis-antoniou.github.io/Alexis-Antoniou/",
+      "name": "Alexis Antoniou - Engineering Portfolio",
+      "isPartOf": { "@id": "https://alexis-antoniou.github.io/Alexis-Antoniou/#website" },
+      "about": { "@id": "https://alexis-antoniou.github.io/Alexis-Antoniou/#person" },
+      "primaryImageOfPage": "https://alexis-antoniou.github.io/Alexis-Antoniou/assets/bridge%20sample%201.jpg",
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alexis-antoniou.github.io/Alexis-Antoniou/#person",
+      "name": "Alexis Antoniou",
+      "givenName": "Alexis",
+      "familyName": "Antoniou",
+      "jobTitle": "Customer Support Supervisor",
+      "description": "Engineering professional building purpose-built analysis tools, interactive 3D visualisations, and operational dashboards for semiconductor AFM metrology.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Infinitesima Ltd",
+        "url": "https://www.infinitesima.com/"
+      },
+      "url": "https://alexis-antoniou.github.io/Alexis-Antoniou/",
+      "image": "https://alexis-antoniou.github.io/Alexis-Antoniou/assets/bridge%20sample%201.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/alexis-antoniou/",
+        "https://github.com/alexis-antoniou"
+      ],
+      "email": "mailto:antoniou.a.alexis@gmail.com",
+      "knowsAbout": [
+        "Atomic Force Microscopy",
+        "Semiconductor Metrology",
+        "Field Service Engineering",
+        "Data Visualisation",
+        "Python",
+        "Flask",
+        "JavaScript",
+        "Three.js",
+        "Computer Vision",
+        "OpenCV",
+        "Building Information Modelling",
+        "Process Automation"
+      ],
+      "knowsLanguage": ["English"],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Portsmouth",
+          "sameAs": "https://www.port.ac.uk/"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alexis-antoniou.github.io/Alexis-Antoniou/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://alexis-antoniou.github.io/Alexis-Antoniou/#projects" },
+        { "@type": "ListItem", "position": 3, "name": "Experience", "item": "https://alexis-antoniou.github.io/Alexis-Antoniou/#experience" },
+        { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://alexis-antoniou.github.io/Alexis-Antoniou/#contact" }
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">h
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;cursor:auto}
-a{color:inherit;text-decoration:none;cursor:auto}
-button{cursor:auto}
-img,video{max-width:100%;display:block}
-
-:root{
-  --bg:      #f7f5f2;
-  --surface: #ffffff;
-  --ink:     #0f0f0f;
-  --text:    #3a3530;
-  --muted:   ##6b6460;
-  --accent:  #2548e8;
-  --accent2: #0a8a6e;
-  --warm:    #e8663c;
-  --border:  rgba(0,0,0,.08);
-}
-
-/* ── Custom Cursor ──────────────────────────────── */
-/* Crosshair - follows mouse exactly — default BLACK */
-.cursor-dot{
-  position:fixed;top:0;left:0;pointer-events:none;z-index:10001;
-  transform:translate(-50%,-50%);
-}
-.cursor-dot::before,.cursor-dot::after{
-  content:'';position:absolute;background:var(--ink);
-  transition:background .3s;
-}
-.cursor-dot::before{width:2px;height:28px;left:50%;top:50%;transform:translate(-50%,-50%)}
-.cursor-dot::after{width:28px;height:2px;left:50%;top:50%;transform:translate(-50%,-50%)}
-.cursor-dot.hover::before,.cursor-dot.hover::after{background:var(--warm)}
-/* Trailing box — default GREEN with centre dot */
-.cursor{
-  position:fixed;top:0;left:0;width:20px;height:20px;
-  border:1.5px solid var(--accent2);pointer-events:none;z-index:10000;
-  transform:translate(-50%,-50%);
-  transition:width .3s cubic-bezier(.23,1,.32,1),height .3s cubic-bezier(.23,1,.32,1),border-color .3s,background .3s;
-}
-/* Centre dot inside the box */
-.cursor::after{
-  content:'';position:absolute;top:50%;left:50%;
-  width:4px;height:4px;border-radius:50%;
-  background:var(--accent2);
-  transform:translate(-50%,-50%);
-  transition:background .3s,width .3s,height .3s;
-}
-.cursor.hover{width:40px;height:40px;border-color:var(--warm);background:rgba(232,102,60,.08)}
-.cursor.hover::after{background:var(--warm);width:5px;height:5px}
-@media(max-width:768px){.cursor,.cursor-dot{display:none}body,a,button{cursor:auto}}
-
-/* ── Scroll Progress ────────────────────────────── */
-.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--warm));z-index:10000;width:0%;transition:none;border-radius:0 2px 2px 0}
-
-/* ── Reveal ──────────────────────────────────────── */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
-.reveal.visible{opacity:1;transform:none}
-.reveal-left{opacity:0;transform:translateX(-60px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
-.reveal-left.visible{opacity:1;transform:none}
-.reveal-right{opacity:0;transform:translateX(60px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
-.reveal-right.visible{opacity:1;transform:none}
-.reveal-scale{opacity:0;transform:scale(.9);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
-
-/* ── Nav ─────────────────────────────────────────── */
-nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(247,245,242,.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:transform .4s}
-nav.hide-nav{transform:translateY(-100%)}
-nav .wrap{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px}
-nav .mark{font-weight:800;font-size:15px;color:var(--ink);letter-spacing:-.03em}
-nav .mark span{color:var(--accent)}
-nav .links{display:flex;gap:28px}
-nav .links a{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;transition:color .2s;position:relative}
-nav .links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
-nav .links a:hover::after{width:100%}
-nav .links a:hover{color:var(--ink)}
-.hamburger{display:none;background:none;border:none;color:var(--ink);cursor:pointer}
-@media(max-width:640px){
-  .hamburger{display:block}
-  nav .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(247,245,242,.98);border-bottom:1px solid var(--border)}
-  nav .links.open{display:flex}
-  nav .links a{padding:14px 40px;border-top:1px solid var(--border)}
-  nav .links a::after{display:none}
-}
-
-/* ════════════════════════════════════════════════════
-   HERO
-   ════════════════════════════════════════════════════ */
-.hero{
-  min-height:100vh;display:flex;align-items:center;
-  padding:80px 0 60px;position:relative;
-  background:linear-gradient(165deg,#eee8e0 0%,#f0eef6 35%,#e8f0ee 60%,#f7f5f2 80%);
-  overflow:hidden;
-}
-.hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:200px;z-index:1;pointer-events:none;
-  background:linear-gradient(to bottom,transparent,#f7f5f2);
-}
-#hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.hero-grid{
-  max-width:1400px;margin:0 auto;padding:0 40px;
-  display:grid;grid-template-columns:1fr 1fr;gap:60px;
-  align-items:center;position:relative;z-index:1;
-}
-.hero-text h1{
-  font-size:clamp(48px,7vw,88px);font-weight:900;
-  line-height:.95;letter-spacing:-.05em;
-  color:var(--ink);margin-bottom:24px;
-}
-.hero-text h1 em{
-  font-style:normal;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.hero-text p{
-  font-size:17px;color:var(--muted);line-height:1.8;
-  max-width:440px;margin-bottom:32px;
-}
-
-/* Magnetic button */
-.hero-cta{display:flex;gap:12px}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:14px 30px;border-radius:8px;font-size:13px;font-weight:700;
-  letter-spacing:.02em;transition:all .25s cubic-bezier(.23,1,.32,1);cursor:none;border:none;
-  position:relative;overflow:hidden;
-}
-.btn::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at var(--x,50%) var(--y,50%),rgba(255,255,255,.2) 0%,transparent 60%);
-  opacity:0;transition:opacity .3s;
-}
-.btn:hover::before{opacity:1}
-.btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(37,72,232,.25)}
-.btn-accent:hover{background:#1a3ad4;box-shadow:0 8px 30px rgba(37,72,232,.35);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:#fff}
-
-/* Hero video stack with 3D tilt */
-.hero-visual{position:relative;height:520px;perspective:1000px}
-.hero-vid{
-  position:absolute;border-radius:14px;overflow:hidden;
-  box-shadow:0 24px 64px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.04);
-  border:1px solid rgba(255,255,255,.3);
-  transition:transform .6s cubic-bezier(.23,1,.32,1),box-shadow .6s;
-  will-change:transform;
-}
-.hero-vid video{width:100%;height:100%;object-fit:cover}
-.hero-vid-1{width:85%;height:60%;top:0;right:0;z-index:2}
-.hero-vid-2{width:65%;height:50%;bottom:0;left:12%;z-index:3;
-  box-shadow:0 24px 64px rgba(0,0,0,.15),0 2px 8px rgba(0,0,0,.06)}
-.hero-vid-label{
-  position:absolute;bottom:12px;left:14px;
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
-  letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.85);
-  background:rgba(0,0,0,.4);backdrop-filter:blur(10px);
-  padding:5px 12px;border-radius:6px;
-}
-
-/* Floating badge */
-.hero-float-badge{
-  position:absolute;top:20%;right:-10px;z-index:5;
-  background:var(--surface);border:1px solid var(--border);border-radius:12px;
-  padding:12px 18px;box-shadow:0 12px 40px rgba(0,0,0,.08);
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
-  color:var(--accent);letter-spacing:.5px;
-  animation:float-y 4s ease-in-out infinite;
-}
-@keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .hero-visual{height:320px}
-  .hero-vid-1{width:90%;height:55%}
-  .hero-vid-2{width:60%;height:45%}
-  .hero-float-badge{display:none}
-}
-
-/* ════════════════════════════════════════════════════
-   ABOUT
-   ════════════════════════════════════════════════════ */
-.about{padding:120px 0;position:relative;overflow:hidden;background:transparent}
-.about .wrap{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start}
-.about-label{
-  font-size:clamp(32px,4vw,44px);font-weight:900;
-  letter-spacing:-.04em;color:var(--ink);
-  line-height:1;position:sticky;top:100px;
-}
-.about-label::after{
-  content:'';display:block;width:0;height:3px;
-  background:var(--accent);margin-top:16px;border-radius:2px;
-  transition:width 1s cubic-bezier(.22,1,.36,1);
-}
-.about-label.visible::after{width:40px}
-.about-body p{font-size:16px;line-height:1.9;color:var(--text);margin-bottom:16px;max-width:640px}
-
-/* Floating shapes behind about */
-.about-shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.about-shapes .shape{position:absolute;border-radius:50%;opacity:.06;filter:blur(60px)}
-.about-shapes .shape-1{width:400px;height:400px;background:var(--accent);top:-100px;right:-100px;animation:drift 20s ease-in-out infinite}
-.about-shapes .shape-2{width:300px;height:300px;background:var(--warm);bottom:-80px;left:-80px;animation:drift 25s ease-in-out infinite reverse}
-@keyframes drift{0%,100%{transform:translate(0,0)}25%{transform:translate(30px,-20px)}50%{transform:translate(-20px,30px)}75%{transform:translate(20px,20px)}}
-
-@media(max-width:768px){
-  .about .wrap{grid-template-columns:1fr;gap:24px}
-  .about-label{position:static}
-}
-
-/* ════════════════════════════════════════════════════
-   COLOUR BLOCK DIVIDER
-   ════════════════════════════════════════════════════ */
-.colour-block{
-  padding:120px 0;position:relative;overflow:hidden;
-}
-.colour-block::before,.colour-block::after{
-  content:'';position:absolute;left:0;right:0;height:60px;z-index:1;pointer-events:none;
-}
-.colour-block::before{top:0;background:linear-gradient(180deg,var(--bg),transparent)}
-.colour-block::after{bottom:0;background:linear-gradient(0deg,var(--bg),transparent)}
-.colour-block.accent-bg{background:var(--accent);color:#fff}
-.colour-block.warm-bg{background:var(--warm);color:#fff}
-.colour-block.dark-bg{background:#e0dbd5;color:var(--ink)}
-.colour-block .wrap{max-width:1400px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
-.flag-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden}
-.flag-slide{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;background-repeat:no-repeat;
-  opacity:0;transition:opacity 2s ease-in-out;
-}
-.flag-slide.active{opacity:.07}
-.colour-block .block-quote{
-  font-size:clamp(24px,3.5vw,42px);font-weight:800;
-  line-height:1.2;letter-spacing:-.03em;max-width:700px;
-}
-.colour-block .block-sub{font-size:14px;margin-top:12px;opacity:.7;font-weight:500}
-.colour-block canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-
-
-/* ════════════════════════════════════════════════════
-   PROJECTS
-   ════════════════════════════════════════════════════ */
-.projects{padding:100px 0 120px}
-.projects .wrap{max-width:1400px;margin:0 auto;padding:0 40px}
-.projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:16px}
-.projects-title{font-size:clamp(32px,4vw,44px);font-weight:900;letter-spacing:-.04em;color:var(--ink);line-height:1}
-.projects-count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em}
-
-/* Large project card with 3D tilt */
-.proj-lg{
-  display:grid;grid-template-columns:1fr 1fr;
-  margin-bottom:24px;border-radius:20px;overflow:hidden;
-  background:var(--surface);border:1px solid var(--border);
-  box-shadow:0 2px 12px rgba(0,0,0,.04);
-  transition:box-shadow .4s,transform .3s,border-color .4s;
-  perspective:1200px;
-}
-.proj-lg:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
-/* Per-project hover hues */
-.proj-lg[data-hue="blue"]:hover{box-shadow:0 16px 48px rgba(37,72,232,.15);border-color:rgba(37,72,232,.2)}
-.proj-lg[data-hue="cyan"]:hover{box-shadow:0 16px 48px rgba(6,182,212,.15);border-color:rgba(6,182,212,.2)}
-.proj-lg[data-hue="purple"]:hover{box-shadow:0 16px 48px rgba(168,85,247,.15);border-color:rgba(168,85,247,.2)}
-.proj-lg:nth-child(even){direction:rtl}
-.proj-lg:nth-child(even) > *{direction:ltr}
-.proj-lg-visual{
-  position:relative;min-height:420px;overflow:hidden;
-}
-.proj-lg-visual video,.proj-lg-visual .proj-mockup{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  transition:transform .6s cubic-bezier(.23,1,.32,1);
-}
-.proj-lg:hover .proj-lg-visual video,
-.proj-lg:hover .proj-lg-visual .proj-mockup{transform:scale(1.04)}
-.proj-lg-info{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.proj-lg-info > *{min-width:0;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
-.proj-lg > *{min-width:0}
-.proj-tag{
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
-  letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);
-  margin-bottom:14px;
-}
-.proj-name{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.15;margin-bottom:12px}
-.proj-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px}
-.proj-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
-.proj-stack span{font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:rgba(0,0,0,.04);color:var(--text);transition:background .3s,color .3s}
-.proj-stack span:hover{background:var(--accent);color:#fff}
-.proj-link{
-  display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
-  color:var(--accent);transition:gap .3s,color .3s;
-}
-.proj-link:hover{gap:12px;color:var(--ink)}
-.proj-link svg{width:14px;height:14px;transition:transform .3s}
-.proj-link:hover svg{transform:translateX(4px)}
-
-/* Small project grid - 3D tilt cards */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-.proj-sm{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:16px;padding:28px;
-  box-shadow:0 1px 6px rgba(0,0,0,.03);
-  transition:box-shadow .4s cubic-bezier(.23,1,.32,1),transform .4s cubic-bezier(.23,1,.32,1),border-color .4s,background .4s;
-  transform-style:preserve-3d;
-  will-change:transform;
-}
-.proj-sm:hover{box-shadow:0 20px 40px rgba(0,0,0,.1)}
-/* Per-card hover hues for small cards — use double class for specificity */
-.proj-sm.proj-sm[data-hue="blue"]:hover{box-shadow:0 20px 40px rgba(37,72,232,.22);border-color:rgba(37,72,232,.45);background:linear-gradient(135deg,rgba(37,72,232,.07),var(--surface))}
-.proj-sm.proj-sm[data-hue="blue"]::before{background:conic-gradient(from var(--glow-angle,0deg),transparent,#2548e8,transparent,#2548e8,transparent)}
-.proj-sm.proj-sm[data-hue="green"]:hover{box-shadow:0 20px 40px rgba(10,138,110,.22);border-color:rgba(10,138,110,.45);background:linear-gradient(135deg,rgba(10,138,110,.07),var(--surface))}
-.proj-sm.proj-sm[data-hue="green"]::before{background:conic-gradient(from var(--glow-angle,0deg),transparent,#0a8a6e,transparent,#0a8a6e,transparent)}
-.proj-sm.proj-sm[data-hue="teal"]:hover{box-shadow:0 20px 40px rgba(6,182,212,.22);border-color:rgba(6,182,212,.45);background:linear-gradient(135deg,rgba(6,182,212,.07),var(--surface))}
-.proj-sm.proj-sm[data-hue="teal"]::before{background:conic-gradient(from var(--glow-angle,0deg),transparent,#06b6d4,transparent,#06b6d4,transparent)}
-.proj-sm.proj-sm[data-hue="orange"]:hover{box-shadow:0 20px 40px rgba(232,102,60,.22);border-color:rgba(232,102,60,.45);background:linear-gradient(135deg,rgba(232,102,60,.07),var(--surface))}
-.proj-sm.proj-sm[data-hue="orange"]::before{background:conic-gradient(from var(--glow-angle,0deg),transparent,#e8663c,transparent,#e8663c,transparent)}
-.proj-sm.proj-sm[data-hue="purple"]:hover{box-shadow:0 20px 40px rgba(168,85,247,.22);border-color:rgba(168,85,247,.45);background:linear-gradient(135deg,rgba(168,85,247,.07),var(--surface))}
-.proj-sm.proj-sm[data-hue="purple"]::before{background:conic-gradient(from var(--glow-angle,0deg),transparent,#a855f7,transparent,#a855f7,transparent)}
-.proj-sm.proj-sm[data-hue="rose"]:hover{box-shadow:0 20px 40px rgba(225,29,72,.22);border-color:rgba(225,29,72,.45);background:linear-gradient(135deg,rgba(225,29,72,.07),var(--surface))}
-.proj-sm.proj-sm[data-hue="rose"]::before{background:conic-gradient(from var(--glow-angle,0deg),transparent,#e11d48,transparent,#e11d48,transparent)}
-.proj-sm .proj-tag{margin-bottom:10px}
-.proj-sm .proj-name{font-size:17px;margin-bottom:8px}
-.proj-sm .proj-desc{font-size:13px;line-height:1.8;margin-bottom:14px}
-.proj-sm .proj-stack span{font-size:10px;padding:3px 10px}
-
-/* Glow effect on hover */
-.proj-sm::before{
-  content:'';position:absolute;inset:-1px;border-radius:17px;
-  background:conic-gradient(from var(--glow-angle,0deg),transparent,var(--accent),transparent,var(--accent2),transparent);
-  opacity:0;transition:opacity .4s;z-index:-1;
-}
-.proj-sm{position:relative}
-.proj-sm:hover::before{opacity:.15}
-
-@media(max-width:900px){
-  .proj-lg{grid-template-columns:1fr}
-  .proj-lg:nth-child(even){direction:ltr}
-  .proj-lg-visual{min-height:260px}
-  .proj-lg-info{padding:28px 24px}
-  .proj-grid{grid-template-columns:1fr}
-}
-@media(min-width:641px) and (max-width:900px){.proj-grid{grid-template-columns:1fr 1fr}}
-
-/* Pattern Recognition version selector */
-.pr-version-selector{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.pr-version-btn{
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
-  letter-spacing:.5px;padding:8px 20px;border-radius:30px;border:1.5px solid var(--border);
-  background:transparent;color:var(--muted);cursor:pointer;
-  transition:all .35s cubic-bezier(.23,1,.32,1);
-  white-space:nowrap;
-}
-.pr-version-btn:hover{border-color:var(--accent2);color:var(--accent2)}
-.pr-version-btn.active{
-  background:var(--accent2);border-color:var(--accent2);color:#fff;
-  box-shadow:0 4px 16px rgba(6,182,212,.3);
-}
-@media(max-width:640px){
-  .pr-version-selector{gap:6px}
-  .pr-version-btn{padding:7px 14px;font-size:10px;flex:1 1 auto;text-align:center;min-width:0}
-}
-
-/* ════════════════════════════════════════════════════
-   SKILLS
-   ════════════════════════════════════════════════════ */
-.skills{padding:100px 0}
-.skills .wrap{max-width:1400px;margin:0 auto;padding:0 40px}
-.skills-header{margin-bottom:48px}
-.skills-title{font-size:clamp(32px,4vw,44px);font-weight:900;letter-spacing:-.04em;color:var(--ink);line-height:1}
-.skills-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.skill{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:14px;padding:28px 24px;
-  box-shadow:0 1px 6px rgba(0,0,0,.03);
-  transition:box-shadow .4s cubic-bezier(.23,1,.32,1),transform .4s cubic-bezier(.23,1,.32,1),border-color .4s;
-  position:relative;overflow:hidden;
-}
-.skill:hover{box-shadow:0 16px 40px rgba(0,0,0,.08);transform:translateY(-4px);border-color:var(--accent)}
-.skill::after{
-  content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .5s cubic-bezier(.23,1,.32,1);
-}
-.skill:hover::after{transform:scaleX(1)}
-.skill-icon{
-  width:42px;height:42px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-  transition:transform .4s cubic-bezier(.23,1,.32,1),background .4s;
-}
-.skill-icon svg{transition:transform .4s cubic-bezier(.23,1,.32,1)}
-.skill:hover .skill-icon{transform:scale(1.1)}
-
-/* ── Data: 3D rotating graph (canvas) ── */
-.icon-canvas-graph{width:30px;height:30px;display:block}
-
-/* ── Web: code lines type in, cursor blinks ── */
-.code-ln{stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .3s}
-.code-cursor{opacity:0;transition:opacity .3s}
-.skill:nth-child(2):hover .ln-1{animation:typeLine 2.5s ease-in-out infinite}
-.skill:nth-child(2):hover .ln-2{animation:typeLine 2.5s ease-in-out .4s infinite}
-.skill:nth-child(2):hover .ln-3{animation:typeLine 2.5s ease-in-out .8s infinite}
-.skill:nth-child(2):hover .code-cursor{animation:blinkCursor .8s step-end infinite}
-
-@keyframes typeLine{0%{stroke-dashoffset:20} 40%{stroke-dashoffset:0} 80%{stroke-dashoffset:0} 100%{stroke-dashoffset:20}}
-@keyframes blinkCursor{0%,100%{opacity:0} 50%{opacity:.8}}
-
-/* ── Engineering: AFM Cantilever ── */
-.skill:nth-child(3):hover .afm-surface{animation:afmSurfaceScroll 3s linear infinite}
-.skill:nth-child(3):hover .afm-laser{animation:afmLaserPulse 2.5s ease-in-out infinite}
-@keyframes afmSurfaceScroll{0%{transform:translateX(0)}100%{transform:translateX(-14px)}}
-@keyframes afmLaserPulse{0%,100%{opacity:.3}50%{opacity:.7}}
-
-/* ── Training: speech bubbles alternate ── */
-.bubble-l,.bubble-r{transition:opacity .3s}
-.skill:nth-child(4):hover .bubble-l{animation:bubbleLeft 2.5s ease-in-out infinite}
-.skill:nth-child(4):hover .bubble-r{animation:bubbleRight 2.5s ease-in-out infinite}
-
-@keyframes bubbleLeft{
-  0%,15%{opacity:0;transform:translateY(2px) scale(.8)} 20%,42%{opacity:.7;transform:translateY(0) scale(1)} 48%,100%{opacity:0;transform:translateY(2px) scale(.8)}
-}
-@keyframes bubbleRight{
-  0%,48%{opacity:0;transform:translateY(2px) scale(.8)} 53%,75%{opacity:.7;transform:translateY(0) scale(1)} 82%,100%{opacity:0;transform:translateY(2px) scale(.8)}
-}
-.skill h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px}
-.skill p{font-size:13px;color:var(--muted);line-height:1.7}
-@media(max-width:900px){.skills-row{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.skills-row{grid-template-columns:1fr}}
-
-/* ════════════════════════════════════════════════════
-   EXPERIENCE
-   ════════════════════════════════════════════════════ */
-.experience{padding:100px 0}
-.experience .wrap{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start}
-.exp-label{
-  font-size:clamp(32px,4vw,44px);font-weight:900;
-  letter-spacing:-.04em;color:var(--ink);line-height:1;
-  position:sticky;top:100px;
-  overflow:hidden;
-}
-.exp-label::after{content:'';display:block;width:0;height:3px;background:var(--warm);margin-top:16px;border-radius:2px;transition:width 1s cubic-bezier(.22,1,.36,1),background .6s ease}
-.exp-label.visible::after{width:40px}
-.exp-label.show-education::after{background:var(--accent2)}
-.exp-label-text{display:block;position:relative}
-.exp-label-text .label-exp,.exp-label-text .label-edu{
-  transition:opacity .6s ease, transform .6s ease;
-}
-.exp-label-text .label-edu{
-  position:absolute;top:0;left:0;
-  opacity:0;transform:translateY(12px);
-}
-.exp-label.show-education .label-exp{
-  opacity:0;transform:translateY(-12px);
-}
-.exp-label.show-education .label-edu{
-  opacity:1;transform:translateY(0);
-}
-.timeline{position:relative;padding-left:28px}
-.timeline::before{
-  content:'';position:absolute;left:5px;top:8px;bottom:8px;
-  width:2px;background:linear-gradient(to bottom,var(--accent),var(--warm),var(--accent2),var(--accent2));
-  border-radius:1px;
-  transform:scaleY(0);transform-origin:top;
-  transition:transform 1.5s cubic-bezier(.22,1,.36,1);
-}
-.timeline.visible::before{transform:scaleY(1)}
-.tl-item{position:relative;margin-bottom:48px}
-.tl-item:last-child{margin-bottom:0}
-.tl-dot{
-  position:absolute;left:-25px;top:7px;
-  width:10px;height:10px;border-radius:50%;
-  background:var(--bg);border:2.5px solid var(--accent);
-  transition:transform .4s,box-shadow .4s;
-}
-.tl-dot.current{background:var(--accent);box-shadow:0 0 0 4px rgba(37,72,232,.15)}
-.tl-item:hover .tl-dot{transform:scale(1.4);box-shadow:0 0 0 6px rgba(37,72,232,.1)}
-.tl-item:nth-child(3) .tl-dot{border-color:var(--warm)}
-.tl-item:nth-child(4) .tl-dot{border-color:#D57800}
-/* Education entries — green accent */
-.tl-item:nth-child(5) .tl-dot,.tl-item:nth-child(6) .tl-dot{border-color:var(--accent2)}
-.tl-item:nth-child(5) .tl-date,.tl-item:nth-child(6) .tl-date{color:var(--accent2)}
-.tl-date{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.5px;margin-bottom:4px}
-.tl-role{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:2px}
-.tl-co{font-size:14px;color:var(--muted);margin-bottom:10px}
-.tl-desc{font-size:14px;color:var(--text);line-height:1.85}
-
-/* Journey cards */
-.journey{margin-top:16px}
-.journey-title{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-.journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.journey-grid.wide{grid-template-columns:1fr 1fr 1fr}
-@media(max-width:900px){.journey-grid.wide{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.journey-grid.wide{grid-template-columns:1fr}}
-.jcard{
-  background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;
-  box-shadow:0 1px 4px rgba(0,0,0,.03);transition:box-shadow .4s,transform .4s,border-color .4s;
-  position:relative;overflow:hidden;
-}
-.jcard:hover{box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
-/* Country flag fade-in on hover (CSS gradients — works on all OS) */
-.jcard::after{
-  content:'';
-  position:absolute;inset:0;border-radius:inherit;
-  opacity:0;transition:opacity .5s cubic-bezier(.22,1,.36,1);
-  pointer-events:none;z-index:0;
-}
-.jcard:hover::after{opacity:1}
-.jcard>*{position:relative;z-index:1}
-/* US flag — image */
-.jcard[data-flag="us"]::after{
-  background:url('assets/Flag-United-States-of-America.webp') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="us"]:hover::after{opacity:.08}
-/* California — state flag image */
-.jcard[data-flag="us-ca"]::after{
-  background:url('assets/Flag_of_California.svg.png') center/55% auto no-repeat, #fff;
-  opacity:0;
-}
-.jcard[data-flag="us-ca"]:hover::after{opacity:.08}
-/* Mississippi — state flag image */
-.jcard[data-flag="us-ms"]::after{
-  background:url('assets/Flag_of_Mississippi.svg.png') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="us-ms"]:hover::after{opacity:.08}
-/* Ohio — state flag image */
-.jcard[data-flag="us-oh"]::after{
-  background:url('assets/Flag_of_Ohio.svg.png') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="us-oh"]:hover::after{opacity:.08}
-/* Kansas — state flag image */
-.jcard[data-flag="us-ks"]::after{
-  background:url('assets/Flag_of_Kansas.png') center/80% auto no-repeat, #002868;
-  opacity:0;
-}
-.jcard[data-flag="us-ks"]:hover::after{opacity:.08}
-/* South Dakota — state flag image */
-.jcard[data-flag="us-sd"]::after{
-  background:url('assets/Flag_of_South_Dakota.svg.png') center/80% auto no-repeat, #0072B0;
-  opacity:0;
-}
-.jcard[data-flag="us-sd"]:hover::after{opacity:.08}
-/* Texas — state flag image */
-.jcard[data-flag="us-tx"]::after{
-  background:url('assets/Flag_of_Texas.svg.png') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="us-tx"]:hover::after{opacity:.08}
-/* South Korea — flag image */
-.jcard[data-flag="kr"]::after{
-  background:url('assets/Flag_of_South_Korea.svg') center/40% auto no-repeat, #fff;
-  opacity:0;
-}
-.jcard[data-flag="kr"]:hover::after{opacity:.09}
-/* Taiwan — flag image */
-.jcard[data-flag="tw"]::after{
-  background:url('assets/Flag_of_the_Republic_of_China.svg.webp') left center/40% auto no-repeat, #DE2910;
-  opacity:0;
-}
-.jcard[data-flag="tw"]:hover::after{opacity:.06}
-/* Australia — flag image */
-.jcard[data-flag="au"]::after{
-  background:url('assets/Flag_of_Australia_(converted).svg.webp') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="au"]:hover::after{opacity:.06}
-/* UK — flag image */
-.jcard[data-flag="gb"]::after{
-  background:url('assets/Flag-United-Kingdom.webp') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="gb"]:hover::after{opacity:.06}
-/* Germany — black/red/gold horizontal stripes */
-.jcard[data-flag="de"]::after{
-  background:linear-gradient(to bottom,#000 33.3%,#DD0000 33.3%,#DD0000 66.6%,#FFCC00 66.6%);
-}
-.jcard[data-flag="de"]:hover::after{opacity:.06}
-/* India — flag image */
-.jcard[data-flag="in"]::after{
-  background:url('assets/Flag_of_India.svg.png') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="in"]:hover::after{opacity:.08}
-/* Italy — green/white/red vertical stripes */
-.jcard[data-flag="it"]::after{
-  background:linear-gradient(to right,#009246 33.3%,#fff 33.3%,#fff 66.6%,#CE2B37 66.6%);
-}
-.jcard[data-flag="it"]:hover::after{opacity:.06}
-/* Indonesia — red over white */
-.jcard[data-flag="id"]::after{
-  background:linear-gradient(to bottom,#FF0000 50%,#fff 50%);
-}
-.jcard[data-flag="id"]:hover::after{opacity:.06}
-/* Bangladesh — green field with red circle */
-.jcard[data-flag="bd"]::after{
-  background:
-    radial-gradient(circle at 45% 50%,#F42A41 0%,#F42A41 22%,transparent 22%),
-    linear-gradient(to bottom,#006a4e,#006a4e);
-}
-.jcard[data-flag="bd"]:hover::after{opacity:.06}
-/* Sweden — blue field with yellow cross */
-.jcard[data-flag="se"]::after{
-  background:
-    linear-gradient(to bottom,transparent 40%,#FECC02 40%,#FECC02 60%,transparent 60%),
-    linear-gradient(to right,transparent 30%,#FECC02 30%,#FECC02 42%,transparent 42%),
-    linear-gradient(to bottom,#006AA7,#006AA7);
-}
-.jcard[data-flag="se"]:hover::after{opacity:.06}
-/* Canada — flag image */
-.jcard[data-flag="ca"]::after{
-  background:url('assets/Flag_of_Canada_(Pantone).svg.webp') center/cover no-repeat;
-  opacity:0;
-}
-.jcard[data-flag="ca"]:hover::after{opacity:.08}
-/* Cyprus — flag image (scaled down to fit within card) */
-.jcard[data-flag="cy"]::after{
-  background:url('assets/Flag_of_Cyprus.svg') center/35% auto no-repeat, #fff;
-  opacity:0;
-}
-.jcard[data-flag="cy"]:hover::after{opacity:.10}
-/* ENISE Bridge — slideshow background on hover */
-.jcard[data-flag="bridge"]::after{display:none}
-.jcard[data-flag="bridge"]{position:relative}
-.bridge-slide{
-  position:absolute;inset:0;border-radius:inherit;
-  background-size:cover;background-position:center;
-  opacity:0;transition:opacity 1s ease-in-out;
-  pointer-events:none;z-index:0;
-}
-.bridge-slide.active{opacity:.18}
-/* Multi-country — subtle gradient for remote/multi */
-.jcard[data-flag="multi"]::after{
-  background:linear-gradient(135deg,#2548e8,#0a8a6e,#e8663c,#a855f7);
-}
-.jcard[data-flag="multi"]:hover::after{opacity:.05}
-.jcard-year{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--accent);letter-spacing:.5px;margin-bottom:3px}
-.jcard-loc{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;display:flex;align-items:center;gap:5px}
-.jcard-loc svg{width:11px;height:11px;color:var(--muted);flex-shrink:0}
-.jcard-detail{font-size:11px;color:var(--muted);line-height:1.6}
-
-@media(max-width:768px){
-  .experience .wrap{grid-template-columns:1fr;gap:24px}
-  .exp-label{position:static}
-  .journey-grid{grid-template-columns:1fr}
-}
-
-/* ════════════════════════════════════════════════════
-   CONTACT
-   ════════════════════════════════════════════════════ */
-.contact{padding:100px 0 120px;text-align:center;position:relative;overflow:hidden}
-.contact .wrap{max-width:1400px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
-.contact-title{font-size:clamp(32px,4vw,44px);font-weight:900;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:8px}
-.contact-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
-.contact-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.contact-pill{
-  display:flex;align-items:center;gap:10px;
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:12px;padding:14px 28px;
-  font-size:14px;font-weight:600;color:var(--text);
-  box-shadow:0 1px 6px rgba(0,0,0,.03);
-  transition:box-shadow .4s,transform .4s,border-color .4s,background .4s;
-}
-.contact-pill:hover{box-shadow:0 12px 32px rgba(0,0,0,.08);transform:translateY(-3px);border-color:var(--accent);background:var(--accent);color:#fff}
-.contact-pill:hover svg{color:#fff}
-.contact-pill svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;transition:color .3s}
-
-/* ════════════════════════════════════════════════════
-   FOOTER
-   ════════════════════════════════════════════════════ */
-footer{border-top:1px solid var(--border);padding:28px 40px;text-align:center;font-size:11px;color:var(--muted);letter-spacing:.04em}
-
-/* ── Grain ───────────────────────────────────────── */
-body::after{
-  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.018;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat:repeat;background-size:128px;
-}
-
-/* ── Text Shimmer ───────────────────────────────── */
-@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-.shimmer-text{
-  background:linear-gradient(90deg,var(--ink) 0%,var(--accent) 25%,var(--ink) 50%,var(--accent2) 75%,var(--ink) 100%);
-  background-size:200% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  animation:shimmer 6s linear infinite;
-}
-
-/* ── Parallax sections ──────────────────────────── */
-.parallax-section{
-  transform:translateZ(0);will-change:transform;
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
+<link rel="author" type="text/plain" href="humans.txt">
+<script defer src="main.js"></script>
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-dot" id="cursorDot"></div>
+<a href="#main" class="sr-only" style="position:absolute;top:8px;left:8px;padding:8px 14px;background:#0f0f0f;color:#fff;z-index:99999;border-radius:6px" onfocus="this.classList.remove('sr-only')" onblur="this.classList.add('sr-only')">Skip to main content</a>
+
+<noscript>
+  <style>.cursor,.cursor-dot,.scroll-progress,#hero-canvas,.reveal,.reveal-left,.reveal-right,.reveal-scale{display:none!important}.hero-text,.hero-vid,.about-body>p,.confidential-note,.proj-lg,.proj-sm,.skill{opacity:1!important;transform:none!important}</style>
+  <div style="background:#fff7e6;border:1px solid #e8b658;padding:12px 18px;margin:12px auto;max-width:880px;font-family:Inter,system-ui,sans-serif;border-radius:8px;color:#3a2618">
+    <strong>JavaScript is disabled.</strong> The site still works, but background animations, lazy-loaded project videos, and the interactive game are turned off. Core content, navigation, and links are unaffected.
+  </div>
+</noscript>
+
+<!-- Custom Cursor (decorative, hidden from assistive tech) -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <!-- Scroll Progress Bar -->
-<div class="scroll-progress" id="scrollProgress"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- ── Nav ─────────────────────────────────────────── -->
 <nav id="mainNav">
   <div class="wrap">
     <a href="#" class="mark">alexis<span>.</span>antoniou</a>
-    <button class="hamburger" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Menu">
-      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
     </button>
-    <div class="links">
-      <a href="#about">About</a>
+    <div class="links" id="nav-links">
+      <a href="#about">About Me</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#edu-start">Education</a>
       <a href="#contact">Contact</a>
+      <a href="game.html">Play</a>
     </div>
   </div>
 </nav>
@@ -730,8 +163,9 @@ body::after{
 <!-- ════════════════════════════════════════════════════
      HERO
      ════════════════════════════════════════════════════ -->
-<section class="hero">
-  <canvas id="hero-canvas"></canvas>
+<main id="main">
+<section class="hero" aria-label="Introduction">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="hero-grid">
     <div class="hero-text">
       <h1>Building tools<br>that turn <em>data</em><br>into insight</h1>
@@ -739,14 +173,14 @@ body::after{
       <div class="hero-cta">
         <a href="#projects" class="btn btn-accent magnetic">
           View Projects
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
         </a>
         <a href="#contact" class="btn btn-ghost magnetic">Get in Touch</a>
       </div>
     </div>
     <div class="hero-visual reveal" id="heroVisual">
       <div class="hero-vid hero-vid-1">
-        h<source src="assets/dashboard.mp4" type="video/mp4"></video>
+        <video autoplay muted loop playsinline preload="metadata"><source src="assets/dashboard.mp4" type="video/mp4"></video>
         <div class="hero-vid-label">AAFM Dashboard</div>
       </div>
       <div class="hero-vid hero-vid-2">
@@ -763,11 +197,24 @@ body::after{
      ════════════════════════════════════════════════════ -->
 <section class="about parallax-section" id="about">
   <div class="wrap">
-    <div class="about-label reveal">About</div>
+    <div class="about-side">
+      <div class="about-label reveal">About Me</div>
+      <figure class="about-portrait reveal">
+        <img src="assets/headshot.jpg" alt="Alexis Antoniou" width="320" height="400" loading="lazy" decoding="async">
+      </figure>
+    </div>
     <div class="about-body">
       <p class="reveal">I'm Alexis - an engineering professional with over 7 years of experience in high-precision sensing technology. I currently serve as Customer Support Supervisor at Infinitesima, where I independently lead service operations across Asia for advanced atomic force microscopy systems.</p>
       <p class="reveal">Beyond hands-on field work, I develop purpose-built analysis scripts, data visualisation tools, and operational dashboards that help engineering teams interpret complex measurement data, enabling faster diagnosis and deeper insight across service and production operations.</p>
       <p class="reveal">My background in Civil Engineering and Building Information Modelling gives me a strong foundation in data management, systems thinking, and translating technical complexity into practical, user-friendly solutions.</p>
+      <div class="credentials reveal" aria-label="Work authorisation">
+        <div class="credentials-title">Work authorisation</div>
+        <ul class="credentials-list">
+          <li><span class="cred-flag" data-cred="gb" aria-hidden="true"></span><span><strong>United Kingdom</strong> &middot; passport holder</span></li>
+          <li><span class="cred-flag" data-cred="cy" aria-hidden="true"></span><span><strong>Cyprus</strong> &middot; passport holder (EU citizen, full right to work across the EU)</span></li>
+          <li><span class="cred-flag" data-cred="tw" aria-hidden="true"></span><span><strong>Taiwan</strong> &middot; 3-year Gold Card (valid through 2029)</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -786,12 +233,14 @@ body::after{
     <!-- Large: Dashboard -->
     <div class="proj-lg reveal-left" data-hue="blue">
       <div class="proj-lg-visual">
-        <video autoplay hhmuted loop playsinline preload="metadata"><source src="assets/dashboard.mp4" type="video/mp4"></video>
+        <video muted loop playsinline preload="none" data-src="assets/dashboard.mp4" aria-label="Screen recording of the AAFM operational dashboard"><source type="video/mp4"></video>
       </div>
       <div class="proj-lg-info">
         <div class="proj-tag">Full-Stack Application</div>
         <h3 class="proj-name">AAFM Dashboard</h3>
-        <p class="proj-desc">A comprehensive Flask-based operational dashboard that centralises 15+ analysis scripts into a single interface. Used by engineering teams to run PM diagnostics, monitor production health, track throughput timing, and generate automated reports.</p>
+        <p class="proj-desc"><strong>The problem.</strong> Every analysis we ran lived as a standalone Python script. Engineers who weren't comfortable in a terminal either asked someone else to run it or just didn't run it, and the outputs ended up scattered across folders.</p>
+        <p class="proj-desc"><strong>What I built.</strong> A Flask dashboard that wraps every script behind a button, with consistent inputs, inline results, and a shared database underneath. Because everything now routes through one place, I could add tool time tracking, throughput trends, and brand-new metrics that no previous script had ever reported - the platform made those analyses possible, not the other way round.</p>
+        <p class="proj-desc"><strong>Result.</strong> Non-Python users can run the full analysis suite themselves. We now track signals we couldn't see before, which is already feeding back into production-quality decisions on the tools.</p>
         <div class="proj-stack">
           <span>Python</span><span>Flask</span><span>Plotly</span><span>SQLite</span><span>Pandas</span>
         </div>
@@ -801,12 +250,14 @@ body::after{
     <!-- Large: 3D Interactive Visualiser -->
     <div class="proj-lg reveal-right" data-hue="cyan">
       <div class="proj-lg-visual">
-        <video style="object-position:40% 0%" autoplay muted loop playsinline preload="metadata"><source src="assets/3d visual 2.mp4" type="video/mp4"></video>
+        <video style="object-position:40% 0%" muted loop playsinline preload="none" data-src="assets/3d visual 2.mp4" aria-label="Screen recording of the 3D interactive visualiser"><source type="video/mp4"></video>
       </div>
       <div class="proj-lg-info">
         <div class="proj-tag" style="color:var(--accent2)">Interactive Visualisation</div>
         <h3 class="proj-name">3D Interactive Visualiser</h3>
-        <p class="proj-desc">Interactive 3D surface and scatter plots for exploring semiconductor measurement data. Features layer toggling, adjustable Z-exaggeration, auto-rotation, and background opacity controls.</p>
+        <p class="proj-desc"><strong>The problem.</strong> The existing analysis scripts output flat 2D images. That's fine for a quick sanity check, but subtle spatial correlations between components were getting lost - you'd look at two plots side by side and still not see the relationship.</p>
+        <p class="proj-desc"><strong>What I built.</strong> An interactive 3D viewer that takes the same underlying measurement data, renders it as a manipulable surface, and - this is the important part - lets you <em>layer</em> two analysed components into the same graph. Pan, rotate, adjust Z-exaggeration, fade one layer against the other.</p>
+        <p class="proj-desc"><strong>Result.</strong> Engineers now draw conclusions they couldn't draw from the 2D version, spotting when two apparently separate issues are actually the same spatial fault expressed differently. The viewer is becoming the default way we look at multi-component measurements.</p>
         <div class="proj-stack">
           <span>Plotly.js</span><span>JavaScript</span><span>3D Surface / Scatter</span><span>CSV Parsing</span>
         </div>
@@ -816,12 +267,14 @@ body::after{
     <!-- Pattern Recognition -->
     <div class="proj-lg reveal-right" data-hue="cyan" id="patternRecognition">
       <div class="proj-lg-visual">
-        <video id="prVideo" autoplay muted loop playsinline preload="metadata"><source src="assets/video_summary_1.mp4" type="video/mp4"></video>
+        <video id="prVideo" muted loop playsinline preload="none" data-src="assets/video_summary_1.mp4" aria-label="Screen recording of the pattern recognition pipeline"><source type="video/mp4"></video>
       </div>
       <div class="proj-lg-info">
         <div class="proj-tag" style="color:var(--accent2)">Computer Vision</div>
         <h3 class="proj-name">Pattern Recognition</h3>
-        <p class="proj-desc">A unified pattern recognition pipeline combining template matching, multi-scale feature extraction, adaptive thresholding, and sub-pixel localisation. A single script handles various levels of image quality, from clean reference images to noisy environments with partial occlusion.</p>
+        <p class="proj-desc"><strong>The problem.</strong> The tool I was working on relied on a National Instruments computer-vision licence, a four-figure fee per tool. Each analysis run also needed a trained engineer at the machine for about an hour to process the output.</p>
+        <p class="proj-desc"><strong>What I built.</strong> I set out just to prove the pattern-recognition step could be reproduced in Python using OpenCV - template matching, multi-scale feature extraction, adaptive thresholding, sub-pixel localisation. It worked, so I kept going and wrote a fresh analysis script that consumes the Python pipeline's output and produces the engineering report end-to-end.</p>
+        <p class="proj-desc"><strong>Result.</strong> We drop the four-figure licence on every tool that adopts it, and we claw back at least an hour of engineer time per analysis. Net gain per tool, per analysis cycle, is measurable and recurring.</p>
         <div class="pr-version-selector">
           <button class="pr-version-btn active" data-version="1" data-src="assets/video_summary_1.mp4">Foundation</button>
           <button class="pr-version-btn" data-version="2" data-src="assets/video_summary_2.mp4">Challenging</button>
@@ -838,37 +291,37 @@ body::after{
       <div class="proj-sm reveal-scale tilt-card" data-hue="blue">
         <div class="proj-tag" style="color:#2548e8">Analysis Pipeline</div>
         <h3 class="proj-name">Combined Analysis Suite</h3>
-        <p class="proj-desc">Unified pipeline that runs multiple analysis modules in a single pass using computer vision, data correlation, and statistical methods.</p>
+        <p class="proj-desc">One pass, many answers. Runs every CV and statistical module the team needs in a single invocation, replacing a fragmented toolchain with one coherent report.</p>
         <div class="proj-stack"><span>Python</span><span>OpenCV</span><span>NumPy</span></div>
       </div>
       <div class="proj-sm reveal-scale tilt-card" data-hue="green">
         <div class="proj-tag" style="color:#0a8a6e">Analysis Tool</div>
         <h3 class="proj-name">Positioning Accuracy & Repeatability</h3>
-        <p class="proj-desc">Analyses stage positioning accuracy across measurement runs, computing error distributions and generating visual reports.</p>
+        <p class="proj-desc">Catches stage drift and repeatability issues before they show up in customer data , error distributions, trend plots, and visual reports generated straight from raw run logs.</p>
         <div class="proj-stack"><span>Python</span><span>OpenCV</span><span>XML</span></div>
       </div>
       <div class="proj-sm reveal-scale tilt-card" data-hue="teal">
         <div class="proj-tag" style="color:#06b6d4">Quality Assurance</div>
         <h3 class="proj-name">Image Quality Comparison</h3>
-        <p class="proj-desc">Compares AFM images against golden references using quality metrics, flagging regressions automatically.</p>
+        <p class="proj-desc">Automatic regression detection against golden reference images , flags quality drift after PM or software changes without a human sitting at a monitor diff-checking outputs.</p>
         <div class="proj-stack"><span>Python</span><span>Pillow</span><span>SSIM</span></div>
       </div>
       <div class="proj-sm reveal-scale tilt-card" data-hue="orange">
         <div class="proj-tag" style="color:#e8663c">Performance</div>
         <h3 class="proj-name">Throughput Timing Analysis</h3>
-        <p class="proj-desc">Parses timing data logs to surface bottlenecks, step durations, and cycle time trends.</p>
+        <p class="proj-desc">Parses raw timing logs into the one chart that matters: which step is slowest, and is it getting worse? Starting point for every throughput conversation we have.</p>
         <div class="proj-stack"><span>Python</span><span>Log Parsing</span><span>Statistics</span></div>
       </div>
       <div class="proj-sm reveal-scale tilt-card" data-hue="purple">
         <div class="proj-tag" style="color:#a855f7">Reporting</div>
         <h3 class="proj-name">PM Report Generator</h3>
-        <p class="proj-desc">Automatically compiles outputs from multiple PM scripts into branded PowerPoint presentations for customer delivery.</p>
+        <p class="proj-desc">Turns a half-day of report assembly into a one-command export , branded PowerPoint decks generated straight from PM script outputs, ready for customer delivery.</p>
         <div class="proj-stack"><span>Python</span><span>python-pptx</span><span>Matplotlib</span></div>
       </div>
       <div class="proj-sm reveal-scale tilt-card" data-hue="rose">
         <div class="proj-tag" style="color:#e11d48">Monitoring</div>
         <h3 class="proj-name">Probe Life & Health Tracker</h3>
-        <p class="proj-desc">Tracks AFM probe usage and health over time using SQLite, monitoring signal strength and pixel consumption.</p>
+        <p class="proj-desc">Replaces guesswork about probe condition with a documented per-probe history , usage, signal strength, and pixel consumption tracked over time so replacement decisions are evidence-based.</p>
         <div class="proj-stack"><span>Python</span><span>SQLite</span><span>XML</span></div>
       </div>
     </div>
@@ -893,7 +346,7 @@ body::after{
       </div>
       <div class="skill reveal tilt-card">
         <div class="skill-icon" style="background:rgba(10,138,110,.08)">
-          <svg class="icon-web" width="22" height="22" fill="none" stroke="var(--accent2)" stroke-width="1.8" viewBox="0 0 24 24">
+          <svg class="icon-web" width="22" height="22" fill="none" stroke="var(--accent2)" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
             <!-- Monitor -->
             <rect x="2" y="3" width="20" height="13" rx="2"/>
             <path d="M8 21h8M12 16v5"/>
@@ -910,7 +363,7 @@ body::after{
       </div>
       <div class="skill reveal tilt-card">
         <div class="skill-icon" style="background:rgba(232,102,60,.08)">
-          <svg class="icon-eng afm-svg" width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <svg class="icon-eng afm-svg" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
             <!-- Chip / mount block -->
             <rect x="1" y="5" width="5" height="6" rx="1" fill="rgba(232,102,60,.12)" stroke="var(--warm)" stroke-width="1"/>
             <!-- Cantilever beam (bends via JS) -->
@@ -941,7 +394,7 @@ body::after{
       </div>
       <div class="skill reveal tilt-card">
         <div class="skill-icon" style="background:rgba(0,0,0,.05)">
-          <svg class="icon-train" width="22" height="22" fill="none" stroke="var(--ink)" stroke-width="1.8" viewBox="0 0 24 24">
+          <svg class="icon-train" width="22" height="22" fill="none" stroke="var(--ink)" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
             <!-- Person 1 -->
             <circle cx="7" cy="8" r="2.5"/>
             <path d="M2 20v-1.5a4 4 0 014-4h2a4 4 0 014 4V20"/>
@@ -1006,7 +459,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="tw">
                 <div class="jcard-year">2026 (Jan - Apr)</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Taiwan
                 </div>
                 <div class="jcard-detail">Led assembly and acceptance testing of a new tool at the facility, preparing the system for customer delivery and performing full validation ahead of on-site installation.</div>
@@ -1014,7 +467,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="kr">
                 <div class="jcard-year">2026 (Apr - Jun)</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   South Korea
                 </div>
                 <div class="jcard-detail">Accompanied the new tool to customer site for installation, independently managing the full setup, commissioning, and handover process.</div>
@@ -1036,7 +489,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="us-ca">
                 <div class="jcard-year">2023</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Bay Area, California
                 </div>
                 <div class="jcard-detail">Tool assembly and acceptance testing at Infinitesima's facility, preparing a flagship system for delivery.</div>
@@ -1044,7 +497,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="kr">
                 <div class="jcard-year">2024</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   South Korea
                 </div>
                 <div class="jcard-detail">Accompanied the tool to customer site for installation, then remained on-site independently for PM and performance monitoring.</div>
@@ -1052,7 +505,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="tw">
                 <div class="jcard-year">2025 (Jan - Mar)</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Taiwan
                 </div>
                 <div class="jcard-detail">Split between tool assembly and acceptance testing for a new system, and performance monitoring of an existing deployment.</div>
@@ -1060,7 +513,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="kr">
                 <div class="jcard-year">2025 (Apr - Dec)</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   South Korea
                 </div>
                 <div class="jcard-detail">Continued providing ongoing support, maintenance, and performance monitoring as the sole engineer on-site.</div>
@@ -1081,129 +534,134 @@ body::after{
             <div class="journey-grid wide">
               <div class="jcard tilt-card" data-flag="gb">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   University of Oxford, Oxford, UK
                 </div>
                 <div class="jcard-detail">Installed a resonant column system with a first-of-its-kind high-frequency resonance calibration kit and high-pressure cell, both tested and developed by myself.</div>
               </div>
               <div class="jcard tilt-card" data-flag="us-ms">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   US Army Corps of Engineers, Vicksburg, USA
                 </div>
                 <div class="jcard-detail">Commissioned static and dynamic triaxial testing systems for the Corps' geotechnical research programme, enabling cyclic load simulation for infrastructure assessment.</div>
               </div>
+              <div class="jcard tilt-card" data-flag="au">
+                <div class="jcard-loc">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Macquarie Geotechnical, Sydney, Australia
+                </div>
+                <div class="jcard-detail">Expanded triaxial testing capabilities for a commercial lab. Diagnosed and resolved issues with pressure-volume controllers and load frames alongside the installation.</div>
+              </div>
+              <div class="gds-more" id="gds-more" hidden>
               <div class="jcard tilt-card" data-flag="us-oh">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   University of Cincinnati, Cincinnati, USA
                 </div>
                 <div class="jcard-detail">Installed a high-stress temperature-controlled triaxial system for advanced geotechnical research under combined thermal and mechanical loading conditions.</div>
               </div>
               <div class="jcard tilt-card" data-flag="us-ks">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Kansas DOT, Kansas, USA
                 </div>
                 <div class="jcard-detail">Commissioned triaxial testing systems for the state's geotechnical laboratory, supporting soil characterisation for highway and infrastructure projects.</div>
               </div>
               <div class="jcard tilt-card" data-flag="us-sd">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   South Dakota School of Mines, Rapid City, USA
                 </div>
                 <div class="jcard-detail">Deployed triaxial testing apparatus for the university's geotechnical engineering programme, enabling research into soil behaviour and foundation design.</div>
               </div>
               <div class="jcard tilt-card" data-flag="us-tx">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   NGI &amp; Fugro, Houston, USA
                 </div>
                 <div class="jcard-detail">Conducted customer visits to two leading geotechnical consultancies, providing on-site technical support and system diagnostics.</div>
               </div>
               <div class="jcard tilt-card" data-flag="au">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   University of Melbourne, Melbourne, Australia
                 </div>
                 <div class="jcard-detail">Extended static and dynamic triaxial capabilities. Also diagnosed and tuned PID servo-control loops on dynamic systems, repaired legacy equipment, and resolved hydraulic leak issues.</div>
               </div>
-              <div class="jcard tilt-card" data-flag="au">
-                <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Macquarie Geotechnical, Sydney, Australia
-                </div>
-                <div class="jcard-detail">Expanded triaxial testing capabilities for a commercial lab. Diagnosed and resolved issues with pressure-volume controllers and load frames alongside the installation.</div>
-              </div>
               <div class="jcard tilt-card" data-flag="de">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   University of Hamburg, Hamburg, Germany
                 </div>
                 <div class="jcard-detail">Commissioned a full range of systems including oedometer consolidation cells, static triaxial, and dynamic triaxial apparatus for the university's soil mechanics research.</div>
               </div>
               <div class="jcard tilt-card" data-flag="in">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   IIT Madras, Chennai, India
                 </div>
                 <div class="jcard-detail">Installed a high-pressure triaxial testing system for advanced geotechnical research, enabling effective stress path testing under elevated confining pressures.</div>
               </div>
               <div class="jcard tilt-card" data-flag="in">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   NIT Puducherry, Puducherry, India
                 </div>
                 <div class="jcard-detail">Commissioned a complete suite of geotechnical testing equipment: dynamic triaxial for cyclic load simulation, oedometer for consolidation, and static triaxial for shear strength characterisation.</div>
               </div>
               <div class="jcard tilt-card" data-flag="id">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   PT. Hydrocore, Jakarta, Indonesia
                 </div>
                 <div class="jcard-detail">Installed a dynamic cyclic stress testing system for evaluating soil liquefaction behaviour and cyclic shear resistance in a commercial testing laboratory.</div>
               </div>
               <div class="jcard tilt-card" data-flag="it">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Universit&agrave; di Napoli Federico II, Naples, Italy
                 </div>
                 <div class="jcard-detail">Commissioned triaxial testing equipment for the university's geotechnical engineering department, supporting research into soil mechanics and foundation behaviour.</div>
               </div>
               <div class="jcard tilt-card" data-flag="se">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Mitta AB, Stockholm, Sweden
                 </div>
                 <div class="jcard-detail">Installed a temperature-controlled triaxial system for stress-path testing, enabling the lab to characterise soil behaviour under combined thermal and mechanical loading.</div>
               </div>
               <div class="jcard tilt-card" data-flag="bd">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   ADC Lab, Dhaka, Bangladesh
                 </div>
                 <div class="jcard-detail">Extended the lab's triaxial and dynamic triaxial testing capabilities, enabling both static shear strength measurement and cyclic load simulation for earthquake-prone infrastructure projects.</div>
               </div>
               <div class="jcard tilt-card" data-flag="ca">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   McGill University, Montreal, Canada
                 </div>
                 <div class="jcard-detail">Diagnosed and repaired a large-scale direct shear stress device, restoring its capacity for testing soil-structure interface behaviour under controlled normal loads.</div>
               </div>
               <div class="jcard tilt-card" data-flag="gb">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   University of Portsmouth, Portsmouth, UK
                 </div>
                 <div class="jcard-detail">Provided training and support for legacy geotechnical testing equipment, ensuring continued research capability on older systems.</div>
               </div>
               <div class="jcard tilt-card" data-flag="multi">
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Remote Support, Worldwide
                 </div>
                 <div class="jcard-detail">Delivered remote training and issue diagnosis for commercial labs and universities in Taiwan, Denmark, India, China, and Serbia, alongside ongoing remote support across many additional countries.</div>
+              </div>
+              </div><!-- /.gds-more -->
+              <div class="gds-toggle-wrap">
+                <button type="button" class="gds-toggle" id="gdsToggle" aria-controls="gds-more" aria-expanded="false">Show all 18 deployments</button>
               </div>
             </div>
           </div>
@@ -1222,7 +680,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="cy">
                 <div class="jcard-year">IT Project</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17V7m0 10l-3-3m3 3l3-3M15 7v10m0-10l3 3m-3-3l-3 3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17V7m0 10l-3-3m3 3l3-3M15 7v10m0-10l3 3m-3-3l-3 3"/></svg>
                   Inventory Automation System
                 </div>
                 <div class="jcard-detail">Designed and built a stock monitoring and automatic re-ordering system as a final high school IT project, deployed in-house to streamline procurement and reduce waste.</div>
@@ -1230,7 +688,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="cy">
                 <div class="jcard-year">Marketing</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                   Social Media &amp; Bookings
                 </div>
                 <div class="jcard-detail">Regularly achieved full venue occupancy through location-targeted Facebook advertising campaigns, driving pre-bookings via the business's social media channels.</div>
@@ -1238,7 +696,7 @@ body::after{
               <div class="jcard tilt-card" data-flag="cy">
                 <div class="jcard-year">Partnerships</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                   Restaurant Networking
                 </div>
                 <div class="jcard-detail">Established lasting partnerships with local restaurants to arrange meals for event customers, creating a seamless guest experience and building a referral network that benefited both businesses.</div>
@@ -1265,7 +723,7 @@ body::after{
                 <div class="bridge-slide" style="background-image:url('assets/bridge sample 1.jpg')"></div>
                 <div class="jcard-year">2017 - 2019</div>
                 <div class="jcard-loc">
-                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   ENISE Bridge Building Competition, Saint-&Eacute;tienne, France
                 </div>
                 <div class="jcard-detail">Organised and led the University of Portsmouth's participation in the annual ENISE bridge building competition for three consecutive years. Coordinated team recruitment, design strategy, material sourcing, and travel logistics, representing the university on an international stage.</div>
@@ -1296,508 +754,32 @@ body::after{
     <p class="contact-sub reveal">I'm always open to discussing engineering challenges, data visualisation, or new opportunities.</p>
     <div class="contact-row reveal">
       <a href="mailto:antoniou.a.alexis@gmail.com" class="contact-pill magnetic">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
         antoniou.a.alexis@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/alexis-antoniou/" target="_blank" class="contact-pill magnetic">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
         LinkedIn
       </a>
     </div>
   </div>
 </section>
 
+<aside class="confidential-note reveal" aria-label="A note on confidentiality" style="max-width:900px;margin:40px auto 24px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start;font-size:14px;line-height:1.6;color:#6b6b6b;border-top:1px solid #e5e1da">
+  <div class="confidential-icon" aria-hidden="true" style="flex-shrink:0;margin-top:2px;color:#9a948a">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+  </div>
+  <div>
+    <strong>A note on the projects on this page.</strong>
+    The tools on this site are built for a live commercial semiconductor metrology environment, so the measurement data, customer names, production context, and specific performance figures behind each project are covered by confidentiality obligations and cannot be published. The screen recordings and descriptions are the public-safe surface of that work. I'm happy to walk through the engineering in detail, including decisions, trade-offs, and outcomes, in a conversation under NDA.
+  </div>
+</aside>
+
 <footer>&copy; 2026 Alexis Antoniou &middot; Built with care</footer>
 
 <!-- ════════════════════════════════════════════════════
      SCRIPTS
      ════════════════════════════════════════════════════ -->
-<script>
-// ── Custom Cursor ────────────────────────────────────
-const cursor = document.getElementById('cursor');
-const cursorDot = document.getElementById('cursorDot');
-let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top = mouseY + 'px';
-});
-
-function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.15;
-  cursorY += (mouseY - cursorY) * 0.15;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top = cursorY + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// Hover state
-document.querySelectorAll('a, button, .proj-sm, .demo-card, .skill, .jcard, .contact-pill').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorDot.classList.add('hover'); });
-  el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorDot.classList.remove('hover'); });
-});
-
-// ── Magnetic Buttons ─────────────────────────────────
-document.querySelectorAll('.magnetic').forEach(btn => {
-  btn.addEventListener('mousemove', e => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    btn.style.setProperty('--x', ((e.clientX - rect.left) / rect.width * 100) + '%');
-    btn.style.setProperty('--y', ((e.clientY - rect.top) / rect.height * 100) + '%');
-  });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = '';
-  });
-});
-
-// ── Scroll Progress Bar ──────────────────────────────
-const scrollProgress = document.getElementById('scrollProgress');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  scrollProgress.style.width = (scrollTop / docHeight * 100) + '%';
-}, { passive: true });
-
-// ── Nav Hide on Scroll ───────────────────────────────
-let lastScroll = 0;
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  const currentScroll = window.scrollY;
-  if (currentScroll > lastScroll && currentScroll > 100) {
-    nav.classList.add('hide-nav');
-  } else {
-    nav.classList.remove('hide-nav');
-  }
-  lastScroll = currentScroll;
-}, { passive: true });
-
-// ── Scroll Reveal (multi-direction) ──────────────────
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const siblings = entry.target.parentElement.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
-      const idx = Array.from(siblings).indexOf(entry.target);
-      entry.target.style.transitionDelay = `${idx * 100}ms`;
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => revealObserver.observe(el));
-
-// ── Nav link close mobile ────────────────────────────
-document.querySelectorAll('nav .links a').forEach(link => {
-  link.addEventListener('click', () => document.querySelector('.links').classList.remove('open'));
-});
-
-// ── 3D Card Tilt ─────────────────────────────────────
-document.querySelectorAll('.tilt-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    const rotateX = (0.5 - y) * 12;
-    const rotateY = (x - 0.5) * 12;
-    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
-
-// ── Hero 3D Parallax on Mouse Move ───────────────────
-const heroVisual = document.getElementById('heroVisual');
-const heroVids = heroVisual ? heroVisual.querySelectorAll('.hero-vid') : [];
-document.querySelector('.hero').addEventListener('mousemove', e => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  const x = (e.clientX - rect.left) / rect.width - 0.5;
-  const y = (e.clientY - rect.top) / rect.height - 0.5;
-  heroVids.forEach((vid, i) => {
-    const depth = (i + 1) * 8;
-    vid.style.transform = `translate(${x * depth}px, ${y * depth}px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
-  });
-});
-
-
-// ── Hero Canvas Particles ────────────────────────────
-(function() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let width, height, particles = [], mouse = { x: 0, y: 0 };
-  const PARTICLE_COUNT = 80;
-  const CONNECTION_DIST = 150;
-
-  function resize() {
-    const rect = canvas.parentElement.getBoundingClientRect();
-    width = canvas.width = rect.width;
-    height = canvas.height = rect.height;
-  }
-
-  function createParticles() {
-    particles = [];
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        r: Math.random() * 2 + 1,
-        color: ['rgba(37,72,232,', 'rgba(10,138,110,', 'rgba(232,102,60,'][Math.floor(Math.random() * 3)]
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-
-    // Draw connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < CONNECTION_DIST) {
-          const opacity = (1 - dist / CONNECTION_DIST) * 0.12;
-          ctx.strokeStyle = `rgba(37,72,232,${opacity})`;
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Draw and update particles
-    particles.forEach(p => {
-      // Mouse interaction
-      const dx = mouse.x - p.x;
-      const dy = mouse.y - p.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 200) {
-        const force = (200 - dist) / 200 * 0.02;
-        p.vx -= dx * force;
-        p.vy -= dy * force;
-      }
-
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vx *= 0.99;
-      p.vy *= 0.99;
-
-      if (p.x < 0 || p.x > width) p.vx *= -1;
-      if (p.y < 0 || p.y > height) p.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.color + '0.3)';
-      ctx.fill();
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  canvas.parentElement.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-
-  window.addEventListener('resize', () => { resize(); createParticles(); });
-  resize();
-  createParticles();
-  draw();
-})();
-
-// ── Colour Block Floating Dots Canvas ────────────────
-function initBlockCanvas(canvasId, baseColor) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let dots = [], width, height;
-
-  function resize() {
-    const rect = canvas.parentElement.getBoundingClientRect();
-    width = canvas.width = rect.width;
-    height = canvas.height = rect.height;
-  }
-
-  function createDots() {
-    dots = [];
-    for (let i = 0; i < 40; i++) {
-      dots.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 3 + 1,
-        speed: Math.random() * 0.5 + 0.2,
-        angle: Math.random() * Math.PI * 2
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-    dots.forEach(d => {
-      d.x += Math.cos(d.angle) * d.speed;
-      d.y += Math.sin(d.angle) * d.speed;
-      d.angle += (Math.random() - 0.5) * 0.02;
-      if (d.x < -10) d.x = width + 10;
-      if (d.x > width + 10) d.x = -10;
-      if (d.y < -10) d.y = height + 10;
-      if (d.y > height + 10) d.y = -10;
-
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${baseColor},${0.08 + Math.random() * 0.05})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', () => { resize(); createDots(); });
-  resize();
-  createDots();
-  draw();
-}
-
-// ── 3D Rotating Graph Icon ──────────────────────────
-(function() {
-  const canvas = document.querySelector('.icon-canvas-graph');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const w = 30, h = 30;
-  let angle = -0.4, animating = false, rafId = null;
-  const bars = [
-    {x: -6, z: -3, h: 10, c: 'rgba(37,72,232,0.7)'},
-    {x: -2, z: -3, h: 16, c: 'rgba(37,72,232,0.85)'},
-    {x: 2, z: -3, h: 8, c: 'rgba(37,72,232,0.6)'},
-    {x: 6, z: -3, h: 13, c: 'rgba(37,72,232,0.75)'},
-    {x: -6, z: 3, h: 12, c: 'rgba(37,72,232,0.5)'},
-    {x: -2, z: 3, h: 7, c: 'rgba(37,72,232,0.45)'},
-    {x: 2, z: 3, h: 14, c: 'rgba(37,72,232,0.65)'},
-    {x: 6, z: 3, h: 9, c: 'rgba(37,72,232,0.55)'},
-  ];
-
-  function project(x, y, z) {
-    const cosA = Math.cos(angle), sinA = Math.sin(angle);
-    const rx = x * cosA - z * sinA;
-    const rz = x * sinA + z * cosA;
-    const scale = 1.1;
-    return { px: w/2 + rx * scale, py: h/2 + 4 - y * 0.7 + rz * 0.25, depth: rz };
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    // Sort by depth for proper overlap
-    const sorted = bars.map((b,i) => ({...b, i})).sort((a,b) => {
-      const da = a.x * Math.sin(angle) + a.z * Math.cos(angle);
-      const db = b.x * Math.sin(angle) + b.z * Math.cos(angle);
-      return da - db;
-    });
-    // Draw floor grid
-    ctx.strokeStyle = 'rgba(37,72,232,0.15)';
-    ctx.lineWidth = 0.5;
-    const corners = [[-9,-5],[9,-5],[9,5],[-9,5]].map(c => project(c[0],0,c[1]));
-    ctx.beginPath();
-    corners.forEach((c,i) => i === 0 ? ctx.moveTo(c.px,c.py) : ctx.lineTo(c.px,c.py));
-    ctx.closePath();
-    ctx.stroke();
-    // Draw bars
-    sorted.forEach(bar => {
-      const bot = project(bar.x, 0, bar.z);
-      const top = project(bar.x, bar.h, bar.z);
-      const bw = 2.5;
-      // Bar body
-      ctx.fillStyle = bar.c;
-      ctx.beginPath();
-      ctx.moveTo(bot.px - bw/2, bot.py);
-      ctx.lineTo(bot.px + bw/2, bot.py);
-      ctx.lineTo(top.px + bw/2, top.py);
-      ctx.lineTo(top.px - bw/2, top.py);
-      ctx.closePath();
-      ctx.fill();
-      // Bar top
-      ctx.fillStyle = bar.c.replace(/[\d.]+\)$/, m => (parseFloat(m)+0.15)+')');
-      ctx.fillRect(top.px - bw/2, top.py - 1, bw, 1.5);
-    });
-  }
-
-  // Static draw
-  draw();
-
-  function animate() {
-    angle += 0.015;
-    draw();
-    if (animating) rafId = requestAnimationFrame(animate);
-  }
-
-  const skillCard = canvas.closest('.skill');
-  skillCard.addEventListener('mouseenter', () => { animating = true; animate(); });
-  skillCard.addEventListener('mouseleave', () => { animating = false; if(rafId) cancelAnimationFrame(rafId); });
-})();
-
-// Flag slideshow crossfade
-(function() {
-  const slides = document.querySelectorAll('#flagSlideshow .flag-slide');
-  if (!slides.length) return;
-  let current = 0;
-  slides[0].classList.add('active');
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 3000);
-})();
-
-
-// ── Smooth Parallax on Scroll ────────────────────────
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  document.querySelectorAll('.about-shapes .shape').forEach((shape, i) => {
-    const speed = (i + 1) * 0.03;
-    shape.style.transform = `translateY(${scrollY * speed}px)`;
-  });
-}, { passive: true });
-
-// ── Glow angle animation for cards ───────────────────
-let glowAngle = 0;
-function animateGlow() {
-  glowAngle += 0.5;
-  document.querySelectorAll('.proj-sm').forEach(card => {
-    card.style.setProperty('--glow-angle', glowAngle + 'deg');
-  });
-  requestAnimationFrame(animateGlow);
-}
-animateGlow();
-
-// Pattern Recognition version switcher
-document.querySelectorAll('.pr-version-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.pr-version-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const video = document.getElementById('prVideo');
-    video.src = btn.dataset.src;
-    video.load();
-    video.play();
-  });
-});
-
-// ── AFM Cantilever bending animation ──────────────────
-(function() {
-  const skillCard = document.querySelector('.skill:nth-child(3)');
-  if (!skillCard) return;
-  const cantilever = skillCard.querySelector('.afm-cantilever');
-  const tip = skillCard.querySelector('.afm-probe-tip');
-  const apex = skillCard.querySelector('.afm-apex');
-  if (!cantilever || !tip || !apex) return;
-  let animId = null, t = 0, hovering = false;
-  function animate() {
-    t += 0.035;
-    const bend = Math.sin(t * 2) * 2.5 + Math.sin(t * 5) * 0.8;
-    const tipY = 8 + bend * 0.4;
-    const midY = 8 + bend * 0.6;
-    cantilever.setAttribute('d', 'M6,8 Q13,' + midY + ' 18,' + tipY);
-    const triBot = tipY + 6.5;
-    tip.setAttribute('points', '18,' + tipY + ' 19.5,' + triBot + ' 16.5,' + triBot);
-    apex.setAttribute('cy', triBot + 0.5);
-    if (hovering) animId = requestAnimationFrame(animate);
-  }
-  skillCard.addEventListener('mouseenter', function() { hovering = true; animate(); });
-  skillCard.addEventListener('mouseleave', function() {
-    hovering = false;
-    if (animId) cancelAnimationFrame(animId);
-    cantilever.setAttribute('d', 'M6,8 Q13,8 18,8');
-    tip.setAttribute('points', '18,8 19.5,14.5 16.5,14.5');
-    apex.setAttribute('cy', '15');
-  });
-})();
-
-// ── Experience → Education label transition ──────────
-(function() {
-  const label = document.getElementById('exp-label');
-  const eduStart = document.getElementById('edu-start');
-  if (!label || !eduStart) return;
-  // Switch to "Education" once the top of the edu section scrolls past 50% of viewport
-  function checkLabel() {
-    const rect = eduStart.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.5) {
-      label.classList.add('show-education');
-    } else {
-      label.classList.remove('show-education');
-    }
-  }
-  window.addEventListener('scroll', checkLabel, { passive: true });
-  checkLabel();
-})();
-
-// ── ENISE Bridge slideshow on hover ───────────────────
-(function() {
-  const card = document.getElementById('bridge-card');
-  if (!card) return;
-  const slides = card.querySelectorAll('.bridge-slide');
-  if (!slides.length) return;
-  let idx = 0, timer = null;
-  function showSlide(i) {
-    slides.forEach(s => s.classList.remove('active'));
-    slides[i].classList.add('active');
-  }
-  function advance() {
-    idx = (idx + 1) % slides.length;
-    showSlide(idx);
-  }
-  card.addEventListener('mouseenter', function() {
-    idx = 0;
-    showSlide(0);
-    timer = setInterval(advance, 2500);
-  });
-  card.addEventListener('mouseleave', function() {
-    clearInterval(timer);
-    slides.forEach(s => s.classList.remove('active'));
-    idx = 0;
-  });
-})();
-
-// ── Confetti on LinkedIn / Email hover ────────────────
-(function() {
-  function createConfetti(container, e) {
-    const rect = container.getBoundingClientRect();
-    const colors = ['#2548e8','#0a8a6e','#e8663c','#f5c542','#a855f7','#ec4899'];
-    for (let i = 0; i < 18; i++) {
-      const dot = document.createElement('span');
-      dot.style.cssText = 'position:fixed;pointer-events:none;z-index:9999;border-radius:' +
-        (Math.random() > 0.5 ? '50%' : '2px') + ';width:' + (4 + Math.random()*5) + 'px;height:' +
-        (4 + Math.random()*5) + 'px;background:' + colors[Math.floor(Math.random()*colors.length)] +
-        ';left:' + (rect.left + rect.width/2) + 'px;top:' + (rect.top + rect.height/2) +
-        'px;opacity:1;transition:none;';
-      document.body.appendChild(dot);
-      const angle = (Math.PI * 2 * i / 18) + (Math.random() - 0.5) * 0.5;
-      const vel = 40 + Math.random() * 60;
-      const dx = Math.cos(angle) * vel;
-      const dy = Math.sin(angle) * vel - 30;
-      const rot = Math.random() * 360;
-      requestAnimationFrame(() => {
-        dot.style.transition = 'all .7s cubic-bezier(.25,.46,.45,.94)';
-        dot.style.transform = 'translate(' + dx + 'px,' + dy + 'px) rotate(' + rot + 'deg) scale(0)';
-        dot.style.opacity = '0';
-      });
-      setTimeout(() => dot.remove(), 800);
-    }
-  }
-  // Attach to LinkedIn and Email links in the contact section
-  document.querySelectorAll('.contact-row a').forEach(link => {
-    let fired = false;
-    link.addEventListener('mouseenter', function(e) {
-      if (!fired) { createConfetti(this, e); fired = true; }
-    });
-    link.addEventListener('mouseleave', function() { fired = false; });
-  });
-})();
-</script>
+</main>
 </body>
 </html>

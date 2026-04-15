@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://alexis-antoniou.github.io/Alexis-Antoniou/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://alexis-antoniou.github.io/Alexis-Antoniou/assets/bridge%20sample%201.jpg</image:loc>
+      <image:title>Bridge sample AFM measurement visualisation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alexis-antoniou.github.io/Alexis-Antoniou/#about</loc>
+    <lastmod>2026-04-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alexis-antoniou.github.io/Alexis-Antoniou/#projects</loc>
+    <lastmod>2026-04-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alexis-antoniou.github.io/Alexis-Antoniou/#experience</loc>
+    <lastmod>2026-04-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alexis-antoniou.github.io/Alexis-Antoniou/#contact</loc>
+    <lastmod>2026-04-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alexis-antoniou.github.io/Alexis-Antoniou/game.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

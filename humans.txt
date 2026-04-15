@@ -1,0 +1,11 @@
+/* TEAM */
+Maker: Alexis Antoniou
+Contact: antoniou.a.alexis [at] gmail.com
+LinkedIn: https://www.linkedin.com/in/alexis-antoniou/
+Location: United Kingdom
+
+/* SITE */
+Last update: 2026-04-15
+Standards: HTML5, CSS3, ES2020
+Components: vanilla JS, HTML5 Canvas, WebAudio, IntersectionObserver
+Software: written by hand in a text editor
